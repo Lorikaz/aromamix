@@ -1,7 +1,9 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Matthias Michalet
- * Date: 21/11/2018
- * Time: 15:45
- */
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Aromamix - Accueil</title>
+</head>
+<body>
+	<h1>Hello World !</h1>
+</body>
+</html>
