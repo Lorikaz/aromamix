@@ -21,7 +21,6 @@
 				<input type="text" name="ville"></br>
 			<fieldset>
 				<legend>Choix des smoothies</legend>
-				<span></span>
 			</fieldset></br>
 			<input type="submit" name="valider" value="Valider">
 		</form>
