@@ -1,10 +1,8 @@
 <?php session_start(); ?>
 <html>
 <head>
-    <meta charset="utf-8" />
     <title>Génétige</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <?php include("/parts/head.php") ?>
 </head>
 <body>
     <div class="menu flex">

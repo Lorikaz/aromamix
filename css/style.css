@@ -1,0 +1,11 @@
+body {
+  background-color: lightgrey; }
+
+.container {
+  background-color: white; }
+
+h1,
+h2,
+legend {
+  font-family: Butler;
+  font-weight: 300; }
