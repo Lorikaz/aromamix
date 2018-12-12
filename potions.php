@@ -1,16 +1,14 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 
 <head>
-	<title>Aromamix - Accueil</title>
+    <title>Aromamix - Potions</title>
     <?php include("/parts/head.php") ?>
 </head>
 
 <body>
     <?php include("/parts/entete.php") ?>
-	<h1>Hello World !</h1>
-	<p>Ceci est une page test du site vitrine Aromamix</p>
+    <h1>Nos potions</h1>
     <?php include("/parts/pied.php") ?>
 </body>
 
