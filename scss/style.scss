@@ -1,8 +1,52 @@
+$color1: rgb(89, 28, 172);
+$color2: rgb(115, 42, 188);
+$color3: rgb(133, 85, 216);
+$color4: rgb(171, 159, 242);
+
+.btn-potion {
+    color: #fff;
+    background-color: $color2;
+    border-color: $color2;
+
+    &:hover {
+        color: #fff;
+        background-color: $color1;
+        border-color: $color2;
+    }
+
+    &:focus,
+    &.focus {
+        box-shadow: 0 0 0 0.2rem rgba(133, 85, 216, 0.5);
+    }
+
+    &.disabled,
+    &:disabled {
+        color: #fff;
+        background-color: $color2;
+        border-color: $color2;
+    }
+
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active,
+    .show>&.dropdown-toggle {
+        color: #fff;
+        background-color: $color2;
+        border-color: $color1;
+    }
+
+    &:not(:disabled):not(.disabled):active:focus,
+    &:not(:disabled):not(.disabled).active:focus,
+    .show>&.dropdown-toggle:focus {
+        box-shadow: 0 0 0 0.2rem rgba(133, 85, 216, 0.5);
+    }
+}
+
+
 body {
     background-color: lightgrey;
 }
 
-.container {
+.container-fluid {
     background-color: white;
 }
 
