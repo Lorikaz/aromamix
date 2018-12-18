@@ -1,3 +1,19 @@
+body {
+  background-color: lightgrey; }
+
+.container-fluid {
+  background-color: white; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+legend {
+  font-family: Butler;
+  font-weight: 300; }
+
 .btn-potion {
   color: #fff;
   background-color: #732abc;
@@ -19,18 +35,50 @@
   .btn-potion:not(:disabled):not(.disabled):active:focus, .btn-potion:not(:disabled):not(.disabled).active:focus, .show > .btn-potion.dropdown-toggle:focus {
     box-shadow: 0 0 0 0.2rem rgba(133, 85, 216, 0.5); }
 
-body {
-  background-color: lightgrey; }
+nav.topnav {
+  position: relative;
+  background-color: white;
+  color: black;
+  overflow: hidden; }
+  nav.topnav a {
+    color: black;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none; }
+    nav.topnav a:hover {
+      background-color: #732abc;
+      color: white; }
+  nav.topnav .topnav-left a {
+    float: left; }
+  nav.topnav .topnav-center a {
+    float: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+    nav.topnav .topnav-center a:hover {
+      background-color: white; }
+  nav.topnav .topnav-right a {
+    float: right; }
 
-.container-fluid {
-  background-color: white; }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-legend {
-  font-family: Butler;
-  font-weight: 300; }
+nav.footnav {
+  position: relative;
+  background-color: white;
+  color: black;
+  overflow: hidden; }
+  nav.footnav span {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none; }
+  nav.footnav a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none; }
+    nav.footnav a:hover {
+      color: darkgrey; }
+  nav.footnav .footnav-right a {
+    float: right; }

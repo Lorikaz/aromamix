@@ -3,7 +3,7 @@
 <html>
 
 <head>
-	<title>Aromamix - Accueil</title>
+	<title>Accueil - Aromamix</title>
     <?php include("/parts/head.php") ?>
 </head>
 

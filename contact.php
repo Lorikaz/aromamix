@@ -11,7 +11,7 @@
 
     <h1>Qui sommes-nous ?</h1>
     <div class="row">
-    	<div class="col-md-4">
+    	<div class="col-md-4 col-sm-12">
     		<div class="card">
 				<img src="media/user.png">
 				<div class="card-body">
@@ -20,7 +20,7 @@
 				</div>
 			</div>
     	</div>
-    	<div class="col-md-4">
+    	<div class="col-md-4 col-sm-12">
     		<div class="card">
 				<img src="media/user.png">
 				<div class="card-body">
@@ -29,7 +29,7 @@
 				</div>
 			</div>
     	</div>
-    	<div class="col-md-4">
+    	<div class="col-md-4 col-sm-12">
     		<div class="card">
 				<img src="media/user.png">
 				<div class="card-body">

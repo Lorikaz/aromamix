@@ -1,10 +1,12 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Aromamix - Livre d'Or</title>
     <?php include("/parts/head.php") ?>
 </head>
+
 <body>
     <?php include("/parts/entete.php") ?>
 
@@ -26,5 +28,8 @@
 
             ?>
         </p>
+
+        <?php include("/parts/pied.php") ?>
 </body>
+
 </html>
