@@ -1,19 +1,23 @@
 <div class="container">
 
     <nav class="topnav">
-        <div class="topnav-left">
+        <li>
             <a href="potions.php">Potions</a>
+        </li>
+        <li>
             <a href="Commande.php">Commander</a>
-        </div>
-        <div class="topnav-center">
+        </li>
+        <li>
             <a href="index.php" id="logo">
                 <img src="media/logo-sm.png" height="30" alt="Aromamix">
             </a>
-        </div>
-        <div class="topnav-right">
+        </li>
+        <li>
             <a href="livreor.php">Livre d'or</a>
+        </li>
+        <li>
             <a href="#">Connexion</a>
-        </div>
+        </li>
     </nav>
 
     <div class="container-fluid">

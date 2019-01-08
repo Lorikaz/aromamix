@@ -63,24 +63,34 @@ $color4: rgb(171, 159, 242);
 
 
 nav.topnav {
-    position: relative;
     background-color: white;
     color: black;
-    overflow: hidden;
+    list-style: none;
+    text-align: center;
 
-    & a {
-        color: black;
-        text-align: center;
-        padding: 15px;
-        text-decoration: none;
+    & li {
+        display: inline;
 
-        &:hover {
-            background-color: $color2;
-            color: white;
+        & a {
+            color: black;
+            text-align: center;
+            display: inline-block;
+            padding: 10px;
+            vertical-align: center;
+            text-decoration: none;
+
+            &:hover {
+                background-color: $color2;
+                color: white;
+            }
+
+            &#logo:hover {
+                background-color: white;
+            }
         }
     }
 
-    & .topnav-left a {
+    /*& .topnav-left a {
         float: left;
     }
 
@@ -98,7 +108,7 @@ nav.topnav {
 
     & .topnav-right a {
         float: right;
-    }
+    }*/
 }
 
 nav.footnav {
