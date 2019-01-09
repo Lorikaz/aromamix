@@ -1,6 +1,5 @@
 body {
-  background-color: lightgrey;
-  font-family: MetricTest, sans-serif;
+  font-family: HelveticaNeue, sans-serif;
   font-weight: 500;
   font-size: 18px;
 }
@@ -83,79 +82,117 @@ nav.footnav {
   bottom: 0;
   padding: 25px;
   background-color: #ab9ff2;
-  color: white;
-}
-nav.footnav > div {
-  margin: 25px 50px;
-}
-nav.footnav > div h2, nav.footnav > div p {
-  text-align: center;
-}
-nav.footnav > div #social div {
-  font-size: 50px;
-}
-nav.footnav > div #social div a {
-  color: white;
-}
-nav.footnav > p {
-  text-align: center;
-}
+  color: white; }
+  nav.footnav > div {
+    margin: 25px 50px; }
+    nav.footnav > div h2, nav.footnav > div p {
+      text-align: center; }
+    nav.footnav > div #social div {
+      font-size: 30px;
+      text-align: center; }
+      nav.footnav > div #social div a {
+        color: white; }
+  nav.footnav > p {
+    text-align: center; }
 
 body.index h1 {
   text-transform: uppercase;
   font-size: 60px;
 }
 body.index div#slogan, body.index div#presentation, body.index div#team, body.index div#potions {
-  padding: 50px 0;
-}
-body.index div#slogan#slogan, body.index div#presentation#slogan, body.index div#team#slogan, body.index div#potions#slogan {
+  padding: 50px 0; }
+  body.index div#slogan p, body.index div#presentation p, body.index div#team p, body.index div#potions p {
+    text-align: justify; }
+body.index div#slogan {
   display: block;
   padding: 100px 0;
-  margin: 0 20%;
-}
-body.index div#slogan#slogan img, body.index div#presentation#slogan img, body.index div#team#slogan img, body.index div#potions#slogan img {
-  display: inline-block;
-  background-color: white;
-  padding: 15px;
-  border: solid 5px #ab9ff2;
-  transform: translateZ(10px);
-}
-body.index div#slogan#slogan h2, body.index div#presentation#slogan h2, body.index div#team#slogan h2, body.index div#potions#slogan h2 {
-  display: inline-block;
-  background-color: #ab9ff2;
-  color: white;
-  font-family: MetricTest, sans-serif;
-  font-weight: 300;
-  padding: 25px;
-  transform: translate(75px, 75px);
-}
-body.index div#slogan#presentation h1, body.index div#presentation#presentation h1, body.index div#team#presentation h1, body.index div#potions#presentation h1 {
+  margin: 0 20%; }
+  body.index div#slogan img {
+    display: inline-block;
+    background-color: white;
+    padding: 15px;
+    border: solid 5px #ab9ff2;
+    transform: translateZ(10px); }
+  body.index div#slogan h2 {
+    display: inline-block;
+    background-color: #ab9ff2;
+    color: white;
+    font-family: MetricTest, sans-serif;
+    font-weight: 300;
+    padding: 25px;
+    transform: translate(75px, 75px); }
+body.index div#presentation h1 {
   color: #ab9ff2;
   padding: 50px 0;
-  transform: translateX(-100px);
-}
-body.index div#slogan#potions, body.index div#presentation#potions, body.index div#team#potions, body.index div#potions#potions {
-  padding: 50px;
-}
-body.index div#slogan#potions h1, body.index div#presentation#potions h1, body.index div#team#potions h1, body.index div#potions#potions h1 {
-  text-transform: none;
-  color: #ab9ff2;
-}
-body.index div#slogan#potions h2, body.index div#presentation#potions h2, body.index div#team#potions h2, body.index div#potions#potions h2 {
-  display: inline-block;
-  background-color: #ab9ff2;
-  color: white;
-  font-family: MetricTest, sans-serif;
-  font-weight: 600;
-  text-transform: uppercase;
-  transform: translate(100px, -50px);
-  padding: 25px;
-  box-shadow: 8px 8px 5px rgba(128, 128, 128, 0.5);
-}
+  transform: translateX(-100px); }
+body.index div#potions {
+  padding: 50px; }
+  body.index div#potions h1 {
+    text-transform: none;
+    color: #ab9ff2; }
+  body.index div#potions h2 {
+    display: inline-block;
+    background-color: #ab9ff2;
+    color: white;
+    font-family: MetricTest, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    transform: translate(100px, -50px);
+    padding: 25px;
+    box-shadow: 8px 8px 5px rgba(128, 128, 128, 0.5); }
 
-body.potions > div > div > div > div.title img {
-  width: 80%;
-  left: 10%;
-}
-
-/*# sourceMappingURL=style.css.map */
+body.potions > div > div > div > div {
+  margin: 50px 0; }
+  body.potions > div > div > div > div.title h1 {
+    color: #ab9ff2;
+    position: absolute;
+    text-transform: uppercase;
+    font-size: 60px;
+    margin: 0 10%; }
+  body.potions > div > div > div > div.title img {
+    width: 60%;
+    margin: 75px 20%; }
+  body.potions > div > div > div > div.row {
+    flex-direction: row; }
+    body.potions > div > div > div > div.row img {
+      padding: 0; }
+    body.potions > div > div > div > div.row > #left {
+      order: 1;
+      text-align: right;
+      padding: 50px 25px; }
+      body.potions > div > div > div > div.row > #left .prix {
+        text-align: left;
+        float: left; }
+    body.potions > div > div > div > div.row > #right {
+      order: 2;
+      text-align: left;
+      padding: 75px; }
+      body.potions > div > div > div > div.row > #right .prix {
+        text-align: right;
+        float: right; }
+    body.potions > div > div > div > div.row .prix {
+      display: inline-block;
+      color: #ab9ff2; }
+      body.potions > div > div > div > div.row .prix h1 {
+        font-size: 75px;
+        margin-bottom: -15px; }
+      body.potions > div > div > div > div.row .prix p {
+        font-size: 25px; }
+    body.potions > div > div > div > div.row .nom_potion {
+      color: #ab9ff2;
+      font-size: 60px; }
+    body.potions > div > div > div > div.row .sous_titre {
+      font-weight: bold; }
+    body.potions > div > div > div > div.row .commentaire {
+      font-size: 10pt;
+      color: #ab9ff2; }
+    body.potions > div > div > div > div.row .button h2 {
+      display: inline-block;
+      background-color: #ab9ff2;
+      color: white;
+      text-align: center;
+      font-family: HelveticaNeue, sans-serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding: 20px;
+      box-shadow: 8px 8px 5px rgba(128, 128, 128, 0.5); }
