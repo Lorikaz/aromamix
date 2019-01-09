@@ -1,5 +1,10 @@
 body {
     background-color: lightgrey;
+    //font-family: MetricTest, sans-serif;
+}
+
+.container {
+    max-width: 90%;
 }
 
 .container-fluid {
@@ -13,8 +18,7 @@ h4,
 h5,
 h6,
 legend {
-    font-family: Butler;
-    font-weight: 300;
+    //font-family: Butler, serif;
 }
 
 
@@ -67,15 +71,18 @@ nav.topnav {
     color: black;
     list-style: none;
     text-align: center;
+    font-size: 50px;
 
     & li {
         display: inline;
 
         & a {
             color: black;
+            font-size: large;
             text-align: center;
             display: inline-block;
-            padding: 10px;
+            margin: 15px 10px;
+            padding: 10px 15px;
             vertical-align: center;
             text-decoration: none;
 
@@ -84,60 +91,65 @@ nav.topnav {
                 color: white;
             }
 
-            &#logo:hover {
-                background-color: white;
+            &#logo {
+
+                &:hover {
+                    background-color: white;
+                }
             }
         }
     }
-
-    /*& .topnav-left a {
-        float: left;
-    }
-
-    & .topnav-center a {
-        float: none;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-        &:hover {
-            background-color: white;
-        }
-    }
-
-    & .topnav-right a {
-        float: right;
-    }*/
 }
 
 nav.footnav {
     position: relative;
-    background-color: white;
-    color: black;
-    overflow: hidden;
+    bottom: 0;
+    padding: 25px;
+    background-color: $color4;
+    color: white;
 
-    & span {
-        float: left;
-        color: black;
-        text-align: center;
-        padding: 15px;
-        text-decoration: none;
-    }
+    &>div {
+        margin: 25px 50px;
 
-    & a {
-        float: left;
-        color: black;
-        text-align: center;
-        padding: 15px;
-        text-decoration: none;
+        & h2 {
+            text-align: center;
+        }
 
-        &:hover {
-            color: darkgrey;
+        & #social div {
+            text-align: center;
+            font-size: 50px;
+        }
+
+        &#right p {
+            text-align: right;
         }
     }
 
-    & .footnav-right a {
-        float: right;
+    & span {
+        text-align: center;
+    }
+}
+
+
+// Index
+
+div#slogan {
+    padding: 100px 0;
+    margin: auto;
+    display: inline;
+
+    & img {
+        display: inline-block;
+        background-color: white;
+        padding: 15px;
+        border: solid 5px $color4;
+    }
+
+    & h2 {
+        display: inline-block;
+        background-color: $color4;
+        color: white;
+        padding: 25px;
+        transform: translate(75px, 75px);
     }
 }

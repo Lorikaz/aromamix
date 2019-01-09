@@ -1,18 +1,11 @@
 body {
   background-color: lightgrey; }
 
+.container {
+  max-width: 90%; }
+
 .container-fluid {
   background-color: white; }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-legend {
-  font-family: Butler;
-  font-weight: 300; }
 
 .btn-potion {
   color: #fff;
@@ -40,32 +33,16 @@ nav.topnav {
   color: black;
   list-style: none;
   text-align: center;
-    /*& .topnav-left a {
-        float: left;
-    }
-
-    & .topnav-center a {
-        float: none;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-        &:hover {
-            background-color: white;
-        }
-    }
-
-    & .topnav-right a {
-        float: right;
-    }*/ }
+  font-size: 50px; }
   nav.topnav li {
     display: inline; }
     nav.topnav li a {
       color: black;
+      font-size: large;
       text-align: center;
       display: inline-block;
-      padding: 10px;
+      margin: 15px 10px;
+      padding: 10px 15px;
       vertical-align: center;
       text-decoration: none; }
       nav.topnav li a:hover {
@@ -76,22 +53,34 @@ nav.topnav {
 
 nav.footnav {
   position: relative;
-  background-color: white;
-  color: black;
-  overflow: hidden; }
+  bottom: 0;
+  padding: 25px;
+  background-color: #ab9ff2;
+  color: white; }
+  nav.footnav > div {
+    margin: 25px 50px; }
+    nav.footnav > div h2 {
+      text-align: center; }
+    nav.footnav > div #social div {
+      text-align: center;
+      font-size: 50px; }
+    nav.footnav > div#right p {
+      text-align: right; }
   nav.footnav span {
-    float: left;
-    color: black;
-    text-align: center;
+    text-align: center; }
+
+div#slogan {
+  padding: 100px 0;
+  margin: auto;
+  display: inline; }
+  div#slogan img {
+    display: inline-block;
+    background-color: white;
     padding: 15px;
-    text-decoration: none; }
-  nav.footnav a {
-    float: left;
-    color: black;
-    text-align: center;
-    padding: 15px;
-    text-decoration: none; }
-    nav.footnav a:hover {
-      color: darkgrey; }
-  nav.footnav .footnav-right a {
-    float: right; }
+    border: solid 5px #ab9ff2; }
+  div#slogan h2 {
+    display: inline-block;
+    background-color: #ab9ff2;
+    color: white;
+    padding: 25px;
+    transform: translate(75px, 75px); }
