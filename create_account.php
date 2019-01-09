@@ -162,20 +162,11 @@
 					  </div>
 
 
-					  <!-- gets-email = newsletter -->
-					  <div class="form-group form-inline newsletter"> 
-					    <label for="gets-email" class="col-sm-3 control-label"></label>
-					    <div class="col-sm-9">
-					    	<P>  </P>
-					    	<label><input type="checkbox" class="form-control" name="gets_emails" id="gets_emails" >En cliquant ici, vous acceptez de recevoir des e-mails de la part de Aromamix.</label>
-					    </div>
-					  </div>
-
 					  <!-- subscription button -->
 					  <div class="form-group"> 
 					    <div class="col-sm-12">
 					    	<p>* Champs obligatoires</p>
-					      <div class="alert alert-info" role="alert">En cliquant sur "Enregistrer", j'accepte les <a href="CGV.php" title="Conditions Générales de Vente et d'utilisation" target="_blank">conditions générales de vente et d'utilisation</a> du site aromamix.com</div>
+					      <div class="alert alert-info" role="alert">En cliquant sur "Enregistrer", j'accepte les conditions générales de vente et d'utilisation du site aromamix.com</div>
 					      <button type="submit" class="btn btn-default" name="sub-btn">Enregistrer</button>
 					    </div>
 					  </div> <!-- /. end of subscription button -->
@@ -269,14 +260,13 @@
 
 	}
 	if(!empty($_POST['lastname']) AND !empty($_POST['firstname']) AND !empty($_POST['password']) AND !empty($_POST['email'])){
-		$req='INSERT INTO `users`(`lastname`, `firstname`, `email`, `password`)VALUES("'.$lastname.'", "'.$firstname.'", "'.$email.'", "'.$password.'");';
+		$req='INSERT INTO `users`(`lastname`, `firstname`, `email`, `password`)VALUES("'.$_POST['lastname'].'", "'.$_POST['firstname'].'", "'.$_POST['email'].'","'.$_POST['password'].'");';
 
-		echo $req;
+		//echo $req;
 		$statement = $bdd->prepare($req);
 		$statement->execute();
 		header('location: index.php'); 
 	}
-
 
 
 
