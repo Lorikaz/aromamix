@@ -32,6 +32,9 @@
 
 <body>
 	<?php include("/parts/entete.php") ?>
+
+  
+
 	<?php include("/parts/pied.php") ?>
 	</div>
 </body>

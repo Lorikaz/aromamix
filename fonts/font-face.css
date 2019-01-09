@@ -30,7 +30,7 @@
     font-family: "Butler";
     src: url("./Butler-Bold.woff") format('woff'),
         url("./Butler-Bold.woff2") format('woff2');
-    font-weight: bold;
+    font-weight: 700;
 }
 
 @font-face {
@@ -65,13 +65,13 @@
 @font-face {
     font-family: "MetricTest";
     src: url("./MetricTest-Light.woff") format('woff');
-    font-weight: lighter;
+    font-weight: 300;
 }
 
 @font-face {
     font-family: "MetricTest";
     src: url("./MetricTest-LightItalic.woff") format('woff');
-    font-weight: lighter;
+    font-weight: 300;
     font-style: italic;
 }
 
@@ -115,13 +115,13 @@
 @font-face {
     font-family: "MetricTest";
     src: url("./MetricTest-Bold.woff") format('woff');
-    font-weight: bold;
+    font-weight: 700;
 }
 
 @font-face {
     font-family: "MetricTest";
     src: url("./MetricTest-BoldItalic.woff") format('woff');
-    font-weight: bold;
+    font-weight: 700;
     font-style: italic;
 }
 
