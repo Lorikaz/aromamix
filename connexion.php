@@ -31,3 +31,6 @@
 	  header('location: index.php');
 	   //Renvoie à la page de connexion si rien n'a été entré 
 	}
+	header('location: index.php');
+}
+
