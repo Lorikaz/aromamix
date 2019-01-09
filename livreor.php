@@ -1,10 +1,12 @@
 <?php session_start(); ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Aromamix - Livre d'Or</title>
     <?php include("/parts/head.php") ?>
 </head>
+
 <body>
 	<?php
 	if(isset($_SESSION['acces']) && $_SESSION['acces']=="oui"){
@@ -26,36 +28,36 @@
 
                 <?php
 
-                ////// Connexion base de données 
+                ////// Connexion base de données
 
                 $bdd = new PDO('mysql:host=localhost;dbname=aromamix', "root", "");
 
-                ////// Récupération et enregistrement du message dans la base de données 
+                ////// Récupération et enregistrement du message dans la base de données
 
                 if (isset($_POST['message'])){
-                    $pseudo = $_SESSION['login']; 
-                    $message =$_POST['message']; 
-                    $message = nl2br($message); 
+                    $pseudo = $_SESSION['login'];
+                    $message =$_POST['message'];
+                    $message = nl2br($message);
                     $ajoutcom =  "INSERT INTO `livreor`(`user`, `message`) VALUES ('$pseudo','$message')";
-                    $resultat = $bdd->query($ajoutcom); 
+                    $resultat = $bdd->query($ajoutcom);
                 }
 
                 ///// Suppression d'un commentaire
 
-                if (isset($_GET['action']) && $_GET['action'] == 'delete') { 
+                if (isset($_GET['action']) && $_GET['action'] == 'delete') {
                         $id = $_GET['id'];
                         $requetesuppression = "DELETE FROM `livreor` WHERE `id` = ".$id;
                         $resultatsuppresion = $bdd->exec($requetesuppression);
-                   
+
                 }
-    }	        
+    }
 
                 ////// Génération des pages par rapport au nombre de message
 
                    /* $nombreDeMessagesParPage = 3;
                     $comptermessage ="SELECT COUNT(message) AS total FROM livreor";
                     $result = $bdd->query($comptermessage) ;
-                    $nb_message = $result->fetch(PDO::FETCH_ASSOC); 
+                    $nb_message = $result->fetch(PDO::FETCH_ASSOC);
                     $messagetotal = $nb_message['total'];
                     $retour = $bdd->prepare('SELECT * FROM livreor');
                     $retour->execute();
@@ -79,7 +81,7 @@
                     $page = $_GET['page'];
                 }
                 else{// La variable n'existe pas, c'est la première fois qu'on charge la page
-                
+
                 $page = 1; // On se met sur la page 1 (par défaut)
                 }
 
@@ -97,7 +99,7 @@
                      $id = $row[0];
                      $pseudo = $row[1];
                      $message = $row[2];
-                        
+
                         //// Si l'utilisateur est auteur du message il peut le supprimer
 
                         if ($_SESSION['login']==$pseudo OR $_SESSION['droits']== "2")  { ?>
@@ -118,10 +120,10 @@
 
                             <div id="<?php echo $id ?>">
                                 <?php echo "<a href=livreor.php?action=delete&id=" .$id .">Supprimer le commentaire</a>";?>
-                            </div> 
+                            </div>
                         <?php
-                        }  
-                        else{ 
+                        }
+                        else{
                         ?>
 
                             <div class="pseudo">
@@ -143,12 +145,12 @@
         </html>
     <?php
 }*/
-   
+
    //// Si l'utilisateur n'est pas connecté
- 
+
 else{
 
-    ////// Connexion base de données 
+    ////// Connexion base de données
     $bdd = new PDO('mysql:host=localhost;dbname=aromamix', "root", "");
 
     ////// Génération des pages par rapport au nombre de message
@@ -156,7 +158,7 @@ else{
     $nombreDeMessagesParPage = 5;
     $comptermessage ="SELECT COUNT(message) AS total FROM livreor";
     $result = $bdd->query($comptermessage) ;
-    $nb_message = $result->fetch(PDO::FETCH_ASSOC); 
+    $nb_message = $result->fetch(PDO::FETCH_ASSOC);
     $messagetotal = $nb_message['total'];
     $retour = $bdd->prepare('SELECT * FROM livreor');
     $retour->execute();
@@ -221,4 +223,5 @@ else{
    include("/parts/entete.php") ?>
 
 </body>
+
 </html>
