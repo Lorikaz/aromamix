@@ -1,6 +1,8 @@
 body {
-    background-color: lightgrey;
-    //font-family: MetricTest, sans-serif;
+    //background-color: lightgrey;
+    font-family: MetricTest, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
 }
 
 .container {
@@ -16,9 +18,9 @@ h2,
 h3,
 h4,
 h5,
-h6,
-legend {
-    //font-family: Butler, serif;
+h6 {
+    font-family: Butler, serif;
+    font-weight: 800;
 }
 
 
@@ -111,21 +113,21 @@ nav.footnav {
     &>div {
         margin: 25px 50px;
 
-        & h2 {
+        & h2,
+        & p {
             text-align: center;
         }
 
         & #social div {
-            text-align: center;
             font-size: 50px;
-        }
 
-        &#right p {
-            text-align: right;
+            & a {
+                color: white;
+            }
         }
     }
 
-    & span {
+    &>p {
         text-align: center;
     }
 }
@@ -133,23 +135,87 @@ nav.footnav {
 
 // Index
 
-div#slogan {
-    padding: 100px 0;
-    margin: auto;
-    display: inline;
-
-    & img {
-        display: inline-block;
-        background-color: blue;
-        padding: 15px;
-        border: solid 5px $color4;
+body.index {
+    & h1 {
+        text-transform: uppercase;
+        font-size: 60px;
     }
 
-    & h2 {
-        display: inline-block;
-        background-color: $color4;
-        color: white;
-        padding: 25px;
-        transform: translate(75px, 75px);
+    & div {
+
+        &#slogan,
+        &#presentation,
+        &#team,
+        &#potions {
+            padding: 50px 0;
+
+            &#slogan {
+                display: block;
+                padding: 100px 0;
+                margin: 0 20%;
+
+                & img {
+                    display: inline-block;
+                    background-color: white;
+                    padding: 15px;
+                    border: solid 5px $color4;
+                    transform: translateZ(10px);
+                }
+
+                & h2 {
+                    display: inline-block;
+                    background-color: $color4;
+                    color: white;
+                    font-family: MetricTest, sans-serif;
+                    font-weight: 300;
+                    padding: 25px;
+                    transform: translate(75px, 75px);
+                }
+            }
+
+            &#presentation {
+                & h1 {
+                    color: $color4;
+                    padding: 50px 0;
+                    transform: translateX(-100px);
+                }
+            }
+
+            &#potions {
+                padding: 50px;
+
+                & h1 {
+                    text-transform: none;
+                    color: $color4;
+                }
+
+                & h2 {
+                    display: inline-block;
+                    background-color: $color4;
+                    color: white;
+                    font-family: MetricTest, sans-serif;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    transform: translate(100px, -50px);
+                    padding: 25px;
+                    box-shadow: 8px 8px 5px fade-out(grey, 0.5);
+                }
+            }
+        }
+    }
+}
+
+
+// Potions
+
+body.potions {
+    &>div>div>div>div {
+        &.title {
+
+            & img {
+                width: 80%;
+                left: 10%;
+            }
+        }
     }
 }

@@ -1,6 +1,8 @@
 body {
   background-color: lightgrey;
-}
+  font-family: MetricTest, sans-serif;
+  font-weight: 500;
+  font-size: 18px; }
 
 .container {
   max-width: 90%;
@@ -9,6 +11,15 @@ body {
 .container-fluid {
   background-color: white;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Butler, serif;
+  font-weight: 800; }
 
 .btn-potion {
   color: #fff;
@@ -70,42 +81,31 @@ nav.footnav {
   bottom: 0;
   padding: 25px;
   background-color: #ab9ff2;
-  color: white;
-}
-nav.footnav > div {
-  margin: 25px 50px;
-}
-nav.footnav > div h2 {
-  text-align: center;
-}
-nav.footnav > div #social div {
-  text-align: center;
-  font-size: 50px;
-}
-nav.footnav > div#right p {
-  text-align: right;
-}
-nav.footnav span {
-  text-align: center;
-}
+  color: white; }
+  nav.footnav > div {
+    margin: 25px 50px; }
+    nav.footnav > div h2 {
+      text-align: center; }
+    nav.footnav > div #social div {
+      text-align: center;
+      font-size: 50px; }
+    nav.footnav > div#right p {
+      text-align: right; }
+  nav.footnav span {
+    text-align: center; }
 
 div#slogan {
   padding: 100px 0;
   margin: auto;
-  display: inline;
-}
-div#slogan img {
-  display: inline-block;
-  background-color: blue;
-  padding: 15px;
-  border: solid 5px #ab9ff2;
-}
-div#slogan h2 {
-  display: inline-block;
-  background-color: #ab9ff2;
-  color: white;
-  padding: 25px;
-  transform: translate(75px, 75px);
-}
-
-/*# sourceMappingURL=style.css.map */
+  display: inline; }
+  div#slogan img {
+    display: inline-block;
+    background-color: white;
+    padding: 15px;
+    border: solid 5px #ab9ff2; }
+  div#slogan h2 {
+    display: inline-block;
+    background-color: #ab9ff2;
+    color: white;
+    padding: 25px;
+    transform: translate(75px, 75px); }
