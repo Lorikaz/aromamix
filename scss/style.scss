@@ -1,14 +1,155 @@
 body {
     background-color: lightgrey;
+    //font-family: MetricTest, sans-serif;
 }
 
 .container {
+    max-width: 90%;
+}
+
+.container-fluid {
     background-color: white;
 }
 
 h1,
 h2,
+h3,
+h4,
+h5,
+h6,
 legend {
-    font-family: Butler;
-    font-weight: 300;
+    //font-family: Butler, serif;
+}
+
+
+$color1: rgb(89, 28, 172);
+$color2: rgb(115, 42, 188);
+$color3: rgb(133, 85, 216);
+$color4: rgb(171, 159, 242);
+
+.btn-potion {
+    color: #fff;
+    background-color: $color2;
+    border-color: $color2;
+
+    &:hover {
+        color: #fff;
+        background-color: $color1;
+        border-color: $color2;
+    }
+
+    &:focus,
+    &.focus {
+        box-shadow: 0 0 0 0.2rem rgba(133, 85, 216, 0.5);
+    }
+
+    &.disabled,
+    &:disabled {
+        color: #fff;
+        background-color: $color2;
+        border-color: $color2;
+    }
+
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active,
+    .show>&.dropdown-toggle {
+        color: #fff;
+        background-color: $color2;
+        border-color: $color1;
+    }
+
+    &:not(:disabled):not(.disabled):active:focus,
+    &:not(:disabled):not(.disabled).active:focus,
+    .show>&.dropdown-toggle:focus {
+        box-shadow: 0 0 0 0.2rem rgba(133, 85, 216, 0.5);
+    }
+}
+
+
+nav.topnav {
+    background-color: white;
+    color: black;
+    list-style: none;
+    text-align: center;
+    font-size: 50px;
+
+    & li {
+        display: inline;
+
+        & a {
+            color: black;
+            font-size: large;
+            text-align: center;
+            display: inline-block;
+            margin: 15px 10px;
+            padding: 10px 15px;
+            vertical-align: center;
+            text-decoration: none;
+
+            &:hover {
+                background-color: $color2;
+                color: white;
+            }
+
+            &#logo {
+
+                &:hover {
+                    background-color: white;
+                }
+            }
+        }
+    }
+}
+
+nav.footnav {
+    position: relative;
+    bottom: 0;
+    padding: 25px;
+    background-color: $color4;
+    color: white;
+
+    &>div {
+        margin: 25px 50px;
+
+        & h2 {
+            text-align: center;
+        }
+
+        & #social div {
+            text-align: center;
+            font-size: 50px;
+        }
+
+        &#right p {
+            text-align: right;
+        }
+    }
+
+    & span {
+        text-align: center;
+    }
+}
+
+
+// Index
+
+div#slogan {
+    padding: 100px 0;
+    margin: auto;
+    display: inline;
+
+    & img {
+        display: inline-block;
+        background-color: white;
+        padding: 15px;
+        border: solid 5px $color4;
+    }
+
+    & h2 {
+        display: inline-block;
+        background-color: $color4;
+        color: white;
+        padding: 25px;
+        transform: translate(75px, 75px);
+    }
 }
