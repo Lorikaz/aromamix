@@ -28,6 +28,6 @@
 	  }    
 	}
 	else {
-	  header('location: connexion.php');
+	  header('location: index.php');
 	   //Renvoie à la page de connexion si rien n'a été entré 
 	}

@@ -175,7 +175,7 @@
 					  <div class="form-group"> 
 					    <div class="col-sm-12">
 					    	<p>* Champs obligatoires</p>
-					      <div class="alert alert-info" role="alert">En cliquant sur "Enregistrer", j'accepte les <a href="CGV.php" title="Conditions Générales de Vente et d'utilisation" target="_blank">conditions générales de vente et d'utilisation</a> du site movie-journey.com</div>
+					      <div class="alert alert-info" role="alert">En cliquant sur "Enregistrer", j'accepte les <a href="CGV.php" title="Conditions Générales de Vente et d'utilisation" target="_blank">conditions générales de vente et d'utilisation</a> du site aromamix.com</div>
 					      <button type="submit" class="btn btn-default" name="sub-btn">Enregistrer</button>
 					    </div>
 					  </div> <!-- /. end of subscription button -->
@@ -263,13 +263,14 @@
 			$firstname = $_POST['firstname'];
 			$password = $_POST['password'];
 			$email = $_POST['email'];
-		} else {
-			$lastname = $firstname = $password = $email ="";
-		}
+		} //else {
+			//$lastname = $firstname = $password = $email ="";
+		//}
 
 	}
 	if(!empty($_POST['lastname']) AND !empty($_POST['firstname']) AND !empty($_POST['password']) AND !empty($_POST['email'])){
-		$req=("INSERT INTO users(lastname,firstname,email,password)VALUES('".$lastname."','".$firstname."','".$email."','".$password."')");
+		$req='INSERT INTO `users`(`lastname`, `firstname`, `email`, `password`)VALUES("'.$lastname.'", "'.$firstname.'", "'.$email.'", "'.$password.'");';
+
 		echo $req;
 		$statement = $bdd->prepare($req);
 		$statement->execute();
