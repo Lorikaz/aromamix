@@ -12,16 +12,24 @@
 				<h2>Suivez-nous</h2>
 				<div class="row" id="social">
 					<div class="col-3">
-						<i class="fab fa-facebook"></i>
+						<a href="#">
+							<i class="fab fa-facebook"></i>
+						</a>
 					</div>
 					<div class="col-3">
-						<i class="fab fa-twitter"></i>
+						<a href="#">
+							<i class="fab fa-twitter"></i>
+						</a>
 					</div>
 					<div class="col-3">
-						<i class="fab fa-instagram"></i>
+						<a href="#">
+							<i class="fab fa-instagram"></i>
+						</a>
 					</div>
 					<div class="col-3">
-						<i class="fab fa-linkedin-in"></i>
+						<a href="#">
+							<i class="fab fa-linkedin-in"></i>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -31,7 +39,7 @@
 				</br>13 666 France</p>
 			</div>
 		</div>
-		<span>&copy;AROMAMIX - It's a kind of Magic - Music by The Avalanches.</span>
+		<p>&copy;AROMAMIX - It's a kind of Magic - Music by The Avalanches.</p>
 	</nav>
 
 </div>

@@ -7,7 +7,7 @@
     <?php include("/parts/head.php") ?>
 </head>
 
-<body>
+<body class="index">
     <?php include("/parts/entete.php") ?>
 	
 	<div id="slogan">
@@ -17,7 +17,7 @@
 
 	<div class="row" id="presentation">
 		<div class="col-md-6">
-			<img src="./media/x.jpg">
+			<img src="">
 		</div>
 		<div class="col-md-6">
 			<h1>Qui
@@ -29,37 +29,39 @@
 
 	<div class="row" id="team">
 		<div class="col-md-4">
-			<h1>Al
-				</br>chi
-				</br>mis
-				</br>te
-			</h1>
-			<img src="">
+			<img src="" height="250">
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed nulla augue. Suspendisse id arcu id elit laoreet pretium eget vel orci. Nullam vitae libero eu turpis eleifend ultricies vitae aliquet lectus. Sed tempor ante ac odio dapibus porta. Nulla a arcu cursus, dapibus mauris at, pharetra velit.</p>
 		</div>
 		<div class="col-md-4">
-			<h1>En
-				</br>sor
-				</br>cel
-				</br>eur
-			</h1>
-			<img src="">
+			<img src="" height="250">
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed nulla augue. Suspendisse id arcu id elit laoreet pretium eget vel orci. Nullam vitae libero eu turpis eleifend ultricies vitae aliquet lectus. Sed tempor ante ac odio dapibus porta. Nulla a arcu cursus, dapibus mauris at, pharetra velit.</p>
 		</div>
 		<div class="col-md-4">
-			<h1>Il
-				</br>lu
-				</br>sio
-				</br>nis
-				</br>te
-			</h1>
-			<img src="">
+			<img src="" height="250">
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed nulla augue. Suspendisse id arcu id elit laoreet pretium eget vel orci. Nullam vitae libero eu turpis eleifend ultricies vitae aliquet lectus. Sed tempor ante ac odio dapibus porta. Nulla a arcu cursus, dapibus mauris at, pharetra velit.</p>
 		</div>
 	</div>
 
-	<div class="row" id="potions">
-		
+	<div id="potions">
+		<div class="row">
+			<div class="col-md-6">
+				<h1>À chaque tourment sa préparation. Allez vérifier dans notre catalogue varié.</h1>
+			</div>
+			<div class="col-md-6">
+				<img src="">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<a href="./potions.php">
+					<h2>Nos potions</h2>
+				</a>
+			</div>
+			<div class="col-md-4">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed nulla augue. Suspendisse id arcu id elit laoreet pretium eget vel orci.</p>
+			</div>
+		</div>
 	</div>
 
     <?php include("/parts/pied.php") ?>
