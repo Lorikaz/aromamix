@@ -14,8 +14,7 @@ h2,
 h3,
 h4,
 h5,
-h6,
-legend {
+h6 {
   font-family: Butler, serif;
   font-weight: 800; }
 
@@ -80,22 +79,22 @@ nav.footnav {
   nav.footnav > p {
     text-align: center; }
 
-.index h1 {
+body.index h1 {
   text-transform: uppercase;
   font-size: 60px; }
-.index div#slogan, .index div#presentation, .index div#team, .index div#potions {
+body.index div#slogan, body.index div#presentation, body.index div#team, body.index div#potions {
   padding: 50px 0; }
-  .index div#slogan#slogan, .index div#presentation#slogan, .index div#team#slogan, .index div#potions#slogan {
+  body.index div#slogan#slogan, body.index div#presentation#slogan, body.index div#team#slogan, body.index div#potions#slogan {
     display: block;
     padding: 100px 0;
     margin: 0 20%; }
-    .index div#slogan#slogan img, .index div#presentation#slogan img, .index div#team#slogan img, .index div#potions#slogan img {
+    body.index div#slogan#slogan img, body.index div#presentation#slogan img, body.index div#team#slogan img, body.index div#potions#slogan img {
       display: inline-block;
       background-color: white;
       padding: 15px;
       border: solid 5px #ab9ff2;
       transform: translateZ(10px); }
-    .index div#slogan#slogan h2, .index div#presentation#slogan h2, .index div#team#slogan h2, .index div#potions#slogan h2 {
+    body.index div#slogan#slogan h2, body.index div#presentation#slogan h2, body.index div#team#slogan h2, body.index div#potions#slogan h2 {
       display: inline-block;
       background-color: #ab9ff2;
       color: white;
@@ -103,16 +102,16 @@ nav.footnav {
       font-weight: 300;
       padding: 25px;
       transform: translate(75px, 75px); }
-  .index div#slogan#presentation h1, .index div#presentation#presentation h1, .index div#team#presentation h1, .index div#potions#presentation h1 {
+  body.index div#slogan#presentation h1, body.index div#presentation#presentation h1, body.index div#team#presentation h1, body.index div#potions#presentation h1 {
     color: #ab9ff2;
     padding: 50px 0;
     transform: translateX(-100px); }
-  .index div#slogan#potions, .index div#presentation#potions, .index div#team#potions, .index div#potions#potions {
+  body.index div#slogan#potions, body.index div#presentation#potions, body.index div#team#potions, body.index div#potions#potions {
     padding: 50px; }
-    .index div#slogan#potions h1, .index div#presentation#potions h1, .index div#team#potions h1, .index div#potions#potions h1 {
+    body.index div#slogan#potions h1, body.index div#presentation#potions h1, body.index div#team#potions h1, body.index div#potions#potions h1 {
       text-transform: none;
       color: #ab9ff2; }
-    .index div#slogan#potions h2, .index div#presentation#potions h2, .index div#team#potions h2, .index div#potions#potions h2 {
+    body.index div#slogan#potions h2, body.index div#presentation#potions h2, body.index div#team#potions h2, body.index div#potions#potions h2 {
       display: inline-block;
       background-color: #ab9ff2;
       color: white;
@@ -122,3 +121,7 @@ nav.footnav {
       transform: translate(100px, -50px);
       padding: 25px;
       box-shadow: 8px 8px 5px rgba(128, 128, 128, 0.5); }
+
+body.potions > div > div > div > div.title img {
+  width: 80%;
+  left: 10%; }

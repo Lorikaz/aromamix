@@ -18,8 +18,7 @@ h2,
 h3,
 h4,
 h5,
-h6,
-legend {
+h6 {
     font-family: Butler, serif;
     font-weight: 800;
 }
@@ -136,7 +135,7 @@ nav.footnav {
 
 // Index
 
-.index {
+body.index {
     & h1 {
         text-transform: uppercase;
         font-size: 60px;
@@ -201,6 +200,21 @@ nav.footnav {
                     padding: 25px;
                     box-shadow: 8px 8px 5px fade-out(grey, 0.5);
                 }
+            }
+        }
+    }
+}
+
+
+// Potions
+
+body.potions {
+    &>div>div>div>div {
+        &.title {
+
+            & img {
+                width: 80%;
+                left: 10%;
             }
         }
     }
