@@ -18,6 +18,89 @@
 			addUserGenres($userid,$_POST['types']);
 			//header('Location: account.php');
 		}*/
+
+
+
+  //URL of the host
+  $dbhost = "localhost"; 
+  
+  // Name of the database
+  $dbname = "aromamix";
+  
+  // User name
+  $dbuser = "root";
+  
+  // Password (not used here)
+  $dbpass = "";
+ 
+  try {
+    $bdd = new PDO('mysql:host='.$dbhost.';dbname='.$dbname, $dbuser, $dbpass);
+
+    //Uniquement si l'utilisateur n'entre pas les bons champs	
+  $fnameErr =$lnameErr = $mailErr = $confmailErr =$mdpErr =$confmdpErr = $existEmailErr=$typesErr="";
+  $champOk = true;
+  $toutajouté = false;
+	//Gestion des erreurs dans le formulaire
+	if($_SERVER["REQUEST_METHOD"] == 'POST'){
+		if(empty($_POST['lastname'])){
+			$lnameErr = "* Entrez un nom."; 
+			$champOk=false;
+		}
+		if(empty($_POST['firstname'])){
+			$fnameErr = "* Entrez un prénom.";
+			$champOk=false;
+		}
+		if(empty($_POST['password']) || strlen($_POST['password'])<8){
+			$mdpErr = "* Le mot de passe doit contenir au moins 8 caractères.";
+			$champOk=false;
+		} 
+		
+		if(isset($_POST['password']) and isset($_POST['confPassword'])){
+			if(strcmp($_POST["password"],$_POST["confPassword"])!==0){
+				$confmdpErr = "* Les mots de passes ne sont pas identiques.";
+				$champOk=false;
+			}
+		}
+		
+		if(isset($_POST['email'])){
+			if (!strstr($_POST['email'],"@") or (!strstr($_POST['email'],"."))){
+				$mailErr = "* Email invalide (ne contient pas de @ ou de .)";
+				$champOk=false;
+			}
+			if(isset($_POST['email']) and isset($_POST['email1'])){
+				if(strcmp($_POST["email"],$_POST["email1"])!==0){
+					$confmailErr = "* Les adresses email ne sont pas identiques.";
+					$champOk=false;
+				}
+			}
+			/*if ($champOk){
+				if (checkemail($_POST['email'])==false){
+					$existEmailErr = "* L'email est déjà pris !";
+					$champOk=false;
+				}
+			}*/
+		}
+		if (isset($_POST['gets_emails'])){ 
+			$gets_emails =1;
+		}else{
+			$gets_emails =0;
+		}
+		if ($champOk){
+			$lastname = $_POST['lastname'];
+			$firstname = $_POST['firstname'];
+			$password = $_POST['password'];
+			$email = $_POST['email'];
+			if(!empty($_POST['lastname']) AND !empty($_POST['firstname']) AND !empty($_POST['password']) AND !empty($_POST['email'])){
+				$req='INSERT INTO `users`(`lastname`, `firstname`, `email`, `password`)VALUES("'.$lastname.'", "'.$_firstname.'", "'.$_email.'","'.$_POST['password'].'");';
+				//echo $req;
+				$statement = $bdd->prepare($req);
+				$statement->execute();
+				header('location: index.php'); 
+			}
+		}
+	}
+  
+
 	?>
 
 	<body>
@@ -62,9 +145,9 @@
 					    	// case where both lastname and first name inputs are filled
 					    	?>
 					    	<div class="form-group"> <!-- first name -->
-					   			 <label for="firstname" class="col-sm-3 control-label">Prénom*</label>
+					   			 <label for="firstname" class="col-sm-3 control-label">Prenom*</label>
 					   			 <div class="col-sm-4">
-					    		  <input type="text" class="form-control" name="firstname" id="firstname" placeholder="Prénom" value="<?php if(isset($_POST['firstname'])){echo $_POST['firstname'];} ?>"/>
+					    		  <input type="text" class="form-control" name="firstname" id="firstname" placeholder="Prenom" value="<?php if(isset($_POST['firstname'])){echo $_POST['firstname'];} ?>"/>
 					      
 					   		</div>
 					    	<label for="lastname" class="col-sm-1 control-label">Nom*</label>
@@ -184,97 +267,6 @@
 	</div>
 <?php
 
-
-  //URL of the host
-  $dbhost = "localhost"; 
-  
-  // Name of the database
-  $dbname = "aromamix";
-  
-  // User name
-  $dbuser = "root";
-  
-  // Password (not used here)
-  $dbpass = "";
- 
-  try {
-    $bdd = new PDO('mysql:host='.$dbhost.';dbname='.$dbname, $dbuser, $dbpass);
-
-    //Uniquement si l'utilisateur n'entre pas les bons champs	
-  $fnameErr =$lnameErr = $mailErr = $confmailErr =$mdpErr =$confmdpErr = $existEmailErr=$typesErr="";
-  $champOk = true;
-  $toutajouté = false;
-	//Gestion des erreurs dans le formulaire
-	if($_SERVER["REQUEST_METHOD"] == 'POST'){
-		if(empty($_POST['lastname'])){
-			$lnameErr = "* Entrez un nom."; 
-			$champOk=false;
-		}
-		if(empty($_POST['firstname'])){
-			$fnameErr = "* Entrez un prénom.";
-			$champOk=false;
-		}
-		if(empty($_POST['password']) || strlen($_POST['password'])<8){
-			$mdpErr = "* Le mot de passe doit contenir au moins 8 caractères.";
-			$champOk=false;
-		} 
-		
-		if(isset($_POST['password']) and isset($_POST['confPassword'])){
-			if(strcmp($_POST["password"],$_POST["confPassword"])!==0){
-				$confmdpErr = "* Les mots de passes ne sont pas identiques.";
-				$champOk=false;
-			}
-		}
-		
-		if(isset($_POST['email'])){
-			if (!strstr($_POST['email'],"@") or (!strstr($_POST['email'],"."))){
-				$mailErr = "* Email invalide (ne contient pas de @ ou de .)";
-				$champOk=false;
-			}
-			if(isset($_POST['email']) and isset($_POST['email1'])){
-				if(strcmp($_POST["email"],$_POST["email1"])!==0){
-					$confmailErr = "* Les adresses email ne sont pas identiques.";
-					$champOk=false;
-				}
-			}
-			/*if ($champOk){
-				if (checkemail($_POST['email'])==false){
-					$existEmailErr = "* L'email est déjà pris !";
-					$champOk=false;
-				}
-			}*/
-		}
-		if (isset($_POST['gets_emails'])){ 
-			$gets_emails =1;
-		}else{
-			$gets_emails =0;
-		}
-		if ($champOk){
-			$lastname = $_POST['lastname'];
-			$firstname = $_POST['firstname'];
-			$password = $_POST['password'];
-			$email = $_POST['email'];
-		} //else {
-			//$lastname = $firstname = $password = $email ="";
-		//}
-
-	}
-	if(!empty($_POST['lastname']) AND !empty($_POST['firstname']) AND !empty($_POST['password']) AND !empty($_POST['email'])){
-		$req='INSERT INTO `users`(`lastname`, `firstname`, `email`, `password`)VALUES("'.$_POST['lastname'].'", "'.$_POST['firstname'].'", "'.$_POST['email'].'","'.$_POST['password'].'");';
-
-		//echo $req;
-		$statement = $bdd->prepare($req);
-		$statement->execute();
-		header('location: index.php'); 
-	}
-
-
-
-  } catch(PDOException $e) {
-    echo $e->getMessage();
-  }
-
-
   
 			/*$req->execute(array(
 				'lastname'=>$lastname,
@@ -297,7 +289,9 @@
 			/* returned variable is an pdo object */
 		//}
 
-
+} catch(PDOException $e) {
+    echo $e->getMessage();
+  }
 	include("/parts/pied.php")
 	?>
 
