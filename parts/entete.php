@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
 
     <nav class="topnav">
         <li>
@@ -21,4 +21,4 @@
     </nav>
 
     <div class="container">
-        <div class="container-fluid">
+        <div class="container">

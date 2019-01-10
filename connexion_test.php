@@ -39,8 +39,12 @@
     		<input type="text" name="email" id="email"/>
     		<label for="password">Mot de passe : </label>
     		<input type="password" name="password" id="password"/>
+            <div class="links">
+                <a href="">Mot de passe oublié ?</a>
+                <a href="create_account.php">S'inscrire</a>
+            </div>
     	</fieldset>
-    	<input type="submit" name="connexion">
+    	<input type="submit" name="connexion" value="Connexion">
     </form>
 
     <?php

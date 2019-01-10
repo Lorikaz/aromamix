@@ -1,16 +1,13 @@
 body {
   font-family: HelveticaNeue, sans-serif;
   font-weight: 500;
-  font-size: 18px;
-}
+  font-size: 18px; }
 
 .container {
-  max-width: 90%;
-}
+  max-width: 90%; }
 
 .container-fluid {
-  background-color: white;
-}
+  padding: 0; }
 
 h1,
 h2,
@@ -19,63 +16,51 @@ h4,
 h5,
 h6 {
   font-family: Butler, serif;
-  font-weight: 800;
-}
+  font-weight: 800; }
 
 .btn-potion {
   color: #fff;
   background-color: #732abc;
-  border-color: #732abc;
-}
-.btn-potion:hover {
-  color: #fff;
-  background-color: #591cac;
-  border-color: #732abc;
-}
-.btn-potion:focus, .btn-potion.focus {
-  box-shadow: 0 0 0 0.2rem rgba(133, 85, 216, 0.5);
-}
-.btn-potion.disabled, .btn-potion:disabled {
-  color: #fff;
-  background-color: #732abc;
-  border-color: #732abc;
-}
-.btn-potion:not(:disabled):not(.disabled):active, .btn-potion:not(:disabled):not(.disabled).active, .show > .btn-potion.dropdown-toggle {
-  color: #fff;
-  background-color: #732abc;
-  border-color: #591cac;
-}
-.btn-potion:not(:disabled):not(.disabled):active:focus, .btn-potion:not(:disabled):not(.disabled).active:focus, .show > .btn-potion.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(133, 85, 216, 0.5);
-}
+  border-color: #732abc; }
+  .btn-potion:hover {
+    color: #fff;
+    background-color: #591cac;
+    border-color: #732abc; }
+  .btn-potion:focus, .btn-potion.focus {
+    box-shadow: 0 0 0 0.2rem rgba(133, 85, 216, 0.5); }
+  .btn-potion.disabled, .btn-potion:disabled {
+    color: #fff;
+    background-color: #732abc;
+    border-color: #732abc; }
+  .btn-potion:not(:disabled):not(.disabled):active, .btn-potion:not(:disabled):not(.disabled).active, .show > .btn-potion.dropdown-toggle {
+    color: #fff;
+    background-color: #732abc;
+    border-color: #591cac; }
+  .btn-potion:not(:disabled):not(.disabled):active:focus, .btn-potion:not(:disabled):not(.disabled).active:focus, .show > .btn-potion.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(133, 85, 216, 0.5); }
 
 nav.topnav {
   background-color: white;
   color: black;
   list-style: none;
   text-align: center;
-  font-size: 50px;
-}
-nav.topnav li {
-  display: inline;
-}
-nav.topnav li a {
-  color: black;
-  font-size: large;
-  text-align: center;
-  display: inline-block;
-  margin: 15px 10px;
-  padding: 10px 15px;
-  vertical-align: center;
-  text-decoration: none;
-}
-nav.topnav li a:hover {
-  background-color: #732abc;
-  color: white;
-}
-nav.topnav li a#logo:hover {
-  background-color: white;
-}
+  font-size: 50px; }
+  nav.topnav li {
+    display: inline; }
+    nav.topnav li a {
+      color: black;
+      font-size: large;
+      text-align: center;
+      display: inline-block;
+      margin: 15px 10px;
+      padding: 10px 15px;
+      vertical-align: center;
+      text-decoration: none; }
+      nav.topnav li a:hover {
+        background-color: #732abc;
+        color: white; }
+      nav.topnav li a#logo:hover {
+        background-color: white; }
 
 nav.footnav {
   position: relative;
@@ -97,8 +82,7 @@ nav.footnav {
 
 body.index h1 {
   text-transform: uppercase;
-  font-size: 60px;
-}
+  font-size: 60px; }
 body.index div#slogan, body.index div#presentation, body.index div#team, body.index div#potions {
   padding: 50px 0; }
   body.index div#slogan p, body.index div#presentation p, body.index div#team p, body.index div#potions p {
@@ -125,6 +109,19 @@ body.index div#presentation h1 {
   color: #ab9ff2;
   padding: 50px 0;
   transform: translateX(-100px); }
+body.index div#team div.conteneur {
+  padding: 0 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  body.index div#team div.conteneur .element {
+    margin: 25px 0; }
+body.index div#team img#user {
+  max-height: 400px;
+  max-width: 100%;
+  padding: auto; }
+body.index div#team p {
+  text-align: center; }
 body.index div#potions {
   padding: 50px; }
   body.index div#potions h1 {
@@ -137,9 +134,14 @@ body.index div#potions {
     font-family: MetricTest, sans-serif;
     font-weight: 600;
     text-transform: uppercase;
-    transform: translate(100px, -50px);
+    transform: translate(75px, -75px);
     padding: 25px;
-    box-shadow: 8px 8px 5px rgba(128, 128, 128, 0.5); }
+    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.25); }
+  body.index div#potions .row:nth-child(2) {
+    margin: 25px 0; }
+body.index div img#pic {
+  max-height: 100%;
+  max-width: 100%; }
 
 body.potions > div > div > div > div {
   margin: 50px 0; }
@@ -153,46 +155,58 @@ body.potions > div > div > div > div {
     width: 60%;
     margin: 75px 20%; }
   body.potions > div > div > div > div.row {
-    flex-direction: row; }
-    body.potions > div > div > div > div.row img {
-      padding: 0; }
-    body.potions > div > div > div > div.row > #left {
-      order: 1;
-      text-align: right;
-      padding: 50px 25px; }
-      body.potions > div > div > div > div.row > #left .prix {
-        text-align: left;
-        float: left; }
-    body.potions > div > div > div > div.row > #right {
-      order: 2;
-      text-align: left;
-      padding: 75px; }
-      body.potions > div > div > div > div.row > #right .prix {
-        text-align: right;
-        float: right; }
-    body.potions > div > div > div > div.row .prix {
-      display: inline-block;
-      color: #ab9ff2; }
-      body.potions > div > div > div > div.row .prix h1 {
-        font-size: 75px;
-        margin-bottom: -15px; }
-      body.potions > div > div > div > div.row .prix p {
-        font-size: 25px; }
-    body.potions > div > div > div > div.row .nom_potion {
-      color: #ab9ff2;
-      font-size: 60px; }
-    body.potions > div > div > div > div.row .sous_titre {
-      font-weight: bold; }
-    body.potions > div > div > div > div.row .commentaire {
-      font-size: 10pt;
-      color: #ab9ff2; }
-    body.potions > div > div > div > div.row .button h2 {
-      display: inline-block;
-      background-color: #ab9ff2;
-      color: white;
-      text-align: center;
-      font-family: HelveticaNeue, sans-serif;
-      font-weight: 600;
-      text-transform: uppercase;
-      padding: 20px;
-      box-shadow: 8px 8px 5px rgba(128, 128, 128, 0.5); }
+    margin: 100px 0; }
+    body.potions > div > div > div > div.row.conteneur {
+      display: flex;
+      justify-content: center; }
+      body.potions > div > div > div > div.row.conteneur .desc {
+        vertical-align: middle; }
+      body.potions > div > div > div > div.row.conteneur:nth-child(2n) {
+        flex-direction: row; }
+        body.potions > div > div > div > div.row.conteneur:nth-child(2n) .img img {
+          float: right; }
+        body.potions > div > div > div > div.row.conteneur:nth-child(2n) .desc {
+          text-align: left; }
+          body.potions > div > div > div > div.row.conteneur:nth-child(2n) .desc .prix {
+            text-align: right;
+            float: right; }
+      body.potions > div > div > div > div.row.conteneur:nth-child(2n+1) {
+        flex-direction: row-reverse; }
+        body.potions > div > div > div > div.row.conteneur:nth-child(2n+1) .img img {
+          float: left; }
+        body.potions > div > div > div > div.row.conteneur:nth-child(2n+1) .desc {
+          text-align: right; }
+          body.potions > div > div > div > div.row.conteneur:nth-child(2n+1) .desc .prix {
+            text-align: left;
+            float: left; }
+    body.potions > div > div > div > div.row .img img {
+      padding: 0;
+      max-height: 500px; }
+    body.potions > div > div > div > div.row .desc {
+      padding-top: 50px; }
+      body.potions > div > div > div > div.row .desc .prix {
+        display: inline-block;
+        color: #ab9ff2; }
+        body.potions > div > div > div > div.row .desc .prix h1 {
+          font-size: 75px;
+          margin-bottom: -15px; }
+        body.potions > div > div > div > div.row .desc .prix p {
+          font-size: 25px; }
+      body.potions > div > div > div > div.row .desc .nom_potion {
+        color: #ab9ff2;
+        font-size: 60px; }
+      body.potions > div > div > div > div.row .desc .sous_titre {
+        font-weight: bold; }
+      body.potions > div > div > div > div.row .desc .commentaire {
+        font-size: 10pt;
+        color: #ab9ff2; }
+      body.potions > div > div > div > div.row .desc .button h2 {
+        display: inline-block;
+        background-color: #ab9ff2;
+        color: white;
+        text-align: center;
+        font-family: HelveticaNeue, sans-serif;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 20px;
+        box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.25); }
