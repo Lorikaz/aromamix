@@ -23,22 +23,22 @@
 			<h1>Qui
 			</br>sommes-
 			</br>nous ?</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed nulla augue. Suspendisse id arcu id elit laoreet pretium eget vel orci. Nullam vitae libero eu turpis eleifend ultricies vitae aliquet lectus. Sed tempor ante ac odio dapibus porta. Nulla a arcu cursus, dapibus mauris at, pharetra velit. Vivamus a accumsan lectus, sed elementum mauris. Duis non dui massa. Aenean non porttitor tortor, luctus dictum quam.</p>
+			<p>Dans le grand monde de la sorcellerie, chaque maux sont guéris de sortilèges et autres charmes mystiques. Vous qui en rêviez, et qui souhaitez d’un simple coup de baguette vous débarrasser de vos problèmes. La solution est à portée de fioles. Nous vous proposons à vous, êtres non magiques, des potions livrables jusqu’à chez vous.</p>
 		</div>
 	</div>
 
 	<div class="row" id="team">
 		<div class="col-md-4">
 			<img src="" height="250">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed nulla augue. Suspendisse id arcu id elit laoreet pretium eget vel orci. Nullam vitae libero eu turpis eleifend ultricies vitae aliquet lectus. Sed tempor ante ac odio dapibus porta. Nulla a arcu cursus, dapibus mauris at, pharetra velit.</p>
+			<p>Sophie conceptualise les potions et est chargée de trouver la matière première. Notre sorcière la plus expérimentée et créative s’occupe de trouver de nouveau concept de potion pouvant vous intéresser. Toujours plus soucieuse et attentive à vos problèmes, elle saura trouver LA solution pour vous aider au quotidien.</p>
 		</div>
 		<div class="col-md-4">
 			<img src="" height="250">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed nulla augue. Suspendisse id arcu id elit laoreet pretium eget vel orci. Nullam vitae libero eu turpis eleifend ultricies vitae aliquet lectus. Sed tempor ante ac odio dapibus porta. Nulla a arcu cursus, dapibus mauris at, pharetra velit.</p>
+			<p>Matthias notre mélangeur professionnel. Il vous fait de simple botte de thym une bonne tisane contre la grippe. Qu’importe l’ingrédient, il vous le mystifie pour faire ressortir toute ses qualités magiques.</p>
 		</div>
 		<div class="col-md-4">
 			<img src="" height="250">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed nulla augue. Suspendisse id arcu id elit laoreet pretium eget vel orci. Nullam vitae libero eu turpis eleifend ultricies vitae aliquet lectus. Sed tempor ante ac odio dapibus porta. Nulla a arcu cursus, dapibus mauris at, pharetra velit.</p>
+			<p>La plus créative de la bande, notre graphiste et empaqueteuse en chef. Elle s’occupe de présentation de notre marque ainsi que de nos potions. C’est de sa baguette que les potions sont mis dans des fioles pour être emporté loin de nous mais près de vous.</p>
 		</div>
 	</div>
 
@@ -59,7 +59,7 @@
 				</a>
 			</div>
 			<div class="col-md-4">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed nulla augue. Suspendisse id arcu id elit laoreet pretium eget vel orci.</p>
+				<p>Nos potions ont une efficacité quasi instantanée. Tout comme pour vos médicaments veuillez cependant prendre soin de bien lire la notice d’usage et de ne pas augmenter les doses prescrites.</p>
 			</div>
 		</div>
 	</div>
