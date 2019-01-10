@@ -16,7 +16,7 @@
             <a href="livreor.php">Livre d'or</a>
         </li>
         <li>
-            <a href="create_account.php">Connexion</a>
+            <a href="connexion_test.php">Connexion</a>
         </li>
     </nav>
 
