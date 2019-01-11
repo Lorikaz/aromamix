@@ -20,7 +20,7 @@
   }
 
   /* checks if user exists */
-  if (!empty($_SESSION['email']) && !empty($_SESSION['passsword'])) {
+  if (!empty($_SESSION['email'])) {
     // this boolean variable will tell if the user is connected or just a visitor
     $connect = true;
   //rajouter condition pour afficher toute les données sessions de l'utilisateur ; id, firstname
@@ -52,40 +52,44 @@
     <input type="submit" value="Valider" name="ajout"/>
 </form>
 
+
   <?php
-    $requete ="SELECT * FROM commande WHERE user='".$_SESSION['login']."'";
+  if ($connect===false){
+    echo ("Vous devez vous connectez pour passer la commande !");
+  }else{
+    $requete ="SELECT * FROM commande WHERE user='".$_SESSION['email']."'";
     $retourcommande = $bdd->prepare($requete);
     $retourcommande->execute();
-
-
-?>
-
-
-    <div class="panier">
-      <div class="titre-perso">
+  ?>
+  <div class="panier">
+    <div class="titre">
       <h2>Votre panier</h2>
+    </div>
+    <div class="corps-panier ">
+      <?php
+      $total = 0;
+      foreach ($retourcommande as $row){
+      ?><div class="fiche-produit-panier flex"><?php
+        $id = $row[0];
+        $potion = $row[1];
+        $quantite = $row[2];
+        $prix = $row[4];
+        $prix=$prix*$quantite;
+      ?>
+      <div class="potion">
+        <h3><?php echo $potion; ?></h3>
+        <p><?php echo $prix; ?> €</p>
       </div>
-      <div class="corps-panier ">
-        
-        <?php
-        $total = 0;
-          foreach ($retourcommande as $row){
-          ?><div class="fiche-produit-panier flex"><?php
-                     $id = $row[0];
-                     $potion = $row[2];
-                     $quantite = $row[3];
-                     $prix = $row[4];
-                     $prix=$prix*$quantite;
-                     ?>
-                     <div class="desc-plante">
-                     <h3><?php echo $nompotion ?></h3>
-                     <p><?php echo $prix ?> €</p>
-                   </div>
-                   <div class="bordure"></div>
-                    <div class="quantite flex"> 
-                    <h3>Quantité : </h3>
-                     <p><?php echo $quantite ?></p>
-                    </div>
+      <div class="bordure"></div>
+      <div class="quantite flex"> 
+         <h3>Quantité : </h3>
+        <p><?php echo $quantite; ?></p>
+      </div>
+    </div><?php
+    }
+    ?>
+  </div>
+</div>     
 
 <?php
 /*
@@ -168,12 +172,16 @@
     <input type="text" name="nom" placeholder="Nom & Prénom ..."/>
     <input type="text" name="email" placeholder="Adresse email ..."/>
     <input type="text" name="phone" placeholder="Numéro de téléphone ..."/>
-    <input type="text" name="adresse" placeholder="Adresse postale ...">
+    <input type="text" name="adresse" placeholder="Adresse postale ..."/>
     <input type="submit" value="Valider" />
-</form>
+  </form>
 
-	<?php include("/parts/pied.php") ?>
-	</div>
+
+
+	<?php
+}
+
+  include("/parts/pied.php") ?>
 </body>
 
 </html>
