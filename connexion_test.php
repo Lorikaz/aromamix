@@ -29,8 +29,7 @@
     <?php include("/parts/head.php") ?>
 </head>
 <body>
-    <?php include("/parts/entete.php") 
-?>
+    <?php include("/parts/entete.php") ?>
 
     <form method="post" action="connexion_test.php">
     	<fieldset>
@@ -79,9 +78,8 @@
     			<p>Une erreur s\'est produite !!!</p>
     		<?php	
     		}
-    }
+    } ?>
 
-
-    ?>
+    <?php include("/parts/pied.php") ?>
 </body>
 </html>

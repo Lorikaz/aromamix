@@ -7,24 +7,23 @@
     <?php include("/parts/head.php") ?>
 </head>
 
-<body>
+<body class="livreor">
 	<?php include("/parts/entete.php"); ?>
-    <?php if(isset($_SESSION['acces']) && $_SESSION['acces']=="oui"){
-    ?>
 
     <!-- Génération du formulaire de message -->
 
     <form method="post" action="livreor.php">
+        <!-- Récupère le pseudo dans SESSION-->
+        <!--Connecté en tant que : <?php echo $_SESSION['login'] ?>-->
         <h1>Livre d'or</h1>
-        <p>
-            <!-- Récupère le pseudo dans SESSION-->
-            Connecté en tant que : <?php echo $_SESSION['login'] ?>
-            <textarea name="message" rows="8" cols="35"></textarea><br />
-            <input type="submit" value="Envoyer" />
-        </p>
+        <textarea name="message" rows="8" cols="35" placeholder="Laissez nous votre avis ..."></textarea><br/>
+        <input type="submit" value="Publier" />
     </form>
 
     <p class="pages">
+
+    <?php if(isset($_SESSION['acces']) && $_SESSION['acces']=="oui"){
+    ?>
 
     <?php
 
@@ -191,32 +190,30 @@
 
         $requete ="SELECT * FROM livreor ORDER BY id DESC LIMIT " . $premierMessage . ",". $nombreDeMessagesParPage.";";
         $retourpremiermessage = $bdd->prepare($requete);
-        $retourpremiermessage->execute();
+        $retourpremiermessage->execute(); ?>
 
 
-        ////// On stocke les données de la requete et on affiche les messages
+        <div class="commentaires">
+            <?php ////// On stocke les données de la requete et on affiche les messages
+            if ($retourpremiermessage) {
+                foreach ($retourpremiermessage as $row) {
+                    $pseudo = $row[1];
+                    $message = $row[2];
+                    ?>
+                    <div class="commentaire">
+                        <h1 class="pseudo">
+                            <?php echo $pseudo; ?>
+                        </h1>
 
-        if ($retourpremiermessage) {
-            foreach ($retourpremiermessage as $row) {
-                 $pseudo = $row[1];
-                 $message = $row[2];
-                 ?>
-                 <div class="pseudo">
-                    <h1>
-                        <?php echo $pseudo; ?>
-                    </h1>
-                </div>
+                        <p class="message">
+                            <?php echo $message; ?>
+                        </p>
+                    </div>
+                    <?php }
+                }
+            } ?>
+        </div>
 
-                <div class="message">
-                    <p>
-                        <?php echo $message; ?>
-                    </p>
-                </div>
-             <?php
-            }
-        }
-    }
-?>
     <?php include("/parts/pied.php"); ?>
 
 </body>
