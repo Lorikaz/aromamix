@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
 
     <nav class="topnav">
         <li>
@@ -16,9 +16,9 @@
             <a href="livreor.php">Livre d'or</a>
         </li>
         <li>
-            <a href="create_account.php">Connexion</a>
+            <a href="connexion_test.php">Connexion</a>
         </li>
     </nav>
 
     <div class="container">
-        <div class="container-fluid">
+        <div class="container">
