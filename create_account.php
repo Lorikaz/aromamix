@@ -250,6 +250,7 @@
 					    <div class="col-sm-12">
 					    	<p>* Champs obligatoires</p>
 					      <div class="alert alert-info" role="alert">En cliquant sur "Enregistrer", j'accepte les conditions générales de vente et d'utilisation du site aromamix.com</div>
+					      <a href="connexion_test.php">Se connecter</a>
 					      <button type="submit" class="btn btn-default" name="sub-btn">Enregistrer</button>
 					    </div>
 					  </div> <!-- /. end of subscription button -->

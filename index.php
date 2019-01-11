@@ -12,12 +12,12 @@
 	
 	<div id="slogan">
 		<h2>It's a kind of magic.</h2>
-		<img src="./media/logo-lg.png" height="100">
+		<img src="media/logo-lg.png" height="100">
 	</div>
 
 	<div class="row" id="presentation">
 		<div class="col-md-6">
-			<img src="">
+			<img src="media/index1.png" id="pic">
 		</div>
 		<div class="col-md-6">
 			<h1>Qui
@@ -28,17 +28,17 @@
 	</div>
 
 	<div class="row" id="team">
-		<div class="col-md-4">
-			<img src="" height="250">
-			<p>Sophie conceptualise les potions et est chargée de trouver la matière première. Notre sorcière la plus expérimentée et créative s’occupe de trouver de nouveau concept de potion pouvant vous intéresser. Toujours plus soucieuse et attentive à vos problèmes, elle saura trouver LA solution pour vous aider au quotidien.</p>
+		<div class="col-md-4 conteneur">
+			<img class="element" src="media/Alchimiste.png" id="user">
+			<p class="element">Sophie conceptualise les potions et est chargée de trouver la matière première. Notre sorcière la plus expérimentée et créative s’occupe de trouver de nouveau concept de potion pouvant vous intéresser. Toujours plus soucieuse et attentive à vos problèmes, elle saura trouver LA solution pour vous aider au quotidien.</p>
 		</div>
-		<div class="col-md-4">
-			<img src="" height="250">
-			<p>Matthias notre mélangeur professionnel. Il vous fait de simple botte de thym une bonne tisane contre la grippe. Qu’importe l’ingrédient, il vous le mystifie pour faire ressortir toute ses qualités magiques.</p>
+		<div class="col-md-4 conteneur">
+			<img class="element" src="media/Ensorceleur.png" id="user">
+			<p class="element">Matthias notre mélangeur professionnel. Il vous fait de simple botte de thym une bonne tisane contre la grippe. Qu’importe l’ingrédient, il vous le mystifie pour faire ressortir toute ses qualités magiques.</p>
 		</div>
-		<div class="col-md-4">
-			<img src="" height="250">
-			<p>La plus créative de la bande, notre graphiste et empaqueteuse en chef. Elle s’occupe de présentation de notre marque ainsi que de nos potions. C’est de sa baguette que les potions sont mis dans des fioles pour être emporté loin de nous mais près de vous.</p>
+		<div class="col-md-4 conteneur">
+			<img class="element" src="media/Illusioniste.png" id="user">
+			<p class="element">La plus créative de la bande, notre graphiste et empaqueteuse en chef. Elle s’occupe de présentation de notre marque ainsi que de nos potions. C’est de sa baguette que les potions sont mis dans des fioles pour être emporté loin de nous mais près de vous.</p>
 		</div>
 	</div>
 
@@ -48,13 +48,13 @@
 				<h1>À chaque tourment sa préparation. Allez vérifier dans notre catalogue varié.</h1>
 			</div>
 			<div class="col-md-6">
-				<img src="">
+				<img src="media/index2.png" id="pic">
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-4"></div>
 			<div class="col-md-4">
-				<a href="./potions.php">
+				<a href="potions.php">
 					<h2>Nos potions</h2>
 				</a>
 			</div>
