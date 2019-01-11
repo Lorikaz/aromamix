@@ -29,8 +29,7 @@
     <?php include("/parts/head.php") ?>
 </head>
 <body>
-    <?php include("/parts/entete.php") 
-?>
+    <?php include("/parts/entete.php") ?>
 
     <form method="post" action="connexion_test.php">
     	<fieldset>
@@ -39,8 +38,12 @@
     		<input type="text" name="email" id="email"/>
     		<label for="password">Mot de passe : </label>
     		<input type="password" name="password" id="password"/>
+            <div class="links">
+                <a href="">Mot de passe oublié ?</a>
+                <a href="create_account.php">S'inscrire</a>
+            </div>
     	</fieldset>
-    	<input type="submit" name="connexion">
+    	<input type="submit" name="connexion" value="Connexion">
     </form>
 
     <?php
@@ -75,9 +78,8 @@
     			<p>Une erreur s\'est produite !!!</p>
     		<?php	
     		}
-    }
+    } ?>
 
-
-    ?>
+    <?php include("/parts/pied.php") ?>
 </body>
 </html>

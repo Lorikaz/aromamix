@@ -1,0 +1,20 @@
+$color1: rgb(89, 28, 172);
+$color2: rgb(115, 42, 188);
+$color3: rgb(133, 85, 216);
+$color4: rgb(171, 159, 242);
+
+
+@mixin outline {
+    background-color: white;
+    border: solid 5px $color4;
+}
+
+@mixin button {
+    font-family: HelveticaNeue, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
+    background-color: $color4;
+    padding: 25px;
+    box-shadow: 8px 8px 5px fade-out(black, 0.75);
+}
