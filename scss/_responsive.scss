@@ -50,13 +50,14 @@
     nav.footnav {
         padding: 25px;
 
-        &>div.row {
+        & div.row {
             margin: 25px 50px;
-            display: inline;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
 
             & div.col {
-                display: inline-block;
-                vertical-align: center;
+                //vertical-align: center;
 
                 &#social {}
             }
