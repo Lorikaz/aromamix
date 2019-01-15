@@ -1,13 +1,28 @@
-body {
-  font-family: HelveticaNeue, sans-serif;
-  font-weight: 500;
-  font-size: 18px; }
-
 .container {
   max-width: 90%; }
 
 .container-fluid {
   padding: 0; }
+  .container-fluid.principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
+
+@media only screen and (min-width: 1140px) {
+  nav.topnav li {
+    display: inline; }
+    nav.topnav li a {
+      display: inline-block;
+      vertical-align: center; }
+
+  nav.footnav {
+    padding: 25px; }
+    nav.footnav > div {
+      margin: 25px 50px; } }
+body {
+  font-family: HelveticaNeue, sans-serif;
+  font-weight: 500;
+  font-size: 18px; }
 
 h1 {
   font-family: Butler, serif;
@@ -27,38 +42,31 @@ nav.topnav {
   list-style: none;
   text-align: center;
   font-size: 50px; }
-  nav.topnav li {
-    display: inline; }
-    nav.topnav li a {
-      color: black;
-      font-size: large;
-      text-align: center;
-      display: inline-block;
-      margin: 15px 10px;
-      padding: 10px 15px;
-      vertical-align: center;
-      text-decoration: none; }
-      nav.topnav li a:hover {
-        background-color: #ab9ff2;
-        color: white; }
-      nav.topnav li a#logo:hover {
-        background-color: white; }
+  nav.topnav li a {
+    color: black;
+    font-size: large;
+    text-align: center;
+    margin: 15px 10px;
+    padding: 10px 15px;
+    text-decoration: none; }
+    nav.topnav li a:hover {
+      background-color: #ab9ff2;
+      color: white; }
+    nav.topnav li a#logo:hover {
+      background-color: white; }
 
 nav.footnav {
   position: relative;
   bottom: 0;
-  padding: 25px;
   background-color: #ab9ff2;
   color: white; }
-  nav.footnav > div {
-    margin: 25px 50px; }
-    nav.footnav > div h2, nav.footnav > div p {
-      text-align: center; }
-    nav.footnav > div #social div {
-      font-size: 30px;
-      text-align: center; }
-      nav.footnav > div #social div a {
-        color: white; }
+  nav.footnav > div h2, nav.footnav > div p {
+    text-align: center; }
+  nav.footnav > div #social div {
+    font-size: 30px;
+    text-align: center; }
+    nav.footnav > div #social div a {
+      color: white; }
   nav.footnav > p {
     text-align: center; }
 

@@ -3,6 +3,10 @@ $color2: rgb(115, 42, 188);
 $color3: rgb(133, 85, 216);
 $color4: rgb(171, 159, 242);
 
+//$topH: 100px;
+//$botH: 210px;
+//$contH: 100vh - ($topH + $botH);
+
 
 @mixin outline {
     background-color: white;

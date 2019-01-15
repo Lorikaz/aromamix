@@ -3,12 +3,12 @@
 
 	<nav class="footnav">
 		<div class="row">
-			<div class="col-md-4" id="left">
+			<div class="col">
 				<h2>Contactez-nous</h2>
 				<p>contact@aromamix.com
 				</br>+339 666 666</p>
 			</div>
-			<div class="col-md-4">
+			<div class="col">
 				<h2>Suivez-nous</h2>
 				<div class="row" id="social">
 					<div class="col-3">
@@ -33,7 +33,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4" id="right">
+			<div class="col">
 				<h2>Adresse</h2>
 				<p>13 rue de Salem
 				</br>13 666 France</p>
