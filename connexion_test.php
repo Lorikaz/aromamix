@@ -34,17 +34,17 @@
 
         <section class="main-content">
             <form method="post" action="connexion_test.php">
-            	<fieldset>
-            		<legend>Connexion</legend>
-            		<label for="email">Email : </label>
-            		<input type="text" name="email" id="email"/>
-            		<label for="password">Mot de passe : </label>
-            		<input type="password" name="password" id="password"/>
-                    <div class="links">
-                        <a href="">Mot de passe oublié ?</a>
-                        <a href="create_account.php">S'inscrire</a>
-                    </div>
-            	</fieldset>
+        		<legend>
+                    <h1>Connexion</h1>      
+                </legend>
+        		<label for="email">Email : </label>
+        		<input type="text" name="email" id="email"/>
+        		<label for="password">Mot de passe : </label>
+        		<input type="password" name="password" id="password"/>
+                <div class="links">
+                    <a href="">Mot de passe oublié ?</a>
+                    <a href="create_account.php">S'inscrire</a>
+                </div>
             	<input type="submit" name="connexion" value="Connexion">
             </form>
 

@@ -129,6 +129,30 @@ section.main-content {
       div.potions section.main-content > div.potion div.desc div.cmd div.prix {
         display: flex;
         flex-direction: column; }
+  div.livreor section.main-content {
+    width: 80%;
+    margin: 0 10%;
+    padding: 25px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch; }
+    div.livreor section.main-content form textarea {
+      width: 100%;
+      height: 200px;
+      resize: none;
+      padding: 25px;
+      margin: 25px 0; }
+    div.livreor section.main-content form input {
+      padding: 20px 50px;
+      float: right; }
+    div.livreor section.main-content .commentaires {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch; }
+      div.livreor section.main-content .commentaires .commentaire {
+        padding: 5px 0 10px; }
 
 body {
   margin: 0;
@@ -311,150 +335,30 @@ body.potions > div > div > div > div {
         padding: 25px;
         box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.25); }
 
-body.livreor .container {
-  width: 80%;
-  margin: 0 10%;
-  padding: 25px 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch; }
-  body.livreor .container form h1 {
-    color: #ab9ff2;
-    position: absolute;
-    transform: translate(-75px, -25px); }
-  body.livreor .container form textarea {
-    background-color: white;
-    border: solid 5px #ab9ff2;
-    width: 100%;
-    height: 200px;
-    resize: none;
-    padding: 25px;
-    margin: 25px 0;
-    transform: translateZ(10px); }
-  body.livreor .container form input {
+div.livreor section.main-content div.form form h1 {
+  color: #ab9ff2;
+  position: absolute;
+  transform: translate(-75px, -25px); }
+div.livreor section.main-content div.form form textarea {
+  background-color: white;
+  border: solid 5px #ab9ff2;
+  transform: translateZ(10px); }
+div.livreor section.main-content div.form form input {
+  font-family: HelveticaNeue, sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+  background-color: #ab9ff2;
+  padding: 25px;
+  box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.25);
+  border: none;
+  font-size: 1.5rem; }
+div.livreor section.main-content .commentaires .commentaire {
+  padding: 5px 0 10px;
+  border-bottom: solid 3px #ab9ff2; }
+  div.livreor section.main-content .commentaires .commentaire h1 {
     font-family: HelveticaNeue, sans-serif;
-    font-weight: 600;
-    text-transform: uppercase;
-    color: white;
-    background-color: #ab9ff2;
-    padding: 25px;
-    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.25);
-    border: none;
-    font-size: 1.5rem;
-    padding: 20px 50px;
-    float: right; }
-  body.livreor .container .commentaires {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch; }
-    body.livreor .container .commentaires .commentaire {
-      padding: 5px 0 10px;
-      border-bottom: solid 3px #ab9ff2; }
-      body.livreor .container .commentaires .commentaire h1 {
-        font-family: HelveticaNeue, sans-serif;
-        font-weight: 500;
-        font-style: italic;
-        font-size: 20px;
-        color: #ab9ff2; }
-
-/*div.page.home {
-    & section.main-content {
-        & h1 {
-            text-transform: uppercase;
-        }
-
-        & div {
-
-            &#slogan,
-            &#presentation,
-            &#team,
-            &#potions {
-                padding: 50px 0;
-
-                & p {
-                    text-align: justify;
-                }
-            }
-
-            &#slogan {
-                display: block;
-                padding: 100px 0;
-                margin: 0 20%;
-
-                & img {
-                    @include outline;
-                    display: inline-block;
-                    padding: 15px;
-                    transform: translateZ(10px);
-                }
-
-                & h2 {
-                    display: inline-block;
-                    background-color: $color4;
-                    color: white;
-                    font-family: MetricTest, sans-serif;
-                    font-weight: 300;
-                    padding: 25px;
-                    transform: translate(75px, 75px);
-                }
-            }
-
-            &#presentation {
-                & h1 {
-                    color: $color4;
-                    padding: 50px 0;
-                    transform: translateX(-100px);
-                }
-            }
-
-            &#team {
-                & div.conteneur {
-                    padding: 0 25px;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-
-                    & .element {
-                        margin: 25px 0;
-                    }
-                }
-
-                & img#user {
-                    max-height: 400px;
-                    max-width: 100%;
-                    padding: auto;
-                }
-
-                & p {
-                    text-align: center;
-                }
-            }
-
-            &#potions {
-                padding: 50px;
-
-                & h1 {
-                    text-transform: none;
-                    color: $color4;
-                }
-
-                & h2 {
-                    display: inline-block;
-                    transform: translate(75px, -75px);
-                    @include button;
-                }
-
-                & .row:nth-child(2) {
-                    margin: 25px 0;
-                }
-            }
-
-            & img#pic {
-                max-height: 100%;
-                max-width: 100%;
-            }
-        }
-    }
-}*/
+    font-weight: 500;
+    font-style: italic;
+    font-size: 20px;
+    color: #ab9ff2; }

@@ -36,7 +36,6 @@ header {
         font-size: 50px;
 
         & li {
-
             & a {
                 vertical-align: middle;
                 color: black;
@@ -51,7 +50,6 @@ header {
                 }
 
                 &#logo {
-
                     &:hover {
                         background-color: white;
                     }
@@ -68,7 +66,6 @@ footer {
     color: white;
 
     & nav.footnav {
-
         &>div {
 
             & h2,
@@ -77,7 +74,6 @@ footer {
             }
 
             &.social {
-
                 & div.links {
                     font-size: 30px;
                     text-align: center;
@@ -202,7 +198,6 @@ body.potions {
         margin: 50px 0;
 
         &.title {
-
             & h1 {
                 color: $color4;
                 position: absolute;
@@ -311,51 +306,38 @@ body.potions {
 }
 
 
-// Livre d'or
-body.livreor {
-    & .container {
-        width: 80%;
-        margin: 0 10%;
-        padding: 25px 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: stretch;
 
-        & form {
+section.main-content {
 
-            & h1 {
-                color: $color4;
-                position: absolute;
-                transform: translate(-75px, -25px);
-            }
+    div.home & {}
 
-            & textarea {
-                @include outline;
-                width: 100%;
-                height: 200px;
-                resize: none;
-                padding: 25px;
-                margin: 25px 0;
-                transform: translateZ(10px);
-            }
+    div.potions & {}
 
-            & input {
-                @include button;
-                border: none;
-                font-size: 1.5rem;
-                padding: 20px 50px;
-                float: right;
+    div.commande & {}
+
+    div.livreor & {
+        & div.form {
+            & form {
+                & h1 {
+                    color: $color4;
+                    position: absolute;
+                    transform: translate(-75px, -25px);
+                }
+
+                & textarea {
+                    @include outline;
+                    transform: translateZ(10px);
+                }
+
+                & input {
+                    @include button;
+                    border: none;
+                    font-size: 1.5rem;
+                }
             }
         }
 
         & .commentaires {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: stretch;
-
-
             & .commentaire {
                 padding: 5px 0 10px;
                 border-bottom: solid 3px $color4;
@@ -370,107 +352,8 @@ body.livreor {
             }
         }
     }
+
+    div.connexion & {}
+
+    div.inscription & {}
 }
-
-
-
-// Index 2
-/*div.page.home {
-    & section.main-content {
-        & h1 {
-            text-transform: uppercase;
-        }
-
-        & div {
-
-            &#slogan,
-            &#presentation,
-            &#team,
-            &#potions {
-                padding: 50px 0;
-
-                & p {
-                    text-align: justify;
-                }
-            }
-
-            &#slogan {
-                display: block;
-                padding: 100px 0;
-                margin: 0 20%;
-
-                & img {
-                    @include outline;
-                    display: inline-block;
-                    padding: 15px;
-                    transform: translateZ(10px);
-                }
-
-                & h2 {
-                    display: inline-block;
-                    background-color: $color4;
-                    color: white;
-                    font-family: MetricTest, sans-serif;
-                    font-weight: 300;
-                    padding: 25px;
-                    transform: translate(75px, 75px);
-                }
-            }
-
-            &#presentation {
-                & h1 {
-                    color: $color4;
-                    padding: 50px 0;
-                    transform: translateX(-100px);
-                }
-            }
-
-            &#team {
-                & div.conteneur {
-                    padding: 0 25px;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-
-                    & .element {
-                        margin: 25px 0;
-                    }
-                }
-
-                & img#user {
-                    max-height: 400px;
-                    max-width: 100%;
-                    padding: auto;
-                }
-
-                & p {
-                    text-align: center;
-                }
-            }
-
-            &#potions {
-                padding: 50px;
-
-                & h1 {
-                    text-transform: none;
-                    color: $color4;
-                }
-
-                & h2 {
-                    display: inline-block;
-                    transform: translate(75px, -75px);
-                    @include button;
-                }
-
-                & .row:nth-child(2) {
-                    margin: 25px 0;
-                }
-            }
-
-            & img#pic {
-                max-height: 100%;
-                max-width: 100%;
-            }
-        }
-    }
-}*/

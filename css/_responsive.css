@@ -129,3 +129,26 @@ section.main-content {
       div.potions section.main-content > div.potion div.desc div.cmd div.prix {
         display: flex;
         flex-direction: column; }
+  div.livreor section.main-content {
+    margin: 0 10%;
+    padding: 25px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch; }
+    div.livreor section.main-content form textarea {
+      width: 75%;
+      height: 200px;
+      resize: none;
+      padding: 25px;
+      margin: 25px 0; }
+    div.livreor section.main-content form input {
+      padding: 20px 50px;
+      float: right; }
+    div.livreor section.main-content .commentaires {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch; }
+      div.livreor section.main-content .commentaires .commentaire {
+        padding: 5px 0 10px; }

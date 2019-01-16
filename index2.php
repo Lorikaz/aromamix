@@ -9,7 +9,7 @@
 
 <body>
 	<div class="page home">
-	    <?php include("./parts/entete2.php") ?>
+	    <?php include("./parts/entete.php") ?>
 
 		<section class="main-content">
 			<div class="slogan">
@@ -52,7 +52,7 @@
 			</div>
 		</section>
 
-	    <?php include("./parts/pied2.php") ?>
+	    <?php include("./parts/pied.php") ?>
     </div>
 </body>
 

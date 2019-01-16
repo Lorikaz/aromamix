@@ -7,19 +7,21 @@
     <?php include("./parts/head.php") ?>
 </head>
 
-<body class="livreor">
+<body>
     <div class="page livreor">
     	<?php include("./parts/entete.php"); ?>
 
         <section class="main-content">
             <!-- Génération du formulaire de message -->
-            <form method="post" action="livreor.php">
-                <!-- Récupère le pseudo dans SESSION-->
-                <!--Connecté en tant que : <?php echo $_SESSION['login'] ?>-->
-                <h1>Livre d'or</h1>
-                <textarea name="message" rows="8" cols="35" placeholder="Laissez nous votre avis ..."></textarea><br/>
-                <input type="submit" value="Publier" />
-            </form>
+            <div class="form">
+                <form method="post" action="livreor.php">
+                    <!-- Récupère le pseudo dans SESSION-->
+                    <!--Connecté en tant que : <?php echo $_SESSION['login'] ?>-->
+                    <h1>Livre d'or</h1>
+                    <textarea name="message" rows="8" cols="35" placeholder="Laissez nous votre avis ..."></textarea><br/>
+                    <input type="submit" value="Publier" />
+                </form>
+            </div>
 
             <p class="pages">
 
