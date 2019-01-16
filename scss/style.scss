@@ -4,6 +4,7 @@
 
 body {
     //background-color: lightgrey;
+    margin: 0;
     font-family: HelveticaNeue, sans-serif;
     font-weight: 500;
     font-size: 18px;
@@ -26,62 +27,70 @@ a {
 }
 
 
-nav.topnav {
-    background-color: white;
-    color: black;
-    list-style: none;
-    text-align: center;
-    font-size: 50px;
+header {
+    & nav.topnav {
+        background-color: white;
+        color: black;
+        list-style: none;
+        text-align: center;
+        font-size: 50px;
 
-    & li {
+        & li {
 
-        & a {
-            color: black;
-            font-size: large;
-            text-align: center;
-            margin: 15px 10px;
-            padding: 10px 15px;
-            text-decoration: none;
-
-            &:hover {
-                background-color: $color4;
-                color: white;
-            }
-
-            &#logo {
+            & a {
+                vertical-align: middle;
+                color: black;
+                font-size: large;
+                text-align: center;
+                margin: 15px 10px;
+                padding: 10px 15px;
+                text-decoration: none;
 
                 &:hover {
-                    background-color: white;
+                    color: $color4;
+                }
+
+                &#logo {
+
+                    &:hover {
+                        background-color: white;
+                    }
                 }
             }
         }
     }
 }
 
-nav.footnav {
+footer {
     position: relative;
     bottom: 0;
     background-color: $color4;
     color: white;
 
-    &>div {
+    & nav.footnav {
 
-        & h2,
-        & p {
-            text-align: center;
-        }
+        &>div {
 
-        & #social div {
-            font-size: 30px;
-            text-align: center;
+            & h2,
+            & p {
+                text-align: center;
+            }
 
-            & a {
-                color: white;
+            &.social {
+
+                & div.links {
+                    font-size: 30px;
+                    text-align: center;
+
+                    & a {
+                        color: white;
+                    }
+                }
             }
         }
     }
 
-    &>p {
+    & p.copyright {
         text-align: center;
     }
 }
@@ -215,6 +224,7 @@ body.potions {
                 justify-content: center;
 
                 & .desc {
+                    height: 500px;
                     vertical-align: middle;
                 }
 
@@ -361,3 +371,106 @@ body.livreor {
         }
     }
 }
+
+
+
+// Index 2
+/*div.page.home {
+    & section.main-content {
+        & h1 {
+            text-transform: uppercase;
+        }
+
+        & div {
+
+            &#slogan,
+            &#presentation,
+            &#team,
+            &#potions {
+                padding: 50px 0;
+
+                & p {
+                    text-align: justify;
+                }
+            }
+
+            &#slogan {
+                display: block;
+                padding: 100px 0;
+                margin: 0 20%;
+
+                & img {
+                    @include outline;
+                    display: inline-block;
+                    padding: 15px;
+                    transform: translateZ(10px);
+                }
+
+                & h2 {
+                    display: inline-block;
+                    background-color: $color4;
+                    color: white;
+                    font-family: MetricTest, sans-serif;
+                    font-weight: 300;
+                    padding: 25px;
+                    transform: translate(75px, 75px);
+                }
+            }
+
+            &#presentation {
+                & h1 {
+                    color: $color4;
+                    padding: 50px 0;
+                    transform: translateX(-100px);
+                }
+            }
+
+            &#team {
+                & div.conteneur {
+                    padding: 0 25px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    & .element {
+                        margin: 25px 0;
+                    }
+                }
+
+                & img#user {
+                    max-height: 400px;
+                    max-width: 100%;
+                    padding: auto;
+                }
+
+                & p {
+                    text-align: center;
+                }
+            }
+
+            &#potions {
+                padding: 50px;
+
+                & h1 {
+                    text-transform: none;
+                    color: $color4;
+                }
+
+                & h2 {
+                    display: inline-block;
+                    transform: translate(75px, -75px);
+                    @include button;
+                }
+
+                & .row:nth-child(2) {
+                    margin: 25px 0;
+                }
+            }
+
+            & img#pic {
+                max-height: 100%;
+                max-width: 100%;
+            }
+        }
+    }
+}*/
