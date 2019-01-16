@@ -4,11 +4,11 @@
 
 <head>
 	<title>Accueil - Aromamix</title>
-    <?php include("/parts/head.php") ?>
+    <?php include("./parts/head.php") ?>
 </head>
 
 <body class="index">
-    <?php include("/parts/entete.php") ?>
+    <?php include("./parts/entete.php") ?>
 	
 	<div id="slogan">
 		<h2>It's a kind of magic.</h2>
@@ -21,8 +21,8 @@
 		</div>
 		<div class="col-md-6">
 			<h1>Qui
-			</br>sommes-
-			</br>nous ?</h1>
+			<br/>sommes-
+			<br/>nous ?</h1>
 			<p>Dans le grand monde de la sorcellerie, chaque maux sont guéris de sortilèges et autres charmes mystiques. Vous qui en rêviez, et qui souhaitez d’un simple coup de baguette vous débarrasser de vos problèmes. La solution est à portée de fioles. Nous vous proposons à vous, êtres non magiques, des potions livrables jusqu’à chez vous.</p>
 		</div>
 	</div>
@@ -64,7 +64,7 @@
 		</div>
 	</div>
 
-    <?php include("/parts/pied.php") ?>
+    <?php include("./parts/pied.php") ?>
 </body>
 
 </html>

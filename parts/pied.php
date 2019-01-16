@@ -6,7 +6,7 @@
 			<div class="col-md-4" id="left">
 				<h2>Contactez-nous</h2>
 				<p>contact@aromamix.com
-				</br>+339 666 666</p>
+				<br/>+339 666 666</p>
 			</div>
 			<div class="col-md-4">
 				<h2>Suivez-nous</h2>
@@ -36,7 +36,7 @@
 			<div class="col-md-4" id="right">
 				<h2>Adresse</h2>
 				<p>13 rue de Salem
-				</br>13 666 France</p>
+				<br/>13 666 France</p>
 			</div>
 		</div>
 		<p>&copy;AROMAMIX - It's a kind of Magic - Music by The Avalanches.</p>

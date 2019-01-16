@@ -26,10 +26,10 @@
 <html>
 <head>
 	<title>Aromamix - Accueil</title>
-    <?php include("/parts/head.php") ?>
+    <?php include("./parts/head.php") ?>
 </head>
 <body>
-    <?php include("/parts/entete.php") ?>
+    <?php include("./parts/entete.php") ?>
 
     <form method="post" action="connexion_test.php">
     	<fieldset>
@@ -80,6 +80,6 @@
     		}
     } ?>
 
-    <?php include("/parts/pied.php") ?>
+    <?php include("./parts/pied.php") ?>
 </body>
 </html>

@@ -4,11 +4,11 @@
 
 <head>
     <title>Aromamix - Livre d'Or</title>
-    <?php include("/parts/head.php") ?>
+    <?php include("./parts/head.php") ?>
 </head>
 
 <body class="livreor">
-	<?php include("/parts/entete.php"); ?>
+	<?php include("./parts/entete.php"); ?>
 
     <!-- Génération du formulaire de message -->
 
@@ -214,7 +214,7 @@
             } ?>
         </div>
 
-    <?php include("/parts/pied.php"); ?>
+    <?php include("./parts/pied.php"); ?>
 
 </body>
 

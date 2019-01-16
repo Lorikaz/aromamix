@@ -36,15 +36,15 @@
 
 <head>
 	<title>Commande - Aromamix</title>
-	<?php include("/parts/head.php") ?>
+	<?php include("./parts/head.php") ?>
 </head>
 
 <body>
-	<?php include("/parts/entete.php") ?>
+	<?php include("./parts/entete.php") ?>
 
   
 
-	<?php include("/parts/pied.php") ?>
+	<?php include("./parts/pied.php") ?>
 	</div>
 </body>
 
