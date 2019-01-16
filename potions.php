@@ -3,16 +3,16 @@
 
 <head>
     <title>Aromamix - Potions</title>
-    <?php include("/parts/head.php") ?>
+    <?php include("./parts/head.php") ?>
 </head>
 
 <body class="potions">
-    <?php include("/parts/entete.php") ?>
+    <?php include("./parts/entete.php") ?>
 
 
     <div class="title">
         <h1>Nos 
-        </br>potions</h1>
+        <br/>potions</h1>
         <img src="media/potions-header.png">
     </div>
 
@@ -127,7 +127,7 @@
  	</div> 	
 
 
-    <?php include("/parts/pied.php") ?>
+    <?php include("./parts/pied.php") ?>
 </body>
 
 </html>

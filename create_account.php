@@ -4,9 +4,9 @@
 
 <!DOCTYPE html>
 	<title>Inscription</title>
-	<?php include("/parts/head.php") ?>
+	<?php include("./parts/head.php") ?>
 </head>
-	<?php include("/parts/entete.php") ?>
+	<?php include("./parts/entete.php") ?>
 	</head>
 	<?php 
   	$fnameErr =$lnameErr = $mailErr = $confmailErr =$mdpErr =$confmdpErr = $existEmailErr = $typesErr="";
@@ -293,7 +293,7 @@
 } catch(PDOException $e) {
     echo $e->getMessage();
   }
-	include("/parts/pied.php")
+	include("./parts/pied.php")
 	?>
 
 

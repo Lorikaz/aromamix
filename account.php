@@ -5,10 +5,10 @@ require 'base.php';
 <html>
 <head>
 	<title>Mon compte Aromamix</title>
-    <?php include("/parts/head.php") ?>
+    <?php include("./parts/head.php") ?>
 </head>
 <body>
-    <?php include("/parts/entete.php") ?>
+    <?php include("./parts/entete.php") ?>
 	<h1>Mon compte</h1>
 	<!-- MAIN CONTAINER : all page is contained -->
 	<div class="container-fluid">
@@ -123,6 +123,6 @@ require 'base.php';
 		<?php } ?>
 	</div>
 
-    <?php include("/parts/pied.php") ?>
+    <?php include("./parts/pied.php") ?>
 </body>
 </html>

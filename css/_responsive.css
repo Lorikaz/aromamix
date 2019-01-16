@@ -32,9 +32,8 @@
 
   nav.footnav {
     padding: 25px; }
-    nav.footnav > div.row {
+    nav.footnav div.row {
       margin: 25px 50px;
-      display: inline; }
-      nav.footnav > div.row div.col {
-        display: inline-block;
-        vertical-align: center; } }
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around; } }
