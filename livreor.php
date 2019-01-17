@@ -1,4 +1,34 @@
-<?php session_start(); ?>
+<?php
+    session_start();
+
+  //URL of the host
+  $dbhost = "localhost"; 
+  
+  // Name of the database
+  $dbname = "aromamix";
+  
+  // User name
+  $dbuser = "root";
+  
+  // Password (not used here)
+  $dbpass = "";
+ 
+  try {
+    $bdd = new PDO('mysql:host='.$dbhost.';dbname='.$dbname, $dbuser, $dbpass);
+  } catch(PDOException $e) {
+    echo $e->getMessage();
+  }
+    /* checks if user exists */
+  if (!empty($_SESSION['email'])) {
+    // this boolean variable will tell if the user is connected or just a visitor
+    $connect = true;
+  //rajouter condition pour afficher toute les données sessions de l'utilisateur ; id, firstname
+  }else{
+    $connect = false;
+  }
+
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -14,7 +44,7 @@
 
     <form method="post" action="livreor.php">
         <!-- Récupère le pseudo dans SESSION-->
-        <!--Connecté en tant que : <?php echo $_SESSION['login'] ?>-->
+        Connecté en tant que : <?php echo $_SESSION['email'] ?>
         <h1>Livre d'or</h1>
         <textarea name="message" rows="8" cols="35" placeholder="Laissez nous votre avis ..."></textarea><br/>
         <input type="submit" value="Publier" />
@@ -22,10 +52,7 @@
 
     <p class="pages">
 
-    <?php if(isset($_SESSION['acces']) && $_SESSION['acces']=="oui"){
-    ?>
-
-    <?php
+    <?php if($connect===true){
 
     ////// Connexion base de données
 
@@ -34,7 +61,7 @@
     ////// Récupération et enregistrement du message dans la base de données
 
     if (isset($_POST['message'])){
-        $pseudo = $_SESSION['login'];
+        $pseudo = $_SESSION['email'];
         $message =$_POST['message'];
         $message = nl2br($message);
         $ajoutcom =  "INSERT INTO `livreor`(`user`, `message`) VALUES ('$pseudo','$message')";
@@ -48,11 +75,11 @@
             $requetesuppression = "DELETE FROM `livreor` WHERE `id` = ".$id;
             $resultatsuppresion = $bdd->exec($requetesuppression);
     }
-    }
+    
 
     ////// Génération des pages par rapport au nombre de message
 
-       /* $nombreDeMessagesParPage = 3;
+        $nombreDeMessagesParPage = 3;
         $comptermessage ="SELECT COUNT(message) AS total FROM livreor";
         $result = $bdd->query($comptermessage) ;
         $nb_message = $result->fetch(PDO::FETCH_ASSOC);
@@ -100,7 +127,7 @@
 
             //// Si l'utilisateur est auteur du message il peut le supprimer
 
-            if ($_SESSION['login']==$pseudo OR $_SESSION['droits']== "2")  { ?>
+            if ($_SESSION['email']==$pseudo)  { ?>
                 <div class="pseudo">
                     <h1>
                         <?php
@@ -136,13 +163,13 @@
                     echo $message;
             }
         }
-    }/*
+    }
     ?>
 
 </body>
 </html>
 <?php
-}*/
+}
 
    //// Si l'utilisateur n'est pas connecté
 
