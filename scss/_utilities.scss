@@ -15,16 +15,6 @@ $color4: rgb(171, 159, 242);
     text-transform: uppercase;
     color: white;
     background-color: $color4;
-    padding: 20px;
+    padding: 25px;
     box-shadow: 8px 8px 5px fade-out(black, 0.75);
-}
-
-@mixin form-txt {
-    border-width: 0 0 2px 0;
-    padding: 5px;
-    font-family: HelveticaNeue, sans-serif;
-    font-weight: 100;
-    font-style: italic;
-    font-size: 18pt;
-    color: $color4;
 }
