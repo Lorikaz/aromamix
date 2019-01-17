@@ -33,19 +33,17 @@
         <?php include("./parts/entete.php") ?>
 
         <section class="main-content">
-            <form method="post" action="connexion_test.php">
+            <form class="connexion" method="post" action="connexion_test.php">
         		<legend>
-                    <h1>Connexion</h1>      
+                    <h1>Se connecter</h1>      
                 </legend>
-        		<label for="email">Email : </label>
-        		<input type="text" name="email" id="email"/>
-        		<label for="password">Mot de passe : </label>
-        		<input type="password" name="password" id="password"/>
+        		<input class="text" type="text" name="email" id="email" placeholder="Adresse e-mail" />
+        		<input class="text" type="password" name="password" id="password" placeholder="Mot de passe" />
                 <div class="links">
                     <a href="">Mot de passe oublié ?</a>
                     <a href="create_account.php">S'inscrire</a>
                 </div>
-            	<input type="submit" name="connexion" value="Connexion">
+            	<input class="btn" type="submit" name="connexion" value="Connexion">
             </form>
 
             <?php
@@ -54,7 +52,7 @@
 
             	if(empty($_POST['email'])||empty($_POST['password'])){
             		?>
-            		<p>Une erreur s'est produite pendant votre identification. Vous devez remplir tous les champs du formulaire</p>'
+            		<p>Une erreur s'est produite pendant votre identification. Vous devez remplir tous les champs du formulaire</p>
             		<p>Cliquez <a href="connexion_test.php"> ici </a>pour revenir</p>
             <?php
             	}else

@@ -91,113 +91,109 @@ footer {
     }
 }
 
+section.main-content {
 
-// Index
-body.index {
-    & h1 {
-        text-transform: uppercase;
-    }
+    div.home & {
+        & h1 {
+            text-transform: uppercase;
+        }
 
-    & div {
-
-        &#slogan,
-        &#presentation,
-        &#team,
-        &#potions {
-            padding: 50px 0;
+        &>div {
 
             & p {
                 text-align: justify;
             }
-        }
 
-        &#slogan {
-            display: block;
-            padding: 100px 0;
-            margin: 0 20%;
-
-            & img {
-                @include outline;
-                display: inline-block;
-                padding: 15px;
-                transform: translateZ(10px);
-            }
-
-            & h2 {
-                display: inline-block;
-                background-color: $color4;
-                color: white;
-                font-family: MetricTest, sans-serif;
-                font-weight: 300;
-                padding: 25px;
-                transform: translate(75px, 75px);
-            }
-        }
-
-        &#presentation {
-            & h1 {
-                color: $color4;
-                padding: 50px 0;
-                transform: translateX(-100px);
-            }
-        }
-
-        &#team {
-            & div.conteneur {
-                padding: 0 25px;
+            &.slogan {
+                padding: 100px 0;
+                margin: auto;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
 
-                & .element {
-                    margin: 25px 0;
+
+                & img {
+                    @include outline;
+                    display: inline-block;
+                    padding: 15px;
+                    max-height: 50px;
+                    transform: translate(100px, 25px);
+                    z-index: 2;
+                }
+
+                & h2 {
+                    display: inline-block;
+                    background-color: $color4;
+                    color: white;
+                    font-family: MetricTest, sans-serif;
+                    font-weight: 300;
+                    padding: 25px;
+                    transform: translate(-100px, -25px);
+                    z-index: 1;
                 }
             }
 
-            & img#user {
-                max-height: 400px;
-                max-width: 100%;
-                padding: auto;
+            &.presentation {
+                & img {
+                    width: 50%;
+                }
+
+                & div.pres {
+                    padding: 25px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    & h1 {
+                        color: $color4;
+                        transform: translateX(-100px);
+                    }
+                }
             }
 
-            & p {
-                text-align: center;
+            &.team {
+                & div.member {
+                    padding: 0 25px;
+
+                    & img,
+                    & p {
+                        margin: 25px 0;
+                    }
+                }
+
+                & img.user {
+                    max-height: 400px;
+                    width: auto;
+                    margin: auto;
+                }
+
+                & p {
+                    text-align: center;
+                }
             }
-        }
 
-        &#potions {
-            padding: 50px;
+            &.potions {
+                padding: 50px;
 
-            & h1 {
-                text-transform: none;
-                color: $color4;
+                & h1 {
+                    text-transform: none;
+                    color: $color4;
+                }
+
+                & h2 {
+                    display: inline-block;
+                    transform: translate(-25px, -75px);
+                    @include button;
+                    float: right;
+                }
             }
-
-            & h2 {
-                display: inline-block;
-                transform: translate(75px, -75px);
-                @include button;
-            }
-
-            & .row:nth-child(2) {
-                margin: 25px 0;
-            }
-        }
-
-        & img#pic {
-            max-height: 100%;
-            max-width: 100%;
         }
     }
-}
 
+    div.potions & {
+        margin: 50px inherit;
 
-// Potions
-body.potions {
-    &>div>div>div>div {
-        margin: 50px 0;
-
-        &.title {
+        & div.title {
             & h1 {
                 color: $color4;
                 position: absolute;
@@ -211,54 +207,10 @@ body.potions {
             }
         }
 
-        &.row {
+        & div.potion {
             margin: 100px 0;
 
-            &.conteneur {
-                display: flex;
-                justify-content: center;
-
-                & .desc {
-                    height: 500px;
-                    vertical-align: middle;
-                }
-
-                &:nth-child(2n) {
-                    flex-direction: row;
-
-                    & .img img {
-                        float: right;
-                    }
-
-                    & .desc {
-                        text-align: left;
-
-                        & .prix {
-                            text-align: right;
-                            float: right;
-                        }
-                    }
-                }
-
-                &:nth-child(2n+1) {
-                    flex-direction: row-reverse;
-
-                    & .img img {
-                        float: left;
-                    }
-
-                    & .desc {
-                        text-align: right;
-
-                        & .prix {
-                            text-align: left;
-                            float: left;
-                        }
-                    }
-                }
-            }
-
-            & .img {
+            & div.img {
                 & img {
                     padding: 0;
                     max-height: 500px;
@@ -266,52 +218,90 @@ body.potions {
             }
 
             & .desc {
-                padding-top: 50px;
+                height: 500px;
+                vertical-align: middle;
+                padding: 25px;
 
-                & .prix {
+                & .nom {
+                    color: $color4;
+                    font-size: 60px;
+                }
+
+                & .sub {
+                    font-weight: bold;
+                }
+
+                & .warning {
+                    font-size: 10pt;
+                    color: $color4;
+                }
+
+                & .cmd h2 {
+                    display: inline-block;
+                    @include button;
+                }
+
+                & div.prix {
                     display: inline-block;
                     color: $color4;
 
                     & h1 {
                         font-size: 75px;
-                        margin-bottom: -15px;
+                        margin: 0;
                     }
 
                     & p {
                         font-size: 25px;
+                        margin: -15px 0 0 0;
                     }
-                }
-
-                & .nom_potion {
-                    color: $color4;
-                    font-size: 60px;
-                }
-
-                & .sous_titre {
-                    font-weight: bold;
-                }
-
-                & .commentaire {
-                    font-size: 10pt;
-                    color: $color4;
-                }
-
-                & .button h2 {
-                    display: inline-block;
-                    @include button;
                 }
             }
         }
+
+        div.commande & {}
+
+        div.livreor & {
+            & div.form {
+                & form {
+                    & h1 {
+                        color: $color4;
+                        position: absolute;
+                        transform: translate(-75px, -25px);
+                    }
+
+                    & textarea {
+                        @include outline;
+                        transform: translateZ(10px);
+                    }
+
+                    & input {
+                        @include button;
+                        border: none;
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+
+            & .commentaires {
+                & .commentaire {
+                    padding: 5px 0 10px;
+                    border-bottom: solid 3px $color4;
+
+                    & h1 {
+                        font-family: HelveticaNeue, sans-serif;
+                        font-weight: 500;
+                        font-style: italic;
+                        font-size: 20px;
+                        color: $color4;
+                    }
+                }
+            }
+        }
+
+        div.connexion & {}
+
+        div.inscription & {}
     }
-}
-
-
-
-section.main-content {
-
-    div.home & {}
-
-    div.potions & {}
 
     div.commande & {}
 
@@ -321,12 +311,15 @@ section.main-content {
                 & h1 {
                     color: $color4;
                     position: absolute;
-                    transform: translate(-75px, -25px);
+                    transform: translate(-25px, -75px);
                 }
 
                 & textarea {
                     @include outline;
                     transform: translateZ(10px);
+                    font-family: HelveticaNeue, sans-serif;
+                    font-weight: 500;
+                    font-size: 18px;
                 }
 
                 & input {
@@ -353,7 +346,56 @@ section.main-content {
         }
     }
 
-    div.connexion & {}
+    div.connexion & {
+        form.connexion {
+            & input.text {
+                @include form-txt;
+                width: 100%;
+                margin-top: 25px;
+            }
 
-    div.inscription & {}
+            & div.links {
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            input.btn {
+                @include button;
+                border: none;
+                font-size: 1.5rem;
+                margin: 25px 0;
+            }
+        }
+    }
+
+    div.inscription & {
+        margin-bottom: 100px;
+
+        & form.inscription {
+            & div.form {
+
+                & div.part1,
+                & div.part2 {
+                    & input.form-txt {
+                        @include form-txt;
+                        margin-top: 25px;
+                    }
+
+                    & span.help-block {
+                        font-size: 11pt;
+                        color: $color2;
+                    }
+                }
+            }
+
+            & div.submit {
+                & button.btn {
+                    @include button;
+                    border: none;
+                    font-size: 1.5rem;
+                    margin: 25px 0;
+                }
+            }
+        }
+    }
 }

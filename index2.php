@@ -13,7 +13,7 @@
 
 		<section class="main-content">
 			<div class="slogan">
-				<img src="media/logo-lg.png" height="75">
+				<img src="media/logo-lg.png">
 				<h2>It's a kind of magic.</h2>
 			</div>
 
@@ -29,26 +29,26 @@
 
 			<div class="team">
 				<div class="member">
-					<img src="media/Alchimiste.png" id="user">
+					<img class="user" id="alc" src="media/Alchimiste.png">
 					<p>Sophie conceptualise les potions et est chargée de trouver la matière première. Notre sorcière la plus expérimentée et créative s’occupe de trouver de nouveau concept de potion pouvant vous intéresser. Toujours plus soucieuse et attentive à vos problèmes, elle saura trouver LA solution pour vous aider au quotidien.</p>
 				</div>
 				<div class="member">
-					<img src="media/Ensorceleur.png" id="user">
+					<img class="user" id="ens" src="media/Ensorceleur.png">
 					<p>Matthias notre mélangeur professionnel. Il vous fait de simple botte de thym une bonne tisane contre la grippe. Qu’importe l’ingrédient, il vous le mystifie pour faire ressortir toute ses qualités magiques.</p>
 				</div>
 				<div class="member">
-					<img src="media/Illusioniste.png" id="user">
+					<img class="user" id="ill" src="media/Illusioniste.png">
 					<p>La plus créative de la bande, notre graphiste et empaqueteuse en chef. Elle s’occupe de présentation de notre marque ainsi que de nos potions. C’est de sa baguette que les potions sont mis dans des fioles pour être emporté loin de nous mais près de vous.</p>
 				</div>
 			</div>
 
 			<div class="potions">
-				<h1 class="potions">À chaque tourment sa préparation. Allez vérifier dans notre catalogue varié.</h1>
-				<img class="potions" src="media/index2.png" id="pic">
-				<a class="potions" href="potions2.php">
+				<h1 class="pelem">À chaque tourment sa préparation. Allez vérifier dans notre catalogue varié.</h1>
+				<img class="pelem" src="media/index2.png" id="pic">
+				<a class="pelem" href="potions2.php">
 					<h2>Nos potions</h2>
 				</a>
-				<p class="potions">Nos potions ont une efficacité quasi instantanée. Tout comme pour vos médicaments veuillez cependant prendre soin de bien lire la notice d’usage et de ne pas augmenter les doses prescrites.</p>
+				<p class="pelem">Nos potions ont une efficacité quasi instantanée. Tout comme pour vos médicaments veuillez cependant prendre soin de bien lire la notice d’usage et de ne pas augmenter les doses prescrites.</p>
 			</div>
 		</section>
 
