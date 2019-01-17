@@ -80,26 +80,22 @@
 				}
 			}*/
 		}
-		if (isset($_POST['gets_emails'])){ 
-			$gets_emails =1;
-		}else{
-			$gets_emails =0;
-		}
 		if ($champOk){
 			$lastname = $_POST['lastname'];
 			$firstname = $_POST['firstname'];
 			$password = $_POST['password'];
 			$email = $_POST['email'];
-			if(!empty($_POST['lastname']) AND !empty($_POST['firstname']) AND !empty($_POST['password']) AND !empty($_POST['email'])){
-				$req='INSERT INTO `users`(`lastname`, `firstname`, `email`, `password`)VALUES("'.$lastname.'", "'.$_firstname.'", "'.$_email.'","'.$_POST['password'].'");';
-				//echo $req;
+			$question=$_POST['question'];
+			if(!empty($_POST['lastname']) AND !empty($_POST['firstname']) AND !empty($_POST['password']) AND !empty($_POST['email']) AND !empty('question')){
+				$req='INSERT INTO `users`(`lastname`, `firstname`, `email`, `password`, `question`)VALUES("'.$lastname.'", "'.$firstname.'", "'.$email.'","'.$_POST['password'].'","'.$question.'")';
+				echo $req;
 				$statement = $bdd->prepare($req);
 				$statement->execute();
-				header('location: index.php'); 
+				//header('location: index.php'); 
 			}
 		}
-	}
-  
+
+  }
 
 	?>
 
@@ -244,6 +240,11 @@
 					    </div>
 					  </div>
 
+					  <label for="lastname" class="col-sm-6 control-label">Quel est le nom de jeune fille de votre mère ?*</label>
+					    <div class="col-sm-4"><!-- last name -->
+					      	<input type="text" class="form-control" name="question" id="question" placeholder="Question secrète" value="<?php if(isset($_POST['question'])){echo $_POST['question'];} ?>"/>
+					    </div>
+
 
 					  <!-- subscription button -->
 					  <div class="form-group"> 
@@ -261,39 +262,15 @@
 			</div>
 		</div>
 
-		<!-- advertisement or movies -->
-		<div class="row advertisement">
-		</div>
 
 	</div>
+
 <?php
 
-  
-			/*$req->execute(array(
-				'lastname'=>$lastname,
-				'mdp'=>$mdp,
-				'email'=>$email
-			));*/
-
-
-	/*
-		function requete_bdd($connection, $req){
-			/* will return all data from the database as json data
-				
-				------- ARGUMENTS
-				$req is a string
-				$connection is the database
-						*/
-
-			//$query = $connection->prepare($req);
-			//return $query;
-			/* returned variable is an pdo object */
-		//}
-
-} catch(PDOException $e) {
+}catch(PDOException $e) {
     echo $e->getMessage();
-  }
-	include("/parts/pied.php")
+}
+	include("/parts/pied.php");
 	?>
 
 

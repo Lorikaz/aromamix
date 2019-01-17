@@ -52,7 +52,7 @@
 
     	if(empty($_POST['email'])||empty($_POST['password'])){
     		?>
-    		<p>Une erreur s'est produite pendant votre identification. Vous devez remplir tous les champs du formulaire</p>'
+    		<p>Une erreur s'est produite pendant votre identification. Vous devez remplir tous les champs du formulaire</p>
     		<p>Cliquez <a href="connexion_test.php"> ici </a>pour revenir</p>
     <?php
     	}else

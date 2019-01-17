@@ -27,7 +27,6 @@
   }else{
     $connect = false;
   }
-  
 
 ?>
 
@@ -42,24 +41,108 @@
 <body>
 	<?php include("/parts/entete.php") ?>
 
-  <form action="commande.php" method="post">
-    <input type="checkbox" value="pierre_flamel" name="potion1"/>Pierre de Flamel
-    <input type="checkbox" value="sanglote" name="potion2"/>Sanglote
-    <input type="checkbox" value="creabilis" name="potion3" ="potion"/>Créabilis
-    <input type="checkbox" value="animalis" name="potion4" ="potion"/>Animalis
-    <input type="checkbox" value="merliner" name="potion5" ="potion"/>Merliner
-    <input type="checkbox" value="felix" name="potion6" ="potion"/>Félix Felicis
-    <input type="submit" value="Valider" name="ajout"/>
-</form>
 
 
   <?php
+  $quantite=0;
+  $ajout_1=false;
+  $ajout_2=false;
+  $ajout_3=false;
+  $ajout_4=false;
+  $ajout_5=false;
+  $ajout_6=false;
+
+
   if ($connect===false){
     echo ("Vous devez vous connectez pour passer la commande !");
   }else{
-    $requete ="SELECT * FROM commande WHERE user='".$_SESSION['email']."'";
-    $retourcommande = $bdd->prepare($requete);
-    $retourcommande->execute();
+    if(isset($_POST["ajout"])){
+      if($ajout_1==false){
+        if($_POST["potion1"]){
+        $nom_potion="Pierre de Flamel";
+        $price=295;
+        $quantite+=1;
+        $user=$_SESSION['email'];
+        $req="INSERT INTO `commande`(`potion`, `prix`, `quantite`, `user`) VALUES ('".$nom_potion."','".$price."','".$quantite."','".$user."')";
+        echo $req;
+        $insertion = $bdd->prepare($req);
+        $insertion->execute();
+        $ajout_1=true;
+      }
+    }
+    if($ajout_2==false){
+      if($_POST["potion2"]){
+        $nom_potion="Sanglote";
+        $price=145;
+        $quantite+=1;
+        $user=$_SESSION['email'];
+        $req="INSERT INTO `commande`(`potion`, `prix`, `quantite`, `user`) VALUES ('".$nom_potion."','".$price."','".$quantite."','".$user."')";
+        echo $req;
+        $insertion = $bdd->prepare($req);
+        $insertion->execute();
+        $ajout_2=true;
+      }
+    }
+    if($ajout_3==false){
+      if($_POST["potion3"]){
+        $nom_potion="Créabilis";
+        $price=135;
+        $quantite+=1;
+        $user=$_SESSION['email'];
+        $req="INSERT INTO `commande`(`potion`, `prix`, `quantite`, `user`) VALUES ('".$nom_potion."','".$price."','".$quantite."','".$user."')";
+        echo $req;
+        $insertion = $bdd->prepare($req);
+        $insertion->execute();
+        $ajout_3=true;
+      }
+    }
+    if($ajout_4==false){
+      if($_POST["potion4"]){
+        $nom_potion="Animalis";
+        $price=265;
+        $quantite+=1;
+        $user=$_SESSION['email'];
+        $req="INSERT INTO `commande`(`potion`, `prix`, `quantite`, `user`) VALUES ('".$nom_potion."','".$price."','".$quantite."','".$user."')";
+        echo $req;
+        $insertion = $bdd->prepare($req);
+        $insertion->execute();
+        $ajout_4=true;
+      }
+    }
+    if ($ajout_5==false){
+      if($_POST["potion5"]){
+        $nom_potion="Merliner";
+        $price=195;
+        $quantite+=1;
+        $user=$_SESSION['email'];
+        $req="INSERT INTO `commande`(`potion`, `prix`, `quantite`, `user`) VALUES ('".$nom_potion."','".$price."','".$quantite."','".$user."')";
+        echo $req;
+        $insertion = $bdd->prepare($req);
+        $insertion->execute();
+        $ajout_5=true;
+      }
+    }
+    if($ajout_6==false){
+      if($_POST["potion6"]){
+        $nom_potion="Felix Felicis";
+        $price=245;
+        $quantite+=1;
+        $user=$_SESSION['email'];
+        $req="INSERT INTO `commande`(`potion`, `prix`, `quantite`, `user`) VALUES ('".$nom_potion."','".$price."','".$quantite."','".$user."')";
+        echo $req;
+        $insertion = $bdd->prepare($req);
+        $insertion->execute();
+        $ajout_6=true;
+      }
+    }
+
+    }
+  
+
+
+  $requete ="SELECT * FROM commande WHERE user='".$_SESSION['email']."'";
+  $retourcommande = $bdd->prepare($requete);
+  $retourcommande->execute();
   ?>
   <div class="panier">
     <div class="titre">
@@ -72,100 +155,54 @@
       ?><div class="fiche-produit-panier flex"><?php
         $id = $row[0];
         $potion = $row[1];
-        $quantite = $row[2];
-        $prix = $row[4];
+        $quantite = $row[3];
+        $prix = $row[2];
         $prix=$prix*$quantite;
       ?>
       <div class="potion">
-        <h3><?php echo $potion; ?></h3>
-        <p><?php echo $prix; ?> €</p>
+        <p><?php echo $id; ?></p>
+        <p><?php echo $potion; ?></p>
+        <p><?php echo $prix; ?> pièces d'or</p>
       </div>
       <div class="bordure"></div>
       <div class="quantite flex"> 
-         <h3>Quantité : </h3>
+         <p>Quantité : </p>
         <p><?php echo $quantite; ?></p>
+      </div>
+      <form action="commande.php" method="post">
+        <input type="submit" value="Supprimer" name="delete"/>
+      </form>
+      <?php
+        //echo "<a class=liensuppression href=commande.php?action=delete&id=" .$id .">Supprimer</a>";
+        if(isset($_POST["delete"])){
+          //echo "ACCTION";
+          $requete="DELETE FROM `commande` WHERE id='".$_POST["delete"]."'";
+          echo $requete;
+          $supprime = $bdd->prepare($requete);
+          $supprime->execute();
+          header('location: commande.php');
+        }
+        ?>
       </div>
     </div><?php
     }
     ?>
   </div>
-</div>     
+</div>  
 
-<?php
-/*
-  //$_SESSION["produit"]=$_POST["potion"];
-  if(isset($_POST["ajout"])){
-    echo "Toto";
-    if ($_POST["potion1"]){
-      echo "Titi";
-      ?>
-      <div>Pierre de Flamel</div>
-      <div>295</div>
-      <div>Pièces d'or</div>
-      <i class="fas fa-trash-alt"></i>
-      <i class="fas fa-plus"></i>
-      <i class="fas fa-minus"></i>
-      <?php
-    }
-    if ($_POST["potion2"]){
-      echo "Titi";
-      ?>
-      <div>Sanglote</div>
-      <div>145</div>
-      <div>Pièces d'or</div>
-      <i class="fas fa-trash-alt"></i>
-      <i class="fas fa-plus"></i>
-      <i class="fas fa-minus"></i>
-      <?php
-    }
-    if ($_POST["potion3"]){
-      echo "Titi";
-      ?>
-      <div>Créabilis</div>
-      <div>135</div>
-      <div>Pièces d'or</div>
-      <i class="fas fa-trash-alt"></i>
-      <i class="fas fa-plus"></i>
-      <i class="fas fa-minus"></i>
-      <?php
-    }
-    if ($_POST["potion4"]){
-      echo "Titi";
-      ?>
-      <div>Animalis</div>
-      <div>265</div>
-      <div>Pièces d'or</div>
-      <i class="fas fa-trash-alt"></i>
-      <i class="fas fa-plus"></i>
-      <i class="fas fa-minus"></i>
-      <?php
-    }
-    if ($_POST["potion5"]){
-      echo "Titi";
-      ?>
-      <div>Merliner</div>
-      <div>195</div>
-      <div>Pièces d'or</div>
-      <i class="fas fa-trash-alt"></i>
-      <i class="fas fa-plus"></i>
-      <i class="fas fa-minus"></i>
-      <?php
-    }
-    if ($_POST["potion6"]){
-      echo "Titi";
-      ?>
-      <div>Félix Felicis</div>
-      <div>245</div>
-      <div>Pièces d'or</div>
-      <i class="fas fa-trash-alt"></i>
-      <i class="fas fa-plus"></i>
-      <i class="fas fa-minus"></i>
-      <?php
-    }
-  }
 
-*/
-?>
+<form action="commande.php" method="post">
+
+    <input type="checkbox" value="pierre_flamel" name="potion1" <?php if($ajout_1==true) {echo "checked=checked";}?>/>Pierre de Flamel
+    <input type="checkbox" value="sanglote" name="potion2" <?php if($ajout_2==true) {echo "checked=checked";} ?>/>Sanglote
+    <input type="checkbox" value="creabilis" name="potion3" <?php  if($ajout_3==true) {echo "checked=checked";} ?>/>Créabilis
+    <input type="checkbox" value="animalis" name="potion4" <?php if($ajout_4==true) {echo "checked=checked";} ?>/>Animalis
+    <input type="checkbox" value="merliner" name="potion5"<?php if($ajout_5==true) {echo "checked=checked";} ?>/>Merliner
+    <input type="checkbox" value="felix" name="potion6"<?php if($ajout_6==true) {echo "checked=checked";}?>/>Félix Felicis
+    <input type="submit" value="Valider" name="ajout"/>
+</form>
+
+
 
 
   <form action="commande.php" method="post">
@@ -173,14 +210,24 @@
     <input type="text" name="email" placeholder="Adresse email ..."/>
     <input type="text" name="phone" placeholder="Numéro de téléphone ..."/>
     <input type="text" name="adresse" placeholder="Adresse postale ..."/>
-    <input type="submit" value="Valider" />
+    <input type="submit" value="valider" name="envoi"/>
   </form>
+
+  <?php 
+    if(isset($_POST["envoi"])){
+      $to="sdc.costa@outlook.fr";
+      $subject="Nouvelle commande de ".$_POST['lastname']." ".$_POST["firstname"];
+      $message=$_POST['lastname']." ".$_POST["firstname"]." a passé une commande de ".$potion;
+      mail($to,$subject,$message);
+      echo("Votre commande a bien été envoyé à nos magiciens ! Nous vous l'apporteront sur notre balais magique !");
+
+    }
+  }
+  ?>
 
 
 
 	<?php
-}
-
   include("/parts/pied.php") ?>
 </body>
 
