@@ -27,7 +27,7 @@
   }else{
     $connect = false;
   }
-  
+
 
 ?>
 
@@ -36,11 +36,12 @@
 
 <head>
 	<title>Commande - Aromamix</title>
-	<?php include("/parts/head.php") ?>
+	<?php include("./parts/head.php") ?>
 </head>
 
 <body>
-	<?php include("/parts/entete.php") ?>
+    <div class="page commande">
+      	<?php include("./parts/entete.php") ?>
 
   <form action="commande.php" method="post">
     <input type="checkbox" value="pierre_flamel" name="potion1"/>Pierre de Flamel
@@ -81,7 +82,7 @@
         <p><?php echo $prix; ?> €</p>
       </div>
       <div class="bordure"></div>
-      <div class="quantite flex"> 
+      <div class="quantite flex">
          <h3>Quantité : </h3>
         <p><?php echo $quantite; ?></p>
       </div>
@@ -89,7 +90,7 @@
     }
     ?>
   </div>
-</div>     
+</div>
 
 <?php
 /*
