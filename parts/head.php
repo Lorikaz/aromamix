@@ -1,6 +1,5 @@
 <meta charset="utf-8" />
 <link rel="icon" href="media/logo-sm.png" />
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="fonts/font-face.css">
 <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">

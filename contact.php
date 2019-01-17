@@ -3,11 +3,11 @@
 
 <head>
     <title>Aromamix - Contact</title>
-    <?php include("/parts/head.php") ?>
+    <?php include("./parts/head.php") ?>
 </head>
 
 <body>
-    <?php include("/parts/entete.php") ?>
+    <?php include("./parts/entete.php") ?>
 
     <h1>Qui sommes-nous ?</h1>
     <div class="row">
@@ -41,7 +41,7 @@
     </div>
     <h1>Nous contacter</h1>
 
-    <?php include("/parts/pied.php") ?>
+    <?php include("./parts/pied.php") ?>
 </body>
 
 </html>
