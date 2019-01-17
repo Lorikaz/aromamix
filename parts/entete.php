@@ -1,4 +1,5 @@
-<header class="header">
+<div class="container-fluid">
+
     <nav class="topnav">
         <li>
             <a href="potions.php">Nos potions</a>
@@ -18,4 +19,6 @@
             <a href="connexion_test.php">Connexion</a>
         </li>
     </nav>
-</header>
+
+    <div class="container">
+        <div class="container">

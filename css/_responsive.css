@@ -474,3 +474,14 @@ div.page {
           div.inscription section.main-content form.inscription div.submit div.links {
             display: flex;
             justify-content: space-between; } }
+div.home div.loader {
+  position: fixed;
+  z-index: 9999;
+  background: white;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%; }
+  div.home div.loader img {
+    height: 30vh;
+    margin: 30vh 25vw; }

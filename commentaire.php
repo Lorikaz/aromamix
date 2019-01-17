@@ -26,10 +26,10 @@
 ?>
     <meta charset="utf-8" />
 	<title>Aromamix - Commentaire</title>
-    <?php include("./parts/head.php") ?>
+    <?php include("/parts/head.php") ?>
 </head>
 <body>
-    <?php include("./parts/entete.php") ?>
+    <?php include("/parts/entete.php") ?>
 	<h1>Que pensez-vous de notre magie ?</h1>
 	<p>Dites nous tout!</p>
 
@@ -66,6 +66,6 @@
       header('location: commentaire.php');    
     exit;
     }
-    include("./parts/pied.php") ?>
+    include("/parts/pied.php") ?>
 </body>
 </html>
