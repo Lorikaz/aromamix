@@ -75,7 +75,7 @@
     			<p>Cliquez <a href="index.php">ici</a>pour revenir à la page d'accueil  ?><?php 		
     		}else{
     			?>
-    			<p>Une erreur s\'est produite !!!</p>
+    			<p>Une erreur s'est produite !!!</p>
     		<?php	
     		}
     } ?>
