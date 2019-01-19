@@ -1,5 +1,5 @@
 <header class="header">
-    <nav class="topnav">
+    <nav class="topnav computer">
         <li>
             <a href="potions.php">Nos potions</a>
         </li>
