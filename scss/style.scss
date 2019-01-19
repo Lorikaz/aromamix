@@ -8,13 +8,12 @@ body {
     margin: 0;
     font-family: HelveticaNeue, sans-serif;
     font-weight: 500;
-    font-size: 14pt;
 }
 
 h1 {
+    margin: 0;
     font-family: Butler, serif;
     font-weight: 800;
-    font-size: 48pt;
 }
 
 a {
@@ -29,18 +28,15 @@ a {
 
 
 header {
-    & nav.topnav {
-        background-color: white;
+    & nav.topnav.computer {
         color: black;
         list-style: none;
         text-align: center;
-        font-size: 50px;
 
         & li {
             & a {
                 vertical-align: middle;
                 color: black;
-                font-size: large;
                 text-align: center;
                 margin: 15px 10px;
                 padding: 10px 15px;
@@ -116,8 +112,6 @@ section.main-content {
                     @include outline;
                     display: inline-block;
                     padding: 15px;
-                    max-height: 50px;
-                    transform: translate(100px, 25px);
                     z-index: 2;
                 }
 
@@ -125,18 +119,14 @@ section.main-content {
                     display: inline-block;
                     background-color: $color4;
                     color: white;
-                    font-family: MetricTest, sans-serif;
-                    font-weight: 300;
+                    font-family: HelveticaNeue, sans-serif;
                     padding: 25px;
-                    transform: translate(-100px, -25px);
                     z-index: 1;
                 }
             }
 
             &.presentation {
-                & img {
-                    width: 50%;
-                }
+                & img {}
 
                 & div.pres {
                     padding: 25px;
@@ -153,7 +143,7 @@ section.main-content {
 
             &.team {
                 & div.member {
-                    padding: 0 25px;
+                    margin: 0 25px;
 
                     & img,
                     & p {
@@ -162,9 +152,7 @@ section.main-content {
                 }
 
                 & img.user {
-                    max-height: 400px;
                     width: auto;
-                    margin: auto;
                 }
 
                 & p {
@@ -173,7 +161,6 @@ section.main-content {
             }
 
             &.potions {
-                padding: 50px;
 
                 & h1 {
                     text-transform: none;
@@ -182,16 +169,13 @@ section.main-content {
 
                 & h2 {
                     display: inline-block;
-                    transform: translate(-25px, -75px);
                     @include button;
-                    float: right;
                 }
             }
         }
     }
 
     div.potions & {
-        margin: 50px inherit;
 
         & div.title {
             & h1 {
@@ -201,10 +185,7 @@ section.main-content {
                 margin: 0 10%;
             }
 
-            & img {
-                width: 60%;
-                margin: 75px 20%;
-            }
+            & img {}
         }
 
         & div.potion {
@@ -244,70 +225,12 @@ section.main-content {
                 & div.prix {
                     display: inline-block;
                     color: $color4;
-
-                    & h1 {
-                        font-size: 75px;
-                        margin: 0;
-                    }
-
-                    & p {
-                        font-size: 25px;
-                        margin: -15px 0 0 0;
-                    }
                 }
             }
         }
-
-        div.commande & {}
-
-        div.livreor & {
-            & div.form {
-                & form {
-                    & h1 {
-                        color: $color4;
-                        position: absolute;
-                        transform: translate(-75px, -25px);
-                    }
-
-                    & textarea {
-                        @include outline;
-                        transform: translateZ(10px);
-                    }
-
-                    & input {
-                        @include button;
-                        border: none;
-                        font-size: 1.5rem;
-                    }
-                }
-            }
-
-            & .commentaires {
-                & .commentaire {
-                    padding: 5px 0 10px;
-                    border-bottom: solid 3px $color4;
-
-                    & h1 {
-                        font-family: HelveticaNeue, sans-serif;
-                        font-weight: 500;
-                        font-style: italic;
-                        font-size: 20px;
-                        color: $color4;
-                    }
-                }
-            }
-        }
-
-        div.connexion & {}
-
-        div.inscription & {}
     }
 
     div.commande & {
-
-        &>div {
-            margin: 50px;
-        }
 
         & div.choix-produit {
 
@@ -356,14 +279,12 @@ section.main-content {
                 & h1.titre {
                     font-family: HelveticaNeue, sans-serif;
                     font-weight: 400;
-                    font-size: 22pt;
                 }
 
                 & div.prix {
                     & h1 {
                         font-family: HelveticaNeue, sans-serif;
                         font-weight: 600;
-                        font-size: 36pt;
                     }
                 }
 
@@ -443,7 +364,7 @@ section.main-content {
     }
 
     div.connexion & {
-        form.connexion {
+        & form.connexion {
             & input.text {
                 @include form-txt;
                 width: 100%;
@@ -459,6 +380,11 @@ section.main-content {
                 @include button;
                 margin: 25px 0;
             }
+        }
+
+        & p.error {
+            color: $color2;
+            text-align: center;
         }
     }
 
