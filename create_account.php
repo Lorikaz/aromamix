@@ -66,18 +66,17 @@
 					$champOk=false;
 				}
 			}
-			/*if ($champOk){
-				if (checkemail($_POST['email'])==false){
-					$existEmailErr = "* L'email est déjà pris !";
-					$champOk=false;
-				}
-			}*/
+			if(isset($_POST['email'])) {
+			$parcours="SELECT * FROM users WHERE email='".$_POST['email']."'";
+			$verif = $bdd->prepare($parcours);
+			$verif->execute();
+			if($verif){
+				$confmailErr = "* L'adresse email existe déjà.";
+				$champOk=false;
+			}
+			}
 		}
-		if (isset($_POST['gets_emails'])){ 
-			$gets_emails =1;
-		}else{
-			$gets_emails =0;
-		}
+
 		if ($champOk){
 			$lastname = $_POST['lastname'];
 			$firstname = $_POST['firstname'];

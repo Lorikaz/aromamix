@@ -2,17 +2,16 @@
     session_start();
 
   //URL of the host
-  $dbhost = "localhost"; 
-  
+  $dbhost = "mysql-aromamix.alwaysdata.net";
+
   // Name of the database
-  $dbname = "aromamix";
-  
+  $dbname = "aromamix_aromamix";
+
   // User name
-  $dbuser = "root";
-  
+  $dbuser = "aromamix";
+
   // Password (not used here)
-  $dbpass = "";
- 
+  $dbpass = "aromamix";
   try {
     $bdd = new PDO('mysql:host='.$dbhost.';dbname='.$dbname, $dbuser, $dbpass);
   } catch(PDOException $e) {

@@ -11,9 +11,9 @@
 	<div class="page home">
 	    <?php include("./parts/entete.php") ?>
 
-	    <div class="loader">
+	    <!--<div class="loader">
 	    	<img src="media/logo.svg">
-	    </div>
+	    </div>-->
 
 		<section class="main-content">
 			<div class="slogan">
