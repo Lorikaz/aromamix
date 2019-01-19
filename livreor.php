@@ -49,7 +49,7 @@
                     <h2>Connecté en tant que : <?php echo $_SESSION['firstname'] ?></h2>
                     <h1>Livre d'or</h1>
                     <textarea name="message" placeholder="Laissez nous votre avis ..."></textarea><br/>
-                    <input type="submit" value="Publier" />
+                    <input class="ok" type="submit" value="Publier" />
                 </form>
             </div>
 
