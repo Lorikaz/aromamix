@@ -17,18 +17,18 @@ div.page {
     font-size: 30pt; }
 
   header {
+    position: absolute;
     width: 100vw; }
-    header nav.topnav.computer {
+    header nav.topnav.mobile {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
       width: 100vw;
       margin-right: auto;
       margin-left: auto;
       font-size: 25px; }
-      header nav.topnav.computer li {
-        display: inline; }
-        header nav.topnav.computer li a {
-          display: inline-block;
-          vertical-align: center;
-          font-size: x-small; }
+    header nav.topnav.computer {
+      display: none; }
 
   footer {
     order: 3;
@@ -77,9 +77,9 @@ div.page {
         max-width: 90%;
         padding: 50px 0;
         margin: 0 auto; }
-        div.home section.main-content > div.slogan img {
-          max-height: 30px;
-          transform: translate(75px, 20px); }
+        div.home section.main-content > div.slogan svg {
+          max-height: 50px;
+          transform: translate(75px, 15px); }
         div.home section.main-content > div.slogan h2 {
           font-size: 14pt;
           font-weight: 400;
@@ -362,18 +362,18 @@ div.page {
     font-size: 36pt; }
 
   header {
+    position: absolute;
     width: 100vw; }
-    header nav.topnav.computer {
-      width: 90vw;
+    header nav.topnav.mobile {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100vw;
       margin-right: auto;
       margin-left: auto;
-      font-size: 40px; }
-      header nav.topnav.computer li {
-        display: inline; }
-        header nav.topnav.computer li a {
-          display: inline-block;
-          vertical-align: center;
-          font-size: medium; }
+      font-size: 25px; }
+    header nav.topnav.computer {
+      display: none; }
 
   footer {
     order: 3;
@@ -411,9 +411,9 @@ div.page {
         max-width: 50%;
         padding: 100px 0;
         margin: 0 auto; }
-        div.home section.main-content > div.slogan img {
-          max-height: 40px;
-          transform: translate(75px, 20px); }
+        div.home section.main-content > div.slogan svg {
+          max-height: 60px;
+          transform: translate(75px, 15px); }
         div.home section.main-content > div.slogan h2 {
           font-size: 14pt;
           font-weight: 400;
@@ -688,6 +688,8 @@ div.page {
 
   header {
     width: 100vw; }
+    header nav.topnav.mobile {
+      display: none; }
     header nav.topnav.computer {
       width: 75vw;
       margin-right: auto;
@@ -736,9 +738,9 @@ div.page {
         max-width: 33%;
         padding: 100px 0;
         margin: 0 33%; }
-        div.home section.main-content > div.slogan img {
-          max-height: 50px;
-          transform: translate(100px, 25px); }
+        div.home section.main-content > div.slogan svg {
+          max-height: 75px;
+          transform: translate(100px, 20px); }
         div.home section.main-content > div.slogan h2 {
           font-size: 20pt;
           font-weight: 300;
@@ -1006,18 +1008,51 @@ div.page {
             display: flex;
             justify-content: space-between;
             align-items: center; } }
-div.home div.loader {
-  position: fixed;
-  z-index: 9999;
-  background: white;
-  top: 0px;
-  left: 0px;
-  height: 100%;
-  width: 100%; }
-  div.home div.loader img {
-    height: 30vh;
-    margin: 30vh 25vw; }
+div.slogan img {
+  position: relative;
+  margin: auto; }
 
+#lune_pleine {
+  opacity: 0;
+  animation-name: lune;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards; }
+
+@keyframes lune {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+#ellipse {
+  animation-name: ellipse;
+  animation-duration: 2s;
+  animation-delay: 0.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-direction: reverse; }
+
+@keyframes ellipse {
+  from {
+    transform: translate(0); }
+  to {
+    transform: translate(10%, -40%); } }
+#point_i {
+  opacity: 0;
+  animation-name: i;
+  animation-duration: 2s;
+  animation-delay: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards; }
+
+@keyframes i {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 body {
   margin: 0;
   font-family: HelveticaNeue, sans-serif;
@@ -1035,6 +1070,40 @@ a {
   a:hover {
     color: #732abc; }
 
+header .overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  background-color: #ab9ff2;
+  background-color: #ab9ff2;
+  overflow-x: hidden;
+  transition: 0.5s; }
+  header .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 48pt; }
+  header .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-family: Butler, serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 48pt;
+    color: white;
+    display: block;
+    transition: 0.3s; }
+    header .overlay a:hover, header .overlay a:focus {
+      color: #732abc; }
+  header .overlay .overlay-content {
+    position: relative;
+    top: 20%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px; }
 header nav.topnav.computer {
   color: black;
   list-style: none;
@@ -1048,8 +1117,16 @@ header nav.topnav.computer {
     text-decoration: none; }
     header nav.topnav.computer li a:hover {
       color: #ab9ff2; }
-    header nav.topnav.computer li a#logo:hover {
-      background-color: white; }
+header nav.topnav.mobile span {
+  margin: 15px;
+  padding: 15px; }
+  header nav.topnav.mobile span i {
+    vertical-align: middle;
+    color: black;
+    text-align: center;
+    text-decoration: none; }
+    header nav.topnav.mobile span i:hover {
+      color: #ab9ff2; }
 
 footer {
   position: relative;
@@ -1070,11 +1147,11 @@ div.home section.main-content h1 {
   text-transform: uppercase; }
 div.home section.main-content > div p {
   text-align: justify; }
-div.home section.main-content > div.slogan img {
+div.home section.main-content > div.slogan svg {
   background-color: white;
   border: solid 5px #ab9ff2;
   display: inline-block;
-  padding: 15px;
+  padding: 5px 10px;
   z-index: 2; }
 div.home section.main-content > div.slogan h2 {
   display: inline-block;

@@ -21,22 +21,23 @@ div.page {
     }
 
     header {
+        position: absolute;
         width: 100vw;
 
-        & nav.topnav.computer {
-            width: 100vw;
-            margin-right: auto;
-            margin-left: auto;
-            font-size: 25px;
+        & nav.topnav {
+            &.mobile {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
 
-            & li {
-                display: inline;
+                width: 100vw;
+                margin-right: auto;
+                margin-left: auto;
+                font-size: 25px;
+            }
 
-                & a {
-                    display: inline-block;
-                    vertical-align: center;
-                    font-size: x-small;
-                }
+            &.computer {
+                display: none;
             }
         }
     }
@@ -106,9 +107,9 @@ div.page {
                     padding: 50px 0;
                     margin: 0 auto;
 
-                    & img {
-                        max-height: 30px;
-                        transform: translate(75px, 20px);
+                    & svg {
+                        max-height: 50px;
+                        transform: translate(75px, 15px);
                     }
 
                     & h2 {
@@ -594,22 +595,23 @@ div.page {
     }
 
     header {
+        position: absolute;
         width: 100vw;
 
-        & nav.topnav.computer {
-            width: 90vw;
-            margin-right: auto;
-            margin-left: auto;
-            font-size: 40px;
+        & nav.topnav {
+            &.mobile {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
 
-            & li {
-                display: inline;
+                width: 100vw;
+                margin-right: auto;
+                margin-left: auto;
+                font-size: 25px;
+            }
 
-                & a {
-                    display: inline-block;
-                    vertical-align: center;
-                    font-size: medium;
-                }
+            &.computer {
+                display: none;
             }
         }
     }
@@ -664,9 +666,9 @@ div.page {
                     padding: 100px 0;
                     margin: 0 auto;
 
-                    & img {
-                        max-height: 40px;
-                        transform: translate(75px, 20px);
+                    & svg {
+                        max-height: 60px;
+                        transform: translate(75px, 15px);
                     }
 
                     & h2 {
@@ -1137,19 +1139,25 @@ div.page {
     header {
         width: 100vw;
 
-        & nav.topnav.computer {
-            width: 75vw;
-            margin-right: auto;
-            margin-left: auto;
-            font-size: 50px;
+        & nav.topnav {
+            &.mobile {
+                display: none;
+            }
 
-            & li {
-                display: inline;
+            &.computer {
+                width: 75vw;
+                margin-right: auto;
+                margin-left: auto;
+                font-size: 50px;
 
-                & a {
-                    display: inline-block;
-                    vertical-align: center;
-                    font-size: large;
+                & li {
+                    display: inline;
+
+                    & a {
+                        display: inline-block;
+                        vertical-align: center;
+                        font-size: large;
+                    }
                 }
             }
         }
@@ -1205,9 +1213,9 @@ div.page {
                     padding: 100px 0;
                     margin: 0 33%;
 
-                    & img {
-                        max-height: 50px;
-                        transform: translate(100px, 25px);
+                    & svg {
+                        max-height: 75px;
+                        transform: translate(100px, 20px);
                     }
 
                     & h2 {
@@ -1663,23 +1671,6 @@ div.page {
                     }
                 }
             }
-        }
-    }
-}
-
-div.home {
-    & div.loader {
-        position: fixed;
-        z-index: 9999;
-        background: white;
-        top: 0px;
-        left: 0px;
-        height: 100%;
-        width: 100%;
-
-        & img {
-            height: 30vh;
-            margin: 30vh 25vw;
         }
     }
 }
