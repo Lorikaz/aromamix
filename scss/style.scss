@@ -8,13 +8,13 @@ body {
     margin: 0;
     font-family: HelveticaNeue, sans-serif;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 14pt;
 }
 
 h1 {
     font-family: Butler, serif;
     font-weight: 800;
-    font-size: 60px;
+    font-size: 48pt;
 }
 
 a {
@@ -351,7 +351,35 @@ section.main-content {
             }
         }
 
-        & div.panier {}
+        & div.panier {
+            & div.fiche-produit-panier {
+                & h1.titre {
+                    font-family: HelveticaNeue, sans-serif;
+                    font-weight: 400;
+                    font-size: 22pt;
+                }
+
+                & div.prix {
+                    & h1 {
+                        font-family: HelveticaNeue, sans-serif;
+                        font-weight: 600;
+                        font-size: 36pt;
+                    }
+                }
+
+                & form.delete {
+                    & button {
+                        border: 0;
+                        background-color: white;
+
+                        & i {
+                            color: $color4;
+                            font-size: 22pt;
+                        }
+                    }
+                }
+            }
+        }
 
         & div.user-info {
             & form {

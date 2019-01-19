@@ -25,18 +25,6 @@
 input[type="checkbox"]:checked+label span.checkbox::after {
     color: #62AFFF;
 }*/
-.container {
-  max-width: 90%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto; }
-
-.container-fluid {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto; }
-
 div.page {
   width: 100%;
   min-height: 100vh;
@@ -82,8 +70,7 @@ div.page {
 
   section.main-content {
     width: 75vw;
-    margin-right: 12.5vw;
-    margin-left: 12.5vw;
+    margin: 5vh 12.5vw;
     max-width: 1140px;
     order: 2; }
     div.home section.main-content > div {
@@ -185,7 +172,7 @@ div.page {
       align-items: center; }
       div.commande section.main-content div.choix-produit {
         display: flex;
-        align-items: center; }
+        align-items: flex-start; }
         div.commande section.main-content div.choix-produit img {
           width: 50%; }
         div.commande section.main-content div.choix-produit form.form-choix {
@@ -220,7 +207,24 @@ div.page {
         width: 75%; }
         div.commande section.main-content div.panier div.fiche-produit-panier {
           display: flex;
-          justify-content: space-around; }
+          justify-content: space-around;
+          align-items: center;
+          padding: 25px 0;
+          border-bottom: solid 2px #ab9ff2; }
+          div.commande section.main-content div.panier div.fiche-produit-panier h1 {
+            width: 25%;
+            margin: 0; }
+          div.commande section.main-content div.panier div.fiche-produit-panier div.prix {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 45%; }
+            div.commande section.main-content div.panier div.fiche-produit-panier div.prix h1, div.commande section.main-content div.panier div.fiche-produit-panier div.prix p {
+              margin: 0 5px; }
+          div.commande section.main-content div.panier div.fiche-produit-panier div.quantite {
+            width: 15%; }
+          div.commande section.main-content div.panier div.fiche-produit-panier div.delete {
+            width: 15%; }
       div.commande section.main-content div.user-info {
         width: 90%; }
         div.commande section.main-content div.user-info form {
@@ -307,7 +311,8 @@ div.page {
             text-align: right; }
           div.inscription section.main-content form.inscription div.submit div.links {
             display: flex;
-            justify-content: space-between; } }
+            justify-content: space-between;
+            align-items: center; } }
 div.home div.loader {
   position: fixed;
   z-index: 9999;
@@ -324,12 +329,12 @@ body {
   margin: 0;
   font-family: HelveticaNeue, sans-serif;
   font-weight: 500;
-  font-size: 18px; }
+  font-size: 14pt; }
 
 h1 {
   font-family: Butler, serif;
   font-weight: 800;
-  font-size: 60px; }
+  font-size: 48pt; }
 
 a {
   color: #ab9ff2;
@@ -534,6 +539,20 @@ div.commande section.main-content div.choix-produit form.form-choix input.ok {
   padding: 20px;
   box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.25);
   margin: 25px 0; }
+div.commande section.main-content div.panier div.fiche-produit-panier h1.titre {
+  font-family: HelveticaNeue, sans-serif;
+  font-weight: 400;
+  font-size: 22pt; }
+div.commande section.main-content div.panier div.fiche-produit-panier div.prix h1 {
+  font-family: HelveticaNeue, sans-serif;
+  font-weight: 600;
+  font-size: 36pt; }
+div.commande section.main-content div.panier div.fiche-produit-panier form.delete button {
+  border: 0;
+  background-color: white; }
+  div.commande section.main-content div.panier div.fiche-produit-panier form.delete button i {
+    color: #ab9ff2;
+    font-size: 22pt; }
 div.commande section.main-content div.user-info form div.text input {
   background-color: white;
   border: solid 5px #ab9ff2;

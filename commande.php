@@ -29,6 +29,7 @@
   } ?>
 
 <!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <html>
 
 <head>
@@ -213,25 +214,26 @@
                         $prix = $row[2];
                         $prix=$prix*$quantite;
                      ?>
-                    <p class="id"><?php echo $id; ?></p>
+                    <!--<p class="id"><?php echo $id; ?></p>-->
                     <h1 class="titre"><?php echo $potion; ?></h1>
-                    <p class="prix">
+                    <div class="prix">
                         <h1><?php echo $prix; ?></h1>
-                         pièces d'or
-                     </p>
+                        <p> pièces d'or</p>
+                     </div>
                     <div class="quantite"> 
-                        <p>Quantité : </p>
-                        <p><?php echo $quantite; ?></p>
+                        <p>Quantité : <?php echo $quantite; ?></p>
                     </div>
-                    <form action="commande.php" method="post">
-                        <input type="submit" value="&#xf2ed" name="delete"/>
+                    <form class="delete" action="commande.php" method="post">
+                        <button type="submit" name="delete">
+                            <i class="far fa-trash-alt"></i>
+                        </button>
                     </form>
                     <?php
                         //echo "<a class=liensuppression href=commande.php?action=delete&id=" .$id .">Supprimer</a>";
                         if(isset($_POST["delete"])){
                         //echo "ACCTION";
                             $requete="DELETE FROM `commande` WHERE id='".$_POST["delete"]."'";
-                            echo $requete;
+                            //echo $requete;
                             $supprime = $bdd->prepare($requete);
                             $supprime->execute();
                             header('location: commande.php');
