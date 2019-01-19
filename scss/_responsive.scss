@@ -429,16 +429,19 @@ div.page {
         }
 
         div.livreor & {
-            margin: 0 10%;
-            padding: 25px 0;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: stretch;
 
             & form {
+                & h1 {
+                    transform: translateY(-15px);
+                }
+
                 & textarea {
                     width: 100%;
+                    max-width: 660px;
                     height: 200px;
                     resize: none;
                     padding: 25px;
@@ -458,7 +461,13 @@ div.page {
                 align-items: stretch;
 
                 & .commentaire {
-                    padding: 5px 0 10px;
+                    padding: 10px 0 15px;
+
+                    &>div:last-child {
+                        & a {
+                            float: right;
+                        }
+                    }
                 }
             }
         }
@@ -960,8 +969,14 @@ div.page {
             align-items: stretch;
 
             & form {
+
+                & h1 {
+                    transform: translate(-75px, -25px);
+                }
+
                 & textarea {
                     width: 100%;
+                    max-width: 1080px;
                     height: 200px;
                     resize: none;
                     padding: 25px;
@@ -981,7 +996,13 @@ div.page {
                 align-items: stretch;
 
                 & .commentaire {
-                    padding: 5px 0 10px;
+                    padding: 10px 0 15px;
+
+                    &>div:last-child {
+                        & a {
+                            float: right;
+                        }
+                    }
                 }
             }
         }

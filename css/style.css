@@ -257,14 +257,15 @@ div.page {
               float: right;
               width: auto !important; }
     div.livreor section.main-content {
-      margin: 0 10%;
-      padding: 25px 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: stretch; }
+      div.livreor section.main-content form h1 {
+        transform: translateY(-15px); }
       div.livreor section.main-content form textarea {
         width: 100%;
+        max-width: 660px;
         height: 200px;
         resize: none;
         padding: 25px;
@@ -278,7 +279,9 @@ div.page {
         justify-content: center;
         align-items: stretch; }
         div.livreor section.main-content .commentaires .commentaire {
-          padding: 5px 0 10px; }
+          padding: 10px 0 15px; }
+          div.livreor section.main-content .commentaires .commentaire > div:last-child a {
+            float: right; }
     div.connexion section.main-content {
       display: flex;
       flex-direction: column;
@@ -579,8 +582,11 @@ div.page {
       flex-direction: column;
       justify-content: center;
       align-items: stretch; }
+      div.livreor section.main-content form h1 {
+        transform: translate(-75px, -25px); }
       div.livreor section.main-content form textarea {
         width: 100%;
+        max-width: 1080px;
         height: 200px;
         resize: none;
         padding: 25px;
@@ -594,7 +600,9 @@ div.page {
         justify-content: center;
         align-items: stretch; }
         div.livreor section.main-content .commentaires .commentaire {
-          padding: 5px 0 10px; }
+          padding: 10px 0 15px; }
+          div.livreor section.main-content .commentaires .commentaire > div:last-child a {
+            float: right; }
     div.connexion section.main-content {
       display: flex;
       flex-direction: column;
@@ -844,8 +852,7 @@ div.commande section.main-content div.user-info form input.ok {
   margin: 25px 0; }
 div.livreor section.main-content div.form form h1 {
   color: #ab9ff2;
-  position: absolute;
-  transform: translate(-25px, -75px); }
+  position: absolute; }
 div.livreor section.main-content div.form form textarea {
   background-color: white;
   border: solid 5px #ab9ff2;
@@ -862,9 +869,9 @@ div.livreor section.main-content div.form form input {
   background-color: #ab9ff2;
   border: 0;
   padding: 20px;
-  box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.25); }
+  box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.25);
+  border: none; }
 div.livreor section.main-content .commentaires .commentaire {
-  padding: 5px 0 10px;
   border-bottom: solid 3px #ab9ff2; }
   div.livreor section.main-content .commentaires .commentaire h1 {
     font-family: HelveticaNeue, sans-serif;

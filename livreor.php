@@ -48,7 +48,7 @@
                     <!-- Récupère le pseudo dans SESSION-->
                     <h2>Connecté en tant que : <?php echo $_SESSION['firstname'] ?></h2>
                     <h1>Livre d'or</h1>
-                    <textarea name="message" rows="8" cols="35" placeholder="Laissez nous votre avis ..."></textarea><br/>
+                    <textarea name="message" placeholder="Laissez nous votre avis ..."></textarea><br/>
                     <input type="submit" value="Publier" />
                 </form>
             </div>
@@ -118,10 +118,10 @@
             $premierMessage = ($page - 1) * $nombreDeMessagesParPage;
             $requete ="SELECT * FROM livreor ORDER BY id DESC LIMIT " . $premierMessage . ",". $nombreDeMessagesParPage.";";
             $retourpremiermessage = $bdd->prepare($requete);
-            $retourpremiermessage->execute();
+            $retourpremiermessage->execute(); ?>
 
-            ////// On stocke les données de la requete et on affiche les messages
-
+            <div class="commentaires">
+            <?php ////// On stocke les données de la requete et on affiche les messages
             if ($retourpremiermessage) {
                 foreach ($retourpremiermessage as $row) {
                  $id = $row[0];
@@ -131,43 +131,48 @@
                     //// Si l'utilisateur est auteur du message il peut le supprimer
 
                     if ($_SESSION['email']==$pseudo)  { ?>
-                        <div class="pseudo">
-                            <h1>
+                        <div class="commentaire">
+                            <div class="pseudo">
+                                <h1>
+                                    <?php
+                                    echo $pseudo;
+                                    ?>
+                                </h1>
+                            </div>
+                            <div class="message">
                                 <?php
-                                echo $pseudo;
+                                echo $message;
                                 ?>
-                            </h1>
-                        </div>
-                        <div class="message">
-                            <?php
-                            echo $message;
-                            ?>
-                        </div>
+                            </div>
 
-                        <!-- Lien de suppression en fonction de l'ID du message -->
-
-                        <div id="<?php echo $id ?>">
-                            <?php echo "<a href=livreor.php?action=delete&id=" .$id .">Supprimer le commentaire</a>";?>
+                            <!-- Lien de suppression en fonction de l'ID du message -->
+                            <div id="<?php echo $id ?>">
+                                <?php echo "<a href=livreor.php?action=delete&id=" .$id .">Supprimer le commentaire</a>";?>
+                            </div>
                         </div>
                     <?php
                     }
                     else{
                     ?>
 
-                        <div class="pseudo">
-                            <h1>
-                            <?php
-                            echo $pseudo;
-                            ?>
-                            </h1>
+                        <div class="commentaire">
+                            <div class="pseudo">
+                                <h1>
+                                <?php
+                                echo $pseudo;
+                                ?>
+                                </h1>
+                            </div>
+                            <div class="message">
+                                <?php
+                                echo $message; ?>
+                            </div>
                         </div>
-                        <div class="message">
-                            <?php
-                            echo $message;
-                    }
+                    <?php }
                 }
             }
             ?>
+            </div>
 
         </body>
         </html>

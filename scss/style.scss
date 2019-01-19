@@ -330,7 +330,6 @@ section.main-content {
                 & h1 {
                     color: $color4;
                     position: absolute;
-                    transform: translate(-25px, -75px);
                 }
 
                 & textarea {
@@ -343,13 +342,13 @@ section.main-content {
 
                 & input {
                     @include button;
+                    border: none;
                 }
             }
         }
 
         & .commentaires {
             & .commentaire {
-                padding: 5px 0 10px;
                 border-bottom: solid 3px $color4;
 
                 & h1 {
