@@ -15,11 +15,14 @@
 
 div.page {
     width: 100%;
+    min-height: 100vh;
     margin-right: auto;
     margin-left: auto;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
     overflow: hidden;
+    justify-content: space-between;
 }
 
 
@@ -50,7 +53,7 @@ div.page {
     footer {
         order: 3;
         width: 100vw;
-        padding: 25px;
+        padding: 25px 0;
         display: flex;
         flex-direction: column;
 
@@ -132,12 +135,14 @@ div.page {
                     flex-direction: row;
                     flex-wrap: wrap;
                     justify-content: space-between;
+                    align-items: center;
 
                     & h1.pelem {
                         width: 40%;
                     }
 
                     & img.pelem {
+                        display: block;
                         max-width: 60%;
                         height: auto;
                     }
@@ -243,7 +248,108 @@ div.page {
             }
         }
 
-        div.commande & {}
+        div.commande & {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            & h2.error {}
+
+            & div.choix-produit {
+                display: flex;
+                align-items: center;
+
+                & img {
+                    width: 50%;
+                }
+
+                & form.form-choix {
+                    display: flex;
+                    flex-direction: column;
+                    width: 50%;
+
+                    & div.choix {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 100%;
+
+                        & input.check {
+                            width: 10%;
+                        }
+
+                        & h2.titre {
+                            width: 30%;
+                        }
+
+                        & span.separator {
+                            width: 40%;
+                        }
+
+                        & div.prix {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-end;
+                            width: 20%;
+
+                            & h1,
+                            & p {
+                                margin: 0;
+                            }
+
+                            & p {
+                                margin-top: -10px;
+                            }
+                        }
+                    }
+
+                    & input.ok {
+                        align-self: flex-end;
+                    }
+                }
+            }
+
+            & div.panier {
+                display: flex;
+                flex-direction: column;
+                width: 75%;
+
+                & div.fiche-produit-panier {
+                    display: flex;
+                    justify-content: space-around;
+                }
+            }
+
+            & div.user-info {
+                width: 90%;
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+
+                    & div.text {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+
+                        & input {
+                            width: 100%;
+                        }
+
+                        & input:nth-child(2),
+                        & input:nth-child(3) {
+                            width: 45%;
+                        }
+                    }
+
+                    & input.ok {
+                        align-self: flex-end;
+                        float: right;
+                        width: auto !important;
+                    }
+                }
+            }
+        }
 
         div.livreor & {
             margin: 0 10%;

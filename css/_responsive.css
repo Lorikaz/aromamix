@@ -12,11 +12,13 @@
 
 div.page {
   width: 100%;
+  min-height: 100vh;
   margin-right: auto;
   margin-left: auto;
   display: flex;
-  flex-wrap: wrap;
-  overflow: hidden; }
+  flex-direction: column;
+  overflow: hidden;
+  justify-content: space-between; }
 
 @media only screen and (min-width: 1200px) {
   header {
@@ -34,7 +36,7 @@ div.page {
   footer {
     order: 3;
     width: 100vw;
-    padding: 25px;
+    padding: 25px 0;
     display: flex;
     flex-direction: column; }
     footer nav.footnav {
@@ -89,10 +91,12 @@ div.page {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-between; }
+        justify-content: space-between;
+        align-items: center; }
         div.home section.main-content > div.potions h1.pelem {
           width: 40%; }
         div.home section.main-content > div.potions img.pelem {
+          display: block;
           max-width: 60%;
           height: auto; }
         div.home section.main-content > div.potions a.pelem {
@@ -147,6 +151,65 @@ div.page {
             div.potions section.main-content > div.potion div.desc div.commande div.cmd div.prix {
               display: flex;
               flex-direction: column; }
+    div.commande section.main-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      div.commande section.main-content div.choix-produit {
+        display: flex;
+        align-items: center; }
+        div.commande section.main-content div.choix-produit img {
+          width: 50%; }
+        div.commande section.main-content div.choix-produit form.form-choix {
+          display: flex;
+          flex-direction: column;
+          width: 50%; }
+          div.commande section.main-content div.choix-produit form.form-choix div.choix {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%; }
+            div.commande section.main-content div.choix-produit form.form-choix div.choix input.check {
+              width: 10%; }
+            div.commande section.main-content div.choix-produit form.form-choix div.choix h2.titre {
+              width: 30%; }
+            div.commande section.main-content div.choix-produit form.form-choix div.choix span.separator {
+              width: 40%; }
+            div.commande section.main-content div.choix-produit form.form-choix div.choix div.prix {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-end;
+              width: 20%; }
+              div.commande section.main-content div.choix-produit form.form-choix div.choix div.prix h1, div.commande section.main-content div.choix-produit form.form-choix div.choix div.prix p {
+                margin: 0; }
+              div.commande section.main-content div.choix-produit form.form-choix div.choix div.prix p {
+                margin-top: -10px; }
+          div.commande section.main-content div.choix-produit form.form-choix input.ok {
+            align-self: flex-end; }
+      div.commande section.main-content div.panier {
+        display: flex;
+        flex-direction: column;
+        width: 75%; }
+        div.commande section.main-content div.panier div.fiche-produit-panier {
+          display: flex;
+          justify-content: space-around; }
+      div.commande section.main-content div.user-info {
+        width: 90%; }
+        div.commande section.main-content div.user-info form {
+          display: flex;
+          flex-direction: column; }
+          div.commande section.main-content div.user-info form div.text {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between; }
+            div.commande section.main-content div.user-info form div.text input {
+              width: 100%; }
+            div.commande section.main-content div.user-info form div.text input:nth-child(2), div.commande section.main-content div.user-info form div.text input:nth-child(3) {
+              width: 45%; }
+          div.commande section.main-content div.user-info form input.ok {
+            align-self: flex-end;
+            float: right;
+            width: auto !important; }
     div.livreor section.main-content {
       margin: 0 10%;
       padding: 25px 0;

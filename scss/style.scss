@@ -24,7 +24,8 @@ a {
 
     &:hover {
         color: $color2;
-    }}
+    }
+}
 
 
 header {
@@ -207,7 +208,7 @@ section.main-content {
         }
 
         & div.potion {
-            margin: 100px 0;
+            margin: 25px 0;
 
             & div.img {
                 & img {
@@ -302,7 +303,77 @@ section.main-content {
         div.inscription & {}
     }
 
-    div.commande & {}
+    div.commande & {
+
+        &>div {
+            margin: 50px;
+        }
+
+        & div.choix-produit {
+
+            & img {}
+
+            & form.form-choix {
+
+                & div.choix {
+
+                    & label.checkbox {
+                        & input.check {}
+
+                        & span.checkmark {}
+                    }
+
+                    & h2.titre {
+                        font-family: Butler, serif;
+                        font-weight: 800;
+                    }
+
+                    & span.separator {
+                        height: 0;
+                        border: solid 1px $color4;
+                    }
+
+                    & div.prix {
+
+                        & h1,
+                        & p {}
+
+                        & p {
+                            font-size: 10pt;
+                        }
+                    }
+                }
+
+                & input.ok {
+                    @include button;
+                    margin: 25px 0;
+                }
+            }
+        }
+
+        & div.panier {}
+
+        & div.user-info {
+            & form {
+                & div.text {
+                    & input {
+                        @include outline;
+                        border-width: 3px;
+                        padding: 10px 15px;
+                        margin: 10px 0;
+
+                        color: black;
+                        font-style: italic;
+                    }
+                }
+
+                & input.ok {
+                    @include button;
+                    margin: 25px 0;
+                }
+            }
+        }
+    }
 
     div.livreor & {
         & div.form {
@@ -323,8 +394,6 @@ section.main-content {
 
                 & input {
                     @include button;
-                    border: none;
-                    font-size: 1.5rem;
                 }
             }
         }
@@ -360,8 +429,6 @@ section.main-content {
 
             input.btn {
                 @include button;
-                border: none;
-                font-size: 1.5rem;
                 margin: 25px 0;
             }
         }
@@ -390,8 +457,6 @@ section.main-content {
             & div.submit {
                 & button.btn {
                     @include button;
-                    border: none;
-                    font-size: 1.5rem;
                     margin: 25px 0;
                 }
             }

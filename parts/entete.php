@@ -4,7 +4,7 @@
             <a href="potions.php">Nos potions</a>
         </li>
         <li>
-            <a href="Commande.php">Commander</a>
+            <a href="commande.php">Commander</a>
         </li>
         <li>
             <a href="index.php" id="logo">

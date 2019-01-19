@@ -46,7 +46,7 @@
                 <!-- Génération du formulaire de message -->
                 <form method="post" action="livreor.php">
                     <!-- Récupère le pseudo dans SESSION-->
-                    Connecté en tant que : <?php echo $_SESSION['email'] ?>
+                    <h2>Connecté en tant que : <?php echo $_SESSION['firstname'] ?></h2>
                     <h1>Livre d'or</h1>
                     <textarea name="message" rows="8" cols="35" placeholder="Laissez nous votre avis ..."></textarea><br/>
                     <input type="submit" value="Publier" />
