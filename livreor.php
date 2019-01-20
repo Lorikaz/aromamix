@@ -36,216 +36,209 @@
     <?php include("/parts/head.php") ?>
 </head>
 
-<body>
-    <div class="page livreor">
-    	<?php include("/parts/entete.php"); ?>
+<body class="livreor">
+	<?php include("/parts/entete.php"); ?>
 
-        <section class="main-content">
-            <div class="form">
-                <!-- Génération du formulaire de message -->
-                <form method="post" action="livreor.php">
-                    <!-- Récupère le pseudo dans SESSION-->
-                    Connecté en tant que : <?php echo $_SESSION['email'] ?>
-                    <h1>Livre d'or</h1>
-                    <textarea name="message" rows="8" cols="35" placeholder="Laissez nous votre avis ..."></textarea><br/>
-                    <input type="submit" value="Publier" />
-                </form>
-            </div>
+    <!-- Génération du formulaire de message -->
 
-            <p class="pages">
+    <form method="post" action="livreor.php">
+        <!-- Récupère le pseudo dans SESSION-->
+        Connecté en tant que : <?php echo $_SESSION['email'] ?>
+        <h1>Livre d'or</h1>
+        <textarea name="message" rows="8" cols="35" placeholder="Laissez nous votre avis ..."></textarea><br/>
+        <input type="submit" value="Publier" />
+    </form>
 
-            <?php if($connect===true){
+    <p class="pages">
 
-            ////// Connexion base de données
+    <?php if($connect===true){
 
-            $bdd = new PDO('mysql:host=localhost;dbname=aromamix', "root", "");
+    ////// Connexion base de données
 
-            ////// Récupération et enregistrement du message dans la base de données
+    $bdd = new PDO('mysql:host=localhost;dbname=aromamix', "root", "");
 
-            if (isset($_POST['message'])){
-                $pseudo = $_SESSION['email'];
-                $message =$_POST['message'];
-                $message = nl2br($message);
-                $ajoutcom =  "INSERT INTO `livreor`(`user`, `message`) VALUES ('$pseudo','$message')";
-                $resultat = $bdd->query($ajoutcom);
-            }
+    ////// Récupération et enregistrement du message dans la base de données
 
-            ///// Suppression d'un commentaire
+    if (isset($_POST['message'])){
+        $pseudo = $_SESSION['email'];
+        $message =$_POST['message'];
+        $message = nl2br($message);
+        $ajoutcom =  "INSERT INTO `livreor`(`user`, `message`) VALUES ('$pseudo','$message')";
+        $resultat = $bdd->query($ajoutcom);
+    }
 
-            if (isset($_GET['action']) && $_GET['action'] == 'delete') {
-                    $id = $_GET['id'];
-                    $requetesuppression = "DELETE FROM `livreor` WHERE `id` = ".$id;
-                    $resultatsuppresion = $bdd->exec($requetesuppression);
-            }
-            
+    ///// Suppression d'un commentaire
 
-            ////// Génération des pages par rapport au nombre de message
+    if (isset($_GET['action']) && $_GET['action'] == 'delete') {
+            $id = $_GET['id'];
+            $requetesuppression = "DELETE FROM `livreor` WHERE `id` = ".$id;
+            $resultatsuppresion = $bdd->exec($requetesuppression);
+    }
+    
 
-                $nombreDeMessagesParPage = 3;
-                $comptermessage ="SELECT COUNT(message) AS total FROM livreor";
-                $result = $bdd->query($comptermessage) ;
-                $nb_message = $result->fetch(PDO::FETCH_ASSOC);
-                $messagetotal = $nb_message['total'];
-                $retour = $bdd->prepare('SELECT * FROM livreor');
-                $retour->execute();
-                $nb_page=ceil($messagetotal/$nombreDeMessagesParPage);
+    ////// Génération des pages par rapport au nombre de message
 
-            /////// Puis on fait une boucle pour écrire les liens vers chacune des pages
+        $nombreDeMessagesParPage = 3;
+        $comptermessage ="SELECT COUNT(message) AS total FROM livreor";
+        $result = $bdd->query($comptermessage) ;
+        $nb_message = $result->fetch(PDO::FETCH_ASSOC);
+        $messagetotal = $nb_message['total'];
+        $retour = $bdd->prepare('SELECT * FROM livreor');
+        $retour->execute();
+        $nb_page=ceil($messagetotal/$nombreDeMessagesParPage);
 
-                echo 'Page : ';
-                for ($i = 1 ; $i <= $nb_page ; $i++){
-                    echo '<a href="livreor.php?page=' . $i . '">' . $i . '</a> ';
-                }
-                ?>
-            </p>
+    /////// Puis on fait une boucle pour écrire les liens vers chacune des pages
 
-            <?php
+        echo 'Page : ';
+        for ($i = 1 ; $i <= $nb_page ; $i++){
+            echo '<a href="livreor.php?page=' . $i . '">' . $i . '</a> ';
+        }
+        ?>
+    </p>
 
-            ///////// On se place sur la bonne page
+    <?php
 
-            if (isset($_GET['page']))
-            {
-                $page = $_GET['page'];
-            }
-            else{// La variable n'existe pas, c'est la première fois qu'on charge la page
+    ///////// On se place sur la bonne page
 
-            $page = 1; // On se met sur la page 1 (par défaut)
-            }
+    if (isset($_GET['page']))
+    {
+        $page = $_GET['page'];
+    }
+    else{// La variable n'existe pas, c'est la première fois qu'on charge la page
 
-            ////// On recupere les données en mettant les messages dans l'ordre du plus récent au plus ancien
+    $page = 1; // On se met sur la page 1 (par défaut)
+    }
 
-            $premierMessage = ($page - 1) * $nombreDeMessagesParPage;
-            $requete ="SELECT * FROM livreor ORDER BY id DESC LIMIT " . $premierMessage . ",". $nombreDeMessagesParPage.";";
-            $retourpremiermessage = $bdd->prepare($requete);
-            $retourpremiermessage->execute();
+    ////// On recupere les données en mettant les messages dans l'ordre du plus récent au plus ancien
 
-            ////// On stocke les données de la requete et on affiche les messages
+    $premierMessage = ($page - 1) * $nombreDeMessagesParPage;
+    $requete ="SELECT * FROM livreor ORDER BY id DESC LIMIT " . $premierMessage . ",". $nombreDeMessagesParPage.";";
+    $retourpremiermessage = $bdd->prepare($requete);
+    $retourpremiermessage->execute();
 
-            if ($retourpremiermessage) {
-                foreach ($retourpremiermessage as $row) {
-                 $id = $row[0];
-                 $pseudo = $row[1];
-                 $message = $row[2];
+    ////// On stocke les données de la requete et on affiche les messages
 
-                    //// Si l'utilisateur est auteur du message il peut le supprimer
+    if ($retourpremiermessage) {
+        foreach ($retourpremiermessage as $row) {
+         $id = $row[0];
+         $pseudo = $row[1];
+         $message = $row[2];
 
-                    if ($_SESSION['email']==$pseudo)  { ?>
-                        <div class="pseudo">
-                            <h1>
-                                <?php
-                                echo $pseudo;
-                                ?>
-                            </h1>
-                        </div>
-                        <div class="message">
-                            <?php
-                            echo $message;
-                            ?>
-                        </div>
+            //// Si l'utilisateur est auteur du message il peut le supprimer
 
-                        <!-- Lien de suppression en fonction de l'ID du message -->
-
-                        <div id="<?php echo $id ?>">
-                            <?php echo "<a href=livreor.php?action=delete&id=" .$id .">Supprimer le commentaire</a>";?>
-                        </div>
+            if ($_SESSION['email']==$pseudo)  { ?>
+                <div class="pseudo">
+                    <h1>
+                        <?php
+                        echo $pseudo;
+                        ?>
+                    </h1>
+                </div>
+                <div class="message">
                     <?php
-                    }
-                    else{
+                    echo $message;
                     ?>
+                </div>
 
-                        <div class="pseudo">
-                            <h1>
-                            <?php
-                            echo $pseudo;
-                            ?>
-                            </h1>
-                        </div>
-                        <div class="message">
-                            <?php
-                            echo $message;
-                    }
-                }
+                <!-- Lien de suppression en fonction de l'ID du message -->
+
+                <div id="<?php echo $id ?>">
+                    <?php echo "<a href=livreor.php?action=delete&id=" .$id .">Supprimer le commentaire</a>";?>
+                </div>
+            <?php
             }
+            else{
             ?>
 
-        </body>
-        </html>
+                <div class="pseudo">
+                    <h1>
+                    <?php
+                    echo $pseudo;
+                    ?>
+                    </h1>
+                </div>
+                <div class="message">
+                    <?php
+                    echo $message;
+            }
+        }
+    }
+    ?>
+
+</body>
+
+   //// Si l'utilisateur n'est pas connecté
+
+    else{
+
+        ////// Connexion base de données
+        $bdd = new PDO('mysql:host=localhost;dbname=aromamix', "root", "");
+
+        ////// Génération des pages par rapport au nombre de message
+
+        $nombreDeMessagesParPage = 5;
+        $comptermessage ="SELECT COUNT(message) AS total FROM livreor";
+        $result = $bdd->query($comptermessage) ;
+        $nb_message = $result->fetch(PDO::FETCH_ASSOC);
+        $messagetotal = $nb_message['total'];
+        $retour = $bdd->prepare('SELECT * FROM livreor');
+        $retour->execute();
+        $nb_page=ceil($messagetotal/$nombreDeMessagesParPage);
+
+        ///// Puis on fait une boucle pour écrire les liens vers chacune des pages
+
+        echo 'Page : ';
+        for ($i = 1 ; $i <= $nb_page ; $i++){
+            echo '<a href="livreor.php?page=' . $i . '">' . $i . '</a> ';
+        }
+        ?>
+        </p>
+
         <?php
+
+        ///// On se place sur la bonne page
+
+        if (isset($_GET['page']))
+        {
+            $page = $_GET['page'];
+        }
+        else // La variable n'existe pas, c'est la première fois qu'on charge la page
+        {
+            $page = 1; // On se met sur la page 1 (par défaut)
         }
 
-           //// Si l'utilisateur n'est pas connecté
+        $premierMessage = ($page - 1) * $nombreDeMessagesParPage;
 
-            else{
+        ////// On recupere les données en mettant les messages dans l'ordre du plus récent au plus ancien
 
-                ////// Connexion base de données
-                $bdd = new PDO('mysql:host=localhost;dbname=aromamix', "root", "");
+        $requete ="SELECT * FROM livreor ORDER BY id DESC LIMIT " . $premierMessage . ",". $nombreDeMessagesParPage.";";
+        $retourpremiermessage = $bdd->prepare($requete);
+        $retourpremiermessage->execute(); ?>
 
-                ////// Génération des pages par rapport au nombre de message
 
-                $nombreDeMessagesParPage = 5;
-                $comptermessage ="SELECT COUNT(message) AS total FROM livreor";
-                $result = $bdd->query($comptermessage) ;
-                $nb_message = $result->fetch(PDO::FETCH_ASSOC);
-                $messagetotal = $nb_message['total'];
-                $retour = $bdd->prepare('SELECT * FROM livreor');
-                $retour->execute();
-                $nb_page=ceil($messagetotal/$nombreDeMessagesParPage);
+        <div class="commentaires">
+            <?php ////// On stocke les données de la requete et on affiche les messages
+            if ($retourpremiermessage) {
+                foreach ($retourpremiermessage as $row) {
+                    $pseudo = $row[1];
+                    $message = $row[2];
+                    ?>
+                    <div class="commentaire">
+                        <h1 class="pseudo">
+                            <?php echo $pseudo; ?>
+                        </h1>
 
-                ///// Puis on fait une boucle pour écrire les liens vers chacune des pages
-
-                echo 'Page : ';
-                for ($i = 1 ; $i <= $nb_page ; $i++){
-                    echo '<a href="livreor.php?page=' . $i . '">' . $i . '</a> ';
+                        <p class="message">
+                            <?php echo $message; ?>
+                        </p>
+                    </div>
+                    <?php }
                 }
-                ?>
-                </p>
+            } ?>
+        </div>
 
-                <?php
+    <?php include("/parts/pied.php"); ?>
 
-                ///// On se place sur la bonne page
-
-                if (isset($_GET['page']))
-                {
-                    $page = $_GET['page'];
-                }
-                else // La variable n'existe pas, c'est la première fois qu'on charge la page
-                {
-                    $page = 1; // On se met sur la page 1 (par défaut)
-                }
-
-                $premierMessage = ($page - 1) * $nombreDeMessagesParPage;
-
-                ////// On recupere les données en mettant les messages dans l'ordre du plus récent au plus ancien
-
-                $requete ="SELECT * FROM livreor ORDER BY id DESC LIMIT " . $premierMessage . ",". $nombreDeMessagesParPage.";";
-                $retourpremiermessage = $bdd->prepare($requete);
-                $retourpremiermessage->execute(); ?>
-
-
-                <div class="commentaires">
-                    <?php ////// On stocke les données de la requete et on affiche les messages
-                    if ($retourpremiermessage) {
-                        foreach ($retourpremiermessage as $row) {
-                            $pseudo = $row[1];
-                            $message = $row[2];
-                            ?>
-                            <div class="commentaire">
-                                <h1 class="pseudo">
-                                    <?php echo $pseudo; ?>
-                                </h1>
-
-                                <p class="message">
-                                    <?php echo $message; ?>
-                                </p>
-                            </div>
-                            <?php }
-                        }
-                    } ?>
-                </div>
-        </section>
-
-        <?php include("/parts/pied.php"); ?>
-    </div>
 </body>
 
 </html>
