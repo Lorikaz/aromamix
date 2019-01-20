@@ -11,7 +11,7 @@ div.page {
   justify-content: space-between; }
 
 /* NB : le d├®tail de chaque page est disponible dans le fichier style.scss */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-device-width: 768px) {
   body {
     font-size: 10pt; }
 
@@ -357,7 +357,7 @@ div.page {
             display: flex;
             justify-content: space-between;
             align-items: center; } }
-@media only screen and (min-width: 768px) and (max-width: 1200px) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1200px) {
   body {
     font-size: 12pt; }
 
@@ -683,7 +683,7 @@ div.page {
             display: flex;
             justify-content: space-between;
             align-items: center; } }
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-device-width: 1200px) {
   body {
     font-size: 14pt; }
 
@@ -1084,9 +1084,9 @@ header .overlay {
   transition: 0.5s; }
   header .overlay .closebtn {
     position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 48pt; }
+    top: 15px;
+    right: 15px;
+    font-size: 28pt; }
   header .overlay a {
     padding: 8px;
     text-decoration: none;
@@ -1105,6 +1105,16 @@ header .overlay {
     width: 100%;
     text-align: center;
     margin-top: 30px; }
+header nav.topnav.mobile span {
+  margin: 15px;
+  padding: 15px; }
+  header nav.topnav.mobile span i {
+    vertical-align: middle;
+    color: black;
+    text-align: center;
+    text-decoration: none; }
+    header nav.topnav.mobile span i:hover {
+      color: #ab9ff2; }
 header nav.topnav.computer {
   color: black;
   list-style: none;
@@ -1117,16 +1127,6 @@ header nav.topnav.computer {
     padding: 10px 15px;
     text-decoration: none; }
     header nav.topnav.computer li a:hover {
-      color: #ab9ff2; }
-header nav.topnav.mobile span {
-  margin: 15px;
-  padding: 15px; }
-  header nav.topnav.mobile span i {
-    vertical-align: middle;
-    color: black;
-    text-align: center;
-    text-decoration: none; }
-    header nav.topnav.mobile span i:hover {
       color: #ab9ff2; }
 
 footer {

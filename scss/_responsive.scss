@@ -14,7 +14,7 @@ div.page {
 /* NB : le détail de chaque page est disponible dans le fichier style.scss */
 
 // Responsive : version smartphone
-@media only screen and (max-width: 768px) {
+@media only screen and (max-device-width: 768px) {
     body {
         font-size: 10pt;
     }
@@ -602,7 +602,7 @@ div.page {
 }
 
 // Responsive : version tablette
-@media only screen and (min-width: 768px) and (max-width: 1200px) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1200px) {
     body {
         font-size: 12pt;
     }
@@ -1158,7 +1158,7 @@ div.page {
 }
 
 // Responsive : version PC
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-device-width: 1200px) {
     body {
         font-size: 14pt;
     }
