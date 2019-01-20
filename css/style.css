@@ -18,7 +18,8 @@ div.page {
 
   header {
     position: absolute;
-    width: 100vw; }
+    width: 100vw;
+    top: 0; }
     header nav.topnav.mobile {
       display: flex;
       justify-content: flex-end;
@@ -310,7 +311,7 @@ div.page {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin: auto; }
+      margin: 10vh auto; }
       div.connexion section.main-content form.connexion {
         display: flex;
         flex-direction: column;
@@ -325,7 +326,7 @@ div.page {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin: auto; }
+      margin: 10vh auto; }
       div.inscription section.main-content form.inscription {
         display: flex;
         flex-direction: column;
@@ -363,7 +364,8 @@ div.page {
 
   header {
     position: absolute;
-    width: 100vw; }
+    width: 100vw;
+    top: 0; }
     header nav.topnav.mobile {
       display: flex;
       justify-content: flex-end;
@@ -397,7 +399,7 @@ div.page {
   section.main-content {
     width: 90vw;
     margin: 5vh auto;
-    max-width: 720px;
+    max-width: 960px;
     order: 2; }
     div.home section.main-content > div {
       padding: 50px 0;
@@ -635,7 +637,7 @@ div.page {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin: auto; }
+      margin: 10vh auto; }
       div.connexion section.main-content form.connexion {
         display: flex;
         flex-direction: column;
@@ -649,7 +651,7 @@ div.page {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin: auto; }
+      margin: 10vh auto; }
       div.inscription section.main-content form.inscription {
         display: flex;
         flex-direction: column;
@@ -896,6 +898,7 @@ div.page {
             display: flex;
             justify-content: space-around;
             align-items: center;
+            width: 100%;
             padding: 25px 0;
             border-bottom: solid 2px #ab9ff2; }
             div.commande section.main-content > div.panier div.fiche-produit-panier h1 {
@@ -1250,12 +1253,15 @@ div.commande section.main-content div.panier div.fiche-produit-panier h1.titre {
 div.commande section.main-content div.panier div.fiche-produit-panier div.prix h1 {
   font-family: HelveticaNeue, sans-serif;
   font-weight: 600; }
-div.commande section.main-content div.panier div.fiche-produit-panier form.delete button {
-  border: 0;
-  background-color: white; }
-  div.commande section.main-content div.panier div.fiche-produit-panier form.delete button i {
+div.commande section.main-content div.panier div.fiche-produit-panier div.delete {
+  text-align: center; }
+  div.commande section.main-content div.panier div.fiche-produit-panier div.delete a.liensuppression {
+    border: 0;
+    background-color: white;
     color: #ab9ff2;
     font-size: 22pt; }
+    div.commande section.main-content div.panier div.fiche-produit-panier div.delete a.liensuppression:hover, div.commande section.main-content div.panier div.fiche-produit-panier div.delete a.liensuppression:focus {
+      color: #732abc; }
 div.commande section.main-content div.user-info form div.text input {
   background-color: white;
   border: solid 5px #ab9ff2;

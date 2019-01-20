@@ -344,14 +344,18 @@ section.main-content {
                     }
                 }
 
-                & form.delete {
-                    & button {
+                & div.delete {
+                    text-align: center;
+
+                    & a.liensuppression {
                         border: 0;
                         background-color: white;
+                        color: $color4;
+                        font-size: 22pt;
 
-                        & i {
-                            color: $color4;
-                            font-size: 22pt;
+                        &:hover,
+                        &:focus {
+                            color: $color2;
                         }
                     }
                 }

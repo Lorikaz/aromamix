@@ -23,6 +23,7 @@ div.page {
     header {
         position: absolute;
         width: 100vw;
+        top: 0;
 
         & nav.topnav {
             &.mobile {
@@ -511,7 +512,7 @@ div.page {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: auto;
+            margin: 10vh auto;
 
             form.connexion {
                 display: flex;
@@ -535,7 +536,7 @@ div.page {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: auto;
+            margin: 10vh auto;
 
             & form.inscription {
                 display: flex;
@@ -597,6 +598,7 @@ div.page {
     header {
         position: absolute;
         width: 100vw;
+        top: 0;
 
         & nav.topnav {
             &.mobile {
@@ -647,7 +649,7 @@ div.page {
     section.main-content {
         width: 90vw;
         margin: 5vh auto;
-        max-width: 720px;
+        max-width: 960px;
         order: 2;
 
         div.home & {
@@ -1054,7 +1056,7 @@ div.page {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: auto;
+            margin: 10vh auto;
 
             form.connexion {
                 display: flex;
@@ -1076,7 +1078,7 @@ div.page {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: auto;
+            margin: 10vh auto;
 
             & form.inscription {
                 display: flex;
@@ -1482,6 +1484,7 @@ div.page {
                         justify-content: space-around;
                         align-items: center;
 
+                        width: 100%;
                         padding: 25px 0;
                         border-bottom: solid 2px $color4;
 
