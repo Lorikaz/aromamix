@@ -1,20 +1,26 @@
+// Couleurs et règles de mise en forme récurrentes
 @import 'utilities';
+// Règles de positionnement + responsive
 @import 'responsive';
+// Import de l'animation
 @import 'animations';
 
 
+// Typo par défaut
 body {
     margin: 0;
     font-family: HelveticaNeue, sans-serif;
     font-weight: 500;
 }
 
+// Typo des titres
 h1 {
     margin: 0;
     font-family: Butler, serif;
     font-weight: 800;
 }
 
+// Mise en forme des liens
 a {
     color: $color4;
     font-style: italic;
@@ -26,7 +32,10 @@ a {
 }
 
 
+// Barre de navigation supérieure (header)
 header {
+
+    // Menu latéral
     & .overlay {
         height: 100%;
         width: 0;
@@ -74,6 +83,8 @@ header {
     }
 
     & nav.topnav {
+
+        // Navbar PC
         &.computer {
             color: black;
             list-style: none;
@@ -95,6 +106,7 @@ header {
             }
         }
 
+        // Navbar mobile & tablette
         &.mobile {
 
             & span {
@@ -116,6 +128,7 @@ header {
     }
 }
 
+// Barre de navigation inférieure (footer)
 footer {
     position: relative;
     bottom: 0;
@@ -148,19 +161,21 @@ footer {
     }
 }
 
+// Corps de la page
 section.main-content {
 
+    // Page d'accueil
     div.home & {
         & h1 {
             text-transform: uppercase;
         }
 
         &>div {
-
             & p {
                 text-align: justify;
             }
 
+            // Section slogan + logo animé
             &.slogan {
                 & svg {
                     @include outline;
@@ -179,6 +194,7 @@ section.main-content {
                 }
             }
 
+            // Section présentation du site
             &.presentation {
                 & img {}
 
@@ -195,7 +211,10 @@ section.main-content {
                 }
             }
 
+            // Section présentation de l'équipe
             &.team {
+
+                // Un élément pour chaque membre de l'équipe
                 & div.member {
                     margin: 0 25px;
 
@@ -203,17 +222,18 @@ section.main-content {
                     & p {
                         margin: 25px 0;
                     }
-                }
 
-                & img.user {
-                    width: auto;
-                }
+                    & img.user {
+                        width: auto;
+                    }
 
-                & p {
-                    text-align: center;
+                    & p {
+                        text-align: center;
+                    }
                 }
             }
 
+            // Section introduction + lien vers produits
             &.potions {
 
                 & h1 {
@@ -229,8 +249,10 @@ section.main-content {
         }
     }
 
+    // Page produits
     div.potions & {
 
+        // Titre + image
         & div.title {
             & h1 {
                 color: $color4;
@@ -242,8 +264,11 @@ section.main-content {
             & img {}
         }
 
+        // Un élément pour chaque potion
+        // NB : un élément sur deux a l'image et la desc inversés (cf responsive.scss)
         & div.potion {
 
+            // Image de la potion
             & div.img {
                 & img {
                     padding: 0;
@@ -251,6 +276,7 @@ section.main-content {
                 }
             }
 
+            // Description de la potion (nom, desc, prix)
             & .desc {
                 vertical-align: middle;
                 padding: 25px;
@@ -282,36 +308,37 @@ section.main-content {
         }
     }
 
+    // Page de commande
     div.commande & {
 
+        // Message d'erreur si non-connecté
         & h2.error {
             text-align: center;
         }
 
+        // Section sélection des produits
         & div.choix-produit {
 
             & img {}
 
             & form.form-choix {
 
+                // Un élément pour chaque potion disponible
                 & div.choix {
 
-                    & label.checkbox {
-                        & input.check {}
-
-                        & span.checkmark {}
-                    }
-
+                    // Nom de la potion
                     & h2.titre {
                         font-family: Butler, serif;
                         font-weight: 800;
                     }
 
+                    // Ligne de séparation
                     & span.separator {
                         height: 0;
                         border: solid 1px $color4;
                     }
 
+                    // Prix de la potion
                     & div.prix {
 
                         & h1,
@@ -323,6 +350,7 @@ section.main-content {
                     }
                 }
 
+                // Bouton de confirmation de sélection
                 & input.ok {
                     @include button;
                     margin: 25px 0;
@@ -330,13 +358,19 @@ section.main-content {
             }
         }
 
+        // Section produits sélectionnés
         & div.panier {
+
+            // Un élément pour chaque produit sélectionné dans le panier
             & div.fiche-produit-panier {
+
+                // Nom du produit
                 & h1.titre {
                     font-family: HelveticaNeue, sans-serif;
                     font-weight: 400;
                 }
 
+                // Prix du produit
                 & div.prix {
                     & h1 {
                         font-family: HelveticaNeue, sans-serif;
@@ -344,6 +378,7 @@ section.main-content {
                     }
                 }
 
+                // Bouton pour supprimer le produit du panier
                 & div.delete {
                     text-align: center;
 
@@ -362,8 +397,11 @@ section.main-content {
             }
         }
 
+        // Section renseignements utilisateur
         & div.user-info {
             & form {
+
+                // Champs du formulaire
                 & div.text {
                     & input {
                         @include outline;
@@ -376,6 +414,7 @@ section.main-content {
                     }
                 }
 
+                // Bouton de confirmation de commande
                 & input.ok {
                     @include button;
                     margin: 25px 0;
@@ -384,7 +423,10 @@ section.main-content {
         }
     }
 
+    // Page livre d'or
     div.livreor & {
+
+        // Section rédaction du commentaire
         & div.form {
             & form {
                 & h1 {
@@ -407,7 +449,10 @@ section.main-content {
             }
         }
 
+        // Section commentaires des utilisateurs
         & .commentaires {
+
+            // Un élément pour chaque commentaire
             & .commentaire {
                 border-bottom: solid 3px $color4;
 
@@ -422,44 +467,59 @@ section.main-content {
         }
     }
 
+    // Page de connexion
     div.connexion & {
+
+        // Formulaire de connexion
         & form.connexion {
+
+            // Champs du formulaire
             & input.text {
                 @include form-txt;
                 width: 100%;
                 margin-top: 25px;
             }
 
+            // Liens mdp oublié + inscription
             & div.links {
                 width: 100%;
                 margin-top: 10px;
             }
 
-            input.btn {
+            // Bouton de confirmation
+            & input.btn {
                 @include button;
                 margin: 25px 0;
             }
         }
 
+        // Message d'erreur/d'information
         & p.error {
             color: $color2;
             text-align: center;
         }
     }
 
+    // Page d'inscription
     div.inscription & {
         margin-bottom: 100px;
 
         & form.inscription {
+
+            // Formulaire d'inscription
             & div.form {
 
+                // Colonnes de champs du formulaire
                 & div.part1,
                 & div.part2 {
+
+                    // Champs du formulaire
                     & input.form-txt {
                         @include form-txt;
                         margin-top: 25px;
                     }
 
+                    // Messages d'erreur (email incorrect, mdp trop court)
                     & span.help-block {
                         font-size: 11pt;
                         color: $color2;
@@ -467,7 +527,10 @@ section.main-content {
                 }
             }
 
+            // Bouton + "En vous inscrivant, vous acceptez ..."
             & div.submit {
+
+                // Bouton de confirmation
                 & button.btn {
                     @include button;
                     margin: 25px 0;

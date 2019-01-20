@@ -1,11 +1,4 @@
-div.slogan {
-    img {
-        position: relative;
-        margin: auto;
-        //width: 75%;
-    }
-}
-
+// Apparition du cercle dégradé
 #lune_pleine {
     opacity: 0;
     animation-name: lune;
@@ -26,6 +19,8 @@ div.slogan {
     }
 }
 
+
+// Cercle -> croissant de lune
 #ellipse {
     animation-name: ellipse;
     animation-duration: 2s;
@@ -45,6 +40,8 @@ div.slogan {
     }
 }
 
+
+// Apparition du reste du texte
 #point_i {
     opacity: 0;
     animation-name: i;

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 div.page {
   width: 100%;
   min-height: 100vh;
@@ -9,6 +10,7 @@ div.page {
   overflow: hidden;
   justify-content: space-between; }
 
+/* NB : le d├®tail de chaque page est disponible dans le fichier style.scss */
 @media only screen and (max-width: 768px) {
   body {
     font-size: 10pt; }
@@ -1011,10 +1013,6 @@ div.page {
             display: flex;
             justify-content: space-between;
             align-items: center; } }
-div.slogan img {
-  position: relative;
-  margin: auto; }
-
 #lune_pleine {
   opacity: 0;
   animation-name: lune;
@@ -1175,10 +1173,10 @@ div.home section.main-content > div.team div.member {
   margin: 0 25px; }
   div.home section.main-content > div.team div.member img, div.home section.main-content > div.team div.member p {
     margin: 25px 0; }
-div.home section.main-content > div.team img.user {
-  width: auto; }
-div.home section.main-content > div.team p {
-  text-align: center; }
+  div.home section.main-content > div.team div.member img.user {
+    width: auto; }
+  div.home section.main-content > div.team div.member p {
+    text-align: center; }
 div.home section.main-content > div.potions h1 {
   text-transform: none;
   color: #ab9ff2; }

@@ -1,14 +1,17 @@
+// Couleurs de la charte graphique
 $color1: rgb(89, 28, 172);
 $color2: rgb(115, 42, 188);
 $color3: rgb(133, 85, 216);
 $color4: rgb(171, 159, 242);
 
 
+// Mise en forme : element avec un contour
 @mixin outline {
     background-color: white;
     border: solid 5px $color4;
 }
 
+// Mise en forme : bouton
 @mixin button {
     font-family: HelveticaNeue, sans-serif;
     font-weight: 600;
@@ -21,6 +24,7 @@ $color4: rgb(171, 159, 242);
     box-shadow: 8px 8px 5px fade-out(black, 0.75);
 }
 
+// Mise en forme : champ textuel d'un formulaire
 @mixin form-txt {
     border-width: 0 0 2px 0;
     padding: 5px;

@@ -28,5 +28,5 @@
 			<br/>13 666 France</p>
 		</div>
 	</nav>
-	<p class="copyright">&copy;AROMAMIX - It's a kind of Magic - Music by The Avalanches.</p>
+	<p class="copyright">&copy;AROMAMIX - It's a kind of Magic.</p>
 </footer>

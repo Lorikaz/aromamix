@@ -11,6 +11,9 @@ div.page {
 }
 
 
+/* NB : le détail de chaque page est disponible dans le fichier style.scss */
+
+// Responsive : version smartphone
 @media only screen and (max-width: 768px) {
     body {
         font-size: 10pt;
@@ -20,12 +23,15 @@ div.page {
         font-size: 30pt;
     }
 
+    // Barre de navigation supérieure (header)
     header {
         position: absolute;
         width: 100vw;
         top: 0;
 
         & nav.topnav {
+
+            // Navbar mobile active
             &.mobile {
                 display: flex;
                 justify-content: flex-end;
@@ -37,12 +43,14 @@ div.page {
                 font-size: 25px;
             }
 
+            // Navbar PC inactive
             &.computer {
                 display: none;
             }
         }
     }
 
+    // Barre de navigation inférieure (footer)
     footer {
         order: 3;
         width: 100vw;
@@ -86,12 +94,14 @@ div.page {
         }
     }
 
+    // Corps de la page
     section.main-content {
         width: 100vw;
         margin: 5vh auto;
         max-width: 500px;
         order: 2;
 
+        // Page d'accueil
         div.home & {
             &>div {
                 padding: 25px 0;
@@ -199,6 +209,7 @@ div.page {
             }
         }
 
+        // Page produits
         div.potions & {
             &>div {
 
@@ -315,6 +326,7 @@ div.page {
             }
         }
 
+        // Page de commande 
         div.commande & {
             display: flex;
             flex-direction: column;
@@ -464,6 +476,7 @@ div.page {
             }
         }
 
+        // Page livre d'or
         div.livreor & {
             display: flex;
             flex-direction: column;
@@ -508,6 +521,7 @@ div.page {
             }
         }
 
+        // Page de connexion
         div.connexion & {
             display: flex;
             flex-direction: column;
@@ -532,6 +546,7 @@ div.page {
             }
         }
 
+        // Page d'inscription
         div.inscription & {
             display: flex;
             flex-direction: column;
@@ -586,6 +601,7 @@ div.page {
     }
 }
 
+// Responsive : version tablette
 @media only screen and (min-width: 768px) and (max-width: 1200px) {
     body {
         font-size: 12pt;
@@ -595,12 +611,15 @@ div.page {
         font-size: 36pt;
     }
 
+    // Barre de navigation supérieure (header)
     header {
         position: absolute;
         width: 100vw;
         top: 0;
 
         & nav.topnav {
+
+            // Navbar mobile active
             &.mobile {
                 display: flex;
                 justify-content: flex-end;
@@ -612,12 +631,14 @@ div.page {
                 font-size: 25px;
             }
 
+            // Navbar PC inactive
             &.computer {
                 display: none;
             }
         }
     }
 
+    // Barre de navigation inférieure (footer)
     footer {
         order: 3;
         width: 100vw;
@@ -646,12 +667,14 @@ div.page {
         }
     }
 
+    // Corps de la page
     section.main-content {
         width: 90vw;
         margin: 5vh auto;
         max-width: 960px;
         order: 2;
 
+        // Page d'accueil
         div.home & {
             &>div {
                 padding: 50px 0;
@@ -745,6 +768,7 @@ div.page {
             }
         }
 
+        // Page produits
         div.potions & {
             &>div {
                 padding: 25px 0;
@@ -862,6 +886,7 @@ div.page {
             }
         }
 
+        // Page de commande
         div.commande & {
             display: flex;
             flex-direction: column;
@@ -1008,6 +1033,7 @@ div.page {
             }
         }
 
+        // Page livre d'or
         div.livreor & {
             display: flex;
             flex-direction: column;
@@ -1052,6 +1078,7 @@ div.page {
             }
         }
 
+        // Page de connexion
         div.connexion & {
             display: flex;
             flex-direction: column;
@@ -1074,6 +1101,7 @@ div.page {
             }
         }
 
+        // Page d'inscription
         div.inscription & {
             display: flex;
             flex-direction: column;
@@ -1129,6 +1157,7 @@ div.page {
     }
 }
 
+// Responsive : version PC
 @media only screen and (min-width: 1200px) {
     body {
         font-size: 14pt;
@@ -1138,14 +1167,18 @@ div.page {
         font-size: 48pt;
     }
 
+    // Barre de navigation supérieure (header)
     header {
         width: 100vw;
 
         & nav.topnav {
+
+            // Navbar mobile inactive
             &.mobile {
                 display: none;
             }
 
+            // Navbar PC active
             &.computer {
                 width: 75vw;
                 margin-right: auto;
@@ -1165,6 +1198,7 @@ div.page {
         }
     }
 
+    // Barre de navigation inférieure (footer)
     footer {
         order: 3;
         width: 100vw;
@@ -1193,12 +1227,14 @@ div.page {
         }
     }
 
+    // Corps de la page
     section.main-content {
         width: 75vw;
         margin: 5vh auto;
         max-width: 1140px;
         order: 2;
 
+        // Page d'accueil
         div.home & {
             &>div {
                 padding: 50px 0;
@@ -1291,6 +1327,7 @@ div.page {
             }
         }
 
+        // Page produits
         div.potions & {
             &>div {
                 padding: 50px 0;
@@ -1410,6 +1447,7 @@ div.page {
             }
         }
 
+        // Page de commande
         div.commande & {
             display: flex;
             flex-direction: column;
@@ -1554,6 +1592,7 @@ div.page {
             }
         }
 
+        // Page livre d'or
         div.livreor & {
             margin: 0 10%;
             padding: 25px 0;
@@ -1601,6 +1640,7 @@ div.page {
             }
         }
 
+        // Page de connexion
         div.connexion & {
             display: flex;
             flex-direction: column;
@@ -1623,6 +1663,7 @@ div.page {
             }
         }
 
+        // Page d'inscription
         div.inscription & {
             display: flex;
             flex-direction: column;
