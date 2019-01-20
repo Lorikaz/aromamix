@@ -12,9 +12,11 @@ $color4: rgb(171, 159, 242);
 @mixin button {
     font-family: HelveticaNeue, sans-serif;
     font-weight: 600;
+    font-size: 1.5rem;
     text-transform: uppercase;
     color: white;
     background-color: $color4;
+    border: 0;
     padding: 20px;
     box-shadow: 8px 8px 5px fade-out(black, 0.75);
 }

@@ -1,489 +1,43 @@
-.container {
-    max-width: 90%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.container-fluid {
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-
 div.page {
     width: 100%;
+    min-height: 100vh;
     margin-right: auto;
     margin-left: auto;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
     overflow: hidden;
+    justify-content: space-between;
 }
 
 
 @media only screen and (max-width: 768px) {
-    header {
-        width: 100%;
-
-        nav.topnav {
-            width: 75%;
-            margin-right: 12.5%;
-            margin-left: 12.5%;
-
-            & li {
-                display: inline;
-
-                & a {
-                    display: inline-block;
-                    vertical-align: center;
-                }
-            }
-        }
+    body {
+        font-size: 10pt;
     }
 
-    footer {
-        order: 3;
+    h1 {
+        font-size: 30pt;
+    }
+
+    header {
+        position: absolute;
         width: 100vw;
-        padding: 25px;
-        display: flex;
-        flex-direction: column;
-
-        & nav.footnav {
-            margin: 25px 50px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-
-            & div.social {
-                & div.links {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: space-around;
-
-                    & a {
-                        width: 25%;
-                    }
-                }
-            }
-        }
-    }
-
-    section.main-content {
-        width: 75%;
-        margin-right: 12.5%;
-        margin-left: 12.5%;
-        max-width: 1140px;
-        order: 2;
-
-        div.home & {
-            &>div {
-                padding: 50px 0;
-
-                &.slogan {
-                    width: 100%;
-                    max-width: 33%;
-                    padding: 100px 0;
-                    margin: 0 33%;
-                }
-
-                &.presentation {
-                    width: 100%;
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-
-                    &>img,
-                    & div.pres {
-                        width: 50%;
-                    }
-                }
-
-                &.team {
-                    width: 100%;
-                    display: flex;
-                    flex-direction: row;
-                    align-items: space-around;
-
-                    & div.member {
-                        display: flex;
-                        flex-direction: column;
-                    }
-                }
-
-                &.potions {
-                    width: 100%;
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: wrap;
-
-                    & .potions {
-                        width: 50%;
-                    }
-                }
-            }
-        }
-
-        div.potions & {
-            &>div {
-                padding: 50px 0;
-
-                &.title {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-
-                    & h1 {
-                        align-self: flex-start;
-                    }
-
-                    & img {
-                        width: 100%;
-                    }
-                }
-
-                &.potion {
-                    &:nth-child(2n) {
-                        flex-direction: row;
-
-                        & .img img {
-                            float: left;
-                        }
-
-                        & .desc {
-                            text-align: left;
-
-                            & .prix {
-                                text-align: right;
-                                float: right;
-                            }
-                        }
-                    }
-
-                    &:nth-child(2n+1) {
-                        flex-direction: row-reverse;
-
-                        & .img img {
-                            float: right;
-                        }
-
-                        & .desc {
-                            text-align: right;
-
-                            & .prix {
-                                text-align: left;
-                                float: left;
-                            }
-                        }
-                    }
-
-                    & img {
-                        max-height: 500px;
-                    }
-
-                    & div.desc {
-                        & div.cmd {
-                            display: flex;
-                            flex-direction: row;
-                            align-items: space-between;
-
-                            & div.prix {
-                                display: flex;
-                                flex-direction: column;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        div.commande & {}
-
-        div.livreor & {
-            margin: 0 10%;
-            padding: 25px 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: stretch;
-
-            & form {
-                & textarea {
-                    width: 75%;
-                    height: 200px;
-                    resize: none;
-                    padding: 25px;
-                    margin: 25px 0;
-                }
-
-                & input {
-                    padding: 20px 50px;
-                    float: right;
-                }
-            }
-
-            & .commentaires {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: stretch;
-
-                & .commentaire {
-                    padding: 5px 0 10px;
-                }
-            }
-        }
-
-        div.connexion & {}
-
-        div.inscription & {}
-    }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 1200px) {
-    header {
-        width: 100%;
-
-        nav.topnav {
-            width: 75%;
-            margin-right: 12.5%;
-            margin-left: 12.5%;
-
-            & li {
-                display: inline;
-
-                & a {
-                    display: inline-block;
-                    vertical-align: center;
-                }
-            }
-        }
-    }
-
-    footer {
-        order: 3;
-        width: 100vw;
-        padding: 25px;
-        display: flex;
-        flex-direction: column;
-
-        & nav.footnav {
-            margin: 25px 50px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-
-            & div.social {
-                & div.links {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: space-around;
-
-                    & a {
-                        width: 25%;
-                    }
-                }
-            }
-        }
-    }
-
-    section.main-content {
-        width: 90%;
-        margin-right: 12.5%;
-        margin-left: 12.5%;
-        max-width: 720px;
-        order: 2;
-
-        div.home & {
-            &>div {
-                padding: 50px 0;
-                display: flex;
-                flex-direction: column;
-
-                &.slogan {
-                    width: 100%;
-                    max-width: 33%;
-                    padding: 100px 0;
-                    margin: 0 33%;
-
-                    & h2 {
-                        font-size: 16pt;
-                    }
-                }
-
-                &.presentation {
-                    width: 100%;
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-
-                    &>img,
-                    & div.pres {
-                        width: 50%;
-                    }
-                }
-
-                &.team {
-                    width: 100%;
-                    display: flex;
-                    flex-direction: row;
-                    align-items: space-around;
-
-                    & div.member {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        align-content: space-between;
-
-                    }
-                }
-
-                &.potions {
-                    width: 100%;
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: wrap;
-
-                    & .pelem {
-                        max-width: 50%;
-                    }
-                }
-            }
-        }
-
-        div.potions & {
-            &>div {
-                padding: 50px 0;
-
-                &.title {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-
-                    & h1 {
-                        align-self: flex-start;
-                    }
-
-                    & img {
-                        width: 100%;
-                    }
-                }
-
-                &.potion {
-                    &:nth-child(2n) {
-                        flex-direction: row;
-
-                        & .img img {
-                            float: left;
-                        }
-
-                        & .desc {
-                            text-align: left;
-
-                            & .prix {
-                                text-align: right;
-                                float: right;
-                            }
-                        }
-                    }
-
-                    &:nth-child(2n+1) {
-                        flex-direction: row-reverse;
-
-                        & .img img {
-                            float: right;
-                        }
-
-                        & .desc {
-                            text-align: right;
-
-                            & .prix {
-                                text-align: left;
-                                float: left;
-                            }
-                        }
-                    }
-
-                    & img {
-                        max-height: 500px;
-                    }
-
-                    & div.desc {
-                        & div.cmd {
-                            display: flex;
-                            flex-direction: row;
-                            align-items: space-between;
-
-                            & div.prix {
-                                display: flex;
-                                flex-direction: column;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        div.commande & {}
-
-        div.livreor & {
-            margin: 0 10%;
-            padding: 25px 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: stretch;
-
-            & form {
-                & textarea {
-                    width: 75%;
-                    height: 200px;
-                    resize: none;
-                    padding: 25px;
-                    margin: 25px 0;
-                }
-
-                & input {
-                    padding: 20px 50px;
-                    float: right;
-                }
-            }
-
-            & .commentaires {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: stretch;
-
-                & .commentaire {
-                    padding: 5px 0 10px;
-                }
-            }
-        }
-
-        div.connexion & {}
-
-        div.inscription & {}
-    }
-}
-
-@media only screen and (min-width: 1200px) {
-    header {
-        width: 100%;
 
         & nav.topnav {
-            width: 75%;
-            margin-right: 12.5%;
-            margin-left: 12.5%;
+            &.mobile {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
 
-            & li {
-                display: inline;
+                width: 100vw;
+                margin-right: auto;
+                margin-left: auto;
+                font-size: 25px;
+            }
 
-                & a {
-                    display: inline-block;
-                    vertical-align: center;
-                }
+            &.computer {
+                display: none;
             }
         }
     }
@@ -491,7 +45,7 @@ div.page {
     footer {
         order: 3;
         width: 100vw;
-        padding: 25px;
+        padding: 25px 0;
         display: flex;
         flex-direction: column;
 
@@ -499,16 +53,32 @@ div.page {
             margin: 25px 50px;
             display: flex;
             flex-direction: row;
+            flex-wrap: wrap;
             justify-content: space-around;
 
+            & div.contact {
+                order: 1;
+                width: 50%;
+            }
+
+            & div.adresse {
+                order: 2;
+                width: 50%;
+            }
+
             & div.social {
+                order: 3;
+                width: 50%;
+
                 & div.links {
                     display: flex;
                     flex-direction: row;
-                    align-items: space-around;
+                    justify-content: center;
+                    align-items: center;
 
                     & a {
                         width: 25%;
+                        margin: 0 10px;
                     }
                 }
             }
@@ -516,26 +86,36 @@ div.page {
     }
 
     section.main-content {
-        width: 75%;
-        margin-right: 12.5%;
-        margin-left: 12.5%;
-        max-width: 1140px;
+        width: 100vw;
+        margin: 5vh auto;
+        max-width: 500px;
         order: 2;
 
         div.home & {
             &>div {
-                padding: 50px 0;
+                padding: 25px 0;
                 display: flex;
                 flex-direction: column;
 
                 &.slogan {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
                     width: 100%;
-                    max-width: 33%;
-                    padding: 100px 0;
-                    margin: 0 33%;
+                    max-width: 90%;
+                    padding: 50px 0;
+                    margin: 0 auto;
+
+                    & svg {
+                        max-height: 50px;
+                        transform: translate(75px, 15px);
+                    }
 
                     & h2 {
-                        font-size: 20pt;
+                        font-size: 14pt;
+                        font-weight: 400;
+                        transform: translate(-75px, -20px);
                     }
                 }
 
@@ -543,26 +123,46 @@ div.page {
                     width: 100%;
                     display: flex;
                     flex-direction: row;
-                    align-items: center;
+                    align-items: flex-start;
 
-                    &>img,
+                    &>img {
+                        width: 60%;
+                    }
+
                     & div.pres {
-                        width: 50%;
+                        width: 40%;
                     }
                 }
 
                 &.team {
                     width: 100%;
                     display: flex;
-                    flex-direction: row;
-                    align-items: space-around;
+                    flex-direction: column;
+                    align-items: space-between;
 
                     & div.member {
                         display: flex;
-                        flex-direction: column;
                         align-items: center;
-                        align-content: space-between;
+                        justify-content: space-between;
 
+                        & img.user {
+                            width: 50%;
+                            height: auto;
+                        }
+
+                        & p {
+                            width: 40%;
+                            margin: 0 5%;
+                            font-size: 12pt;
+                        }
+
+                        &:nth-child(2n+1) {
+                            flex-direction: row;
+                        }
+
+                        &:nth-child(2n) {
+                            flex-direction: row-reverse;
+                        }
                     }
                 }
 
@@ -571,20 +171,24 @@ div.page {
                     display: flex;
                     flex-direction: row;
                     flex-wrap: wrap;
-                    justify-content: space-between;
 
                     & h1.pelem {
-                        width: 33%;
+                        width: 50%;
+                        position: absolute;
                     }
 
                     & img.pelem {
-                        width: 66%;
-                        height: auto;
+                        width: 70%;
+                        margin-left: auto;
                     }
 
                     & a.pelem {
                         width: 50%;
-                        float: right;
+                        transform: translateX(-25px);
+
+                        & h2 {
+                            float: right;
+                        }
                     }
 
                     & p.pelem {
@@ -596,7 +200,6 @@ div.page {
 
         div.potions & {
             &>div {
-                padding: 50px 0;
 
                 &.title {
                     display: flex;
@@ -609,17 +212,19 @@ div.page {
 
                     & img {
                         width: 100%;
+                        margin: 50px 0;
                     }
                 }
 
                 &.potion {
                     display: flex;
+                    margin: 50px 0;
 
                     &:nth-child(2n) {
-                        flex-direction: row;
+                        flex-direction: column;
 
                         & .img img {
-                            float: right;
+                            float: left;
                         }
 
                         & .desc {
@@ -630,18 +235,31 @@ div.page {
                                 justify-content: space-between;
 
                                 & .prix {
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: center;
+
                                     text-align: right;
                                     float: right;
+
+                                    & h1 {
+                                        font-size: 36pt;
+                                    }
+
+                                    & p {
+                                        font-size: 14pt;
+                                        margin: -10px 0 0 0;
+                                    }
                                 }
                             }
                         }
                     }
 
                     &:nth-child(2n+1) {
-                        flex-direction: row-reverse;
+                        flex-direction: column;
 
                         & .img img {
-                            float: left;
+                            float: right;
                         }
 
                         & .desc {
@@ -652,8 +270,21 @@ div.page {
                                 justify-content: space-between;
 
                                 & .prix {
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: center;
+
                                     text-align: left;
                                     float: left;
+
+                                    & h1 {
+                                        font-size: 36pt;
+                                    }
+
+                                    & p {
+                                        font-size: 14pt;
+                                        margin: -10px 0 0 0;
+                                    }
                                 }
                             }
                         }
@@ -683,19 +314,169 @@ div.page {
             }
         }
 
-        div.commande & {}
+        div.commande & {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            & h2.error {
+                width: 75%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            &>div {
+                margin: 25px 0;
+                width: 100%;
+                max-width: 90vw;
+
+                &.choix-produit {
+                    display: flex;
+                    align-items: flex-start;
+
+
+                    & img {
+                        display: none;
+                        width: 0;
+                    }
+
+                    & form.form-choix {
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+
+                        & div.choix {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            width: 100%;
+
+                            & input.check {
+                                width: 5%;
+                            }
+
+                            & h2.titre {
+                                width: 30%;
+                            }
+
+                            & span.separator {
+                                width: 50%;
+                            }
+
+                            & div.prix {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: flex-end;
+                                width: 15%;
+
+                                & h1,
+                                & p {
+                                    margin: 0;
+                                }
+
+                                & p {
+                                    font-size: 9pt;
+                                    margin-top: -10px;
+                                }
+                            }
+                        }
+
+                        & input.ok {
+                            align-self: flex-end;
+                        }
+                    }
+                }
+
+                &.panier {
+                    display: flex;
+                    flex-direction: column;
+
+                    & div.fiche-produit-panier {
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+
+                        padding: 25px 0;
+                        border-bottom: solid 2px $color4;
+
+                        & h1 {
+                            width: 20%;
+                            margin: 0;
+                            font-size: 18pt;
+                        }
+
+                        & div.prix {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            width: 45%;
+
+                            & h1,
+                            & p {
+                                margin: 0 10px;
+                            }
+
+                            & h1 {
+                                font-size: 28pt;
+                            }
+                        }
+
+                        & div.quantite {
+                            width: 15%;
+                        }
+
+                        & div.delete {
+                            width: 20%;
+                        }
+
+                    }
+                }
+
+                &.user-info {
+                    & form {
+                        display: flex;
+                        flex-direction: column;
+
+                        & div.text {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: space-between;
+
+                            & input {
+                                width: 100%;
+                            }
+
+                            & input:nth-child(2),
+                            & input:nth-child(3) {
+                                width: 42%;
+                            }
+                        }
+
+                        & input.ok {
+                            align-self: flex-end;
+                            float: right;
+                            width: auto !important;
+                        }
+                    }
+                }
+            }
+        }
 
         div.livreor & {
-            margin: 0 10%;
-            padding: 25px 0;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: stretch;
 
             & form {
+                & h1 {
+                    transform: translateY(-15px);
+                }
+
                 & textarea {
                     width: 100%;
+                    max-width: 440px;
                     height: 200px;
                     resize: none;
                     padding: 25px;
@@ -715,7 +496,556 @@ div.page {
                 align-items: stretch;
 
                 & .commentaire {
-                    padding: 5px 0 10px;
+                    padding: 10px 0 15px;
+
+                    &>div:last-child {
+                        & a {
+                            float: right;
+                        }
+                    }
+                }
+            }
+        }
+
+        div.connexion & {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: auto;
+
+            form.connexion {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                width: 100%;
+
+                & div.links {
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                & input.btn {
+                    align-self: flex-end;
+                }
+            }
+        }
+
+        div.inscription & {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: auto;
+
+            & form.inscription {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                & div.form {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-items: center;
+
+                    & div.part1,
+                    & div.part2 {
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+
+                        & input.form-txt {
+                            width: 100%;
+                        }
+                    }
+                }
+
+                & div.submit {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: flex-end;
+                    width: 100%;
+                    align-self: flex-end;
+
+                    & p,
+                    & div.alert,
+                    & div.links {
+                        width: 100%;
+                        text-align: right;
+                    }
+
+                    & div.links {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+    body {
+        font-size: 12pt;
+    }
+
+    h1 {
+        font-size: 36pt;
+    }
+
+    header {
+        position: absolute;
+        width: 100vw;
+
+        & nav.topnav {
+            &.mobile {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+
+                width: 100vw;
+                margin-right: auto;
+                margin-left: auto;
+                font-size: 25px;
+            }
+
+            &.computer {
+                display: none;
+            }
+        }
+    }
+
+    footer {
+        order: 3;
+        width: 100vw;
+        padding: 25px 0;
+        display: flex;
+        flex-direction: column;
+
+        & nav.footnav {
+            margin: 25px 50px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+
+            & div.social {
+                & div.links {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: space-around;
+
+                    & a {
+                        width: 25%;
+                        margin: 0 15px;
+                    }
+                }
+            }
+        }
+    }
+
+    section.main-content {
+        width: 90vw;
+        margin: 5vh auto;
+        max-width: 720px;
+        order: 2;
+
+        div.home & {
+            &>div {
+                padding: 50px 0;
+                display: flex;
+                flex-direction: column;
+
+                &.slogan {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    width: 100%;
+                    max-width: 50%;
+                    padding: 100px 0;
+                    margin: 0 auto;
+
+                    & svg {
+                        max-height: 60px;
+                        transform: translate(75px, 15px);
+                    }
+
+                    & h2 {
+                        font-size: 14pt;
+                        font-weight: 400;
+                        transform: translate(-75px, -20px);
+                    }
+                }
+
+                &.presentation {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+
+                    &>img {
+                        width: 60%;
+                    }
+
+                    & div.pres {
+                        width: 40%;
+                    }
+                }
+
+                &.team {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: space-between;
+
+                    & div.member {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        align-content: space-between;
+
+                        & img.user {
+                            max-height: 250px;
+                        }
+                    }
+                }
+
+                &.potions {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    & h1.pelem {
+                        width: 50%;
+                    }
+
+                    & img.pelem {
+                        width: 50%;
+                    }
+
+                    & a.pelem {
+                        width: 50%;
+                        transform: translateX(-25px);
+
+                        & h2 {
+                            float: right;
+                        }
+                    }
+
+                    & p.pelem {
+                        width: 50%;
+                    }
+                }
+            }
+        }
+
+        div.potions & {
+            &>div {
+                padding: 25px 0;
+
+                &.title {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    & h1 {
+                        align-self: flex-start;
+                    }
+
+                    & img {
+                        width: 100%;
+                        margin: 85px 0;
+                    }
+                }
+
+                &.potion {
+                    display: flex;
+                    margin: 50px 0;
+
+                    &:nth-child(2n) {
+                        flex-direction: row;
+
+                        & .img img {
+                            float: right;
+                        }
+
+                        & .desc {
+                            text-align: left;
+
+                            & .commande {
+                                flex-direction: row;
+                                justify-content: space-between;
+
+                                & .prix {
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: center;
+
+                                    text-align: right;
+                                    float: right;
+
+                                    & h1 {
+                                        font-size: 36pt;
+                                    }
+
+                                    & p {
+                                        font-size: 14pt;
+                                        margin: -10px 0 0 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &:nth-child(2n+1) {
+                        flex-direction: row-reverse;
+
+                        & .img img {
+                            float: left;
+                        }
+
+                        & .desc {
+                            text-align: right;
+
+                            & .commande {
+                                flex-direction: row-reverse;
+                                justify-content: space-between;
+
+                                & .prix {
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: center;
+
+                                    text-align: left;
+                                    float: left;
+
+                                    & h1 {
+                                        font-size: 36pt;
+                                    }
+
+                                    & p {
+                                        font-size: 14pt;
+                                        margin: -10px 0 0 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    & img {
+                        max-height: 500px;
+                    }
+
+                    & div.desc {
+                        & div.commande {
+                            display: flex;
+
+                            & div.cmd {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: space-between;
+
+                                & div.prix {
+                                    display: flex;
+                                    flex-direction: column;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        div.commande & {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            & h2.error {}
+
+            &>div {
+                margin: 50px 0;
+
+                &.choix-produit {
+                    display: flex;
+                    align-items: flex-start;
+
+                    width: 100%;
+
+                    & img {
+                        display: none;
+                        width: 0;
+                    }
+
+                    & form.form-choix {
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+
+                        & div.choix {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            width: 100%;
+
+                            & input.check {
+                                width: 5%;
+                            }
+
+                            & h2.titre {
+                                width: 30%;
+                            }
+
+                            & span.separator {
+                                width: 50%;
+                            }
+
+                            & div.prix {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: flex-end;
+                                width: 15%;
+
+                                & h1,
+                                & p {
+                                    margin: 0;
+                                }
+
+                                & p {
+                                    margin-top: -10px;
+                                }
+                            }
+                        }
+
+                        & input.ok {
+                            align-self: flex-end;
+                        }
+                    }
+                }
+
+                &.panier {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+
+                    & div.fiche-produit-panier {
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+
+                        padding: 25px 0;
+                        border-bottom: solid 2px $color4;
+
+                        & h1 {
+                            width: 25%;
+                            margin: 0;
+                            font-size: 18pt;
+                        }
+
+                        & div.prix {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            width: 45%;
+
+                            & h1,
+                            & p {
+                                margin: 0 5px;
+                            }
+
+                            & h1 {
+                                font-size: 30pt;
+                            }
+                        }
+
+                        & div.quantite {
+                            width: 15%;
+                        }
+
+                        & div.delete {
+                            width: 15%;
+                        }
+
+                    }
+                }
+
+                &.user-info {
+                    width: 100%;
+
+                    form {
+                        display: flex;
+                        flex-direction: column;
+
+                        & div.text {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: space-between;
+
+                            & input {
+                                width: 100%;
+                            }
+
+                            & input:nth-child(2),
+                            & input:nth-child(3) {
+                                width: 43%;
+                            }
+                        }
+
+                        & input.ok {
+                            align-self: flex-end;
+                            float: right;
+                            width: auto !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        div.livreor & {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: stretch;
+
+            & form {
+                & h1 {
+                    transform: translateY(-15px);
+                }
+
+                & textarea {
+                    width: 100%;
+                    max-width: 660px;
+                    height: 200px;
+                    resize: none;
+                    padding: 25px;
+                    margin: 25px 0;
+                }
+
+                & input {
+                    padding: 20px 50px;
+                    float: right;
+                }
+            }
+
+            & .commentaires {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: stretch;
+
+                & .commentaire {
+                    padding: 10px 0 15px;
+
+                    &>div:last-child {
+                        & a {
+                            float: right;
+                        }
+                    }
                 }
             }
         }
@@ -789,6 +1119,7 @@ div.page {
                     & div.links {
                         display: flex;
                         justify-content: space-between;
+                        align-items: center;
                     }
                 }
             }
@@ -796,19 +1127,550 @@ div.page {
     }
 }
 
-div.home {
-    & div.loader {
-        position: fixed;
-        z-index: 9999;
-        background: white;
-        top: 0px;
-        left: 0px;
-        height: 100%;
-        width: 100%;
+@media only screen and (min-width: 1200px) {
+    body {
+        font-size: 14pt;
+    }
 
-        & img {
-            height: 30vh;
-            margin: 30vh 25vw;
+    h1 {
+        font-size: 48pt;
+    }
+
+    header {
+        width: 100vw;
+
+        & nav.topnav {
+            &.mobile {
+                display: none;
+            }
+
+            &.computer {
+                width: 75vw;
+                margin-right: auto;
+                margin-left: auto;
+                font-size: 50px;
+
+                & li {
+                    display: inline;
+
+                    & a {
+                        display: inline-block;
+                        vertical-align: center;
+                        font-size: large;
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        order: 3;
+        width: 100vw;
+        padding: 25px 0;
+        display: flex;
+        flex-direction: column;
+
+        & nav.footnav {
+            margin: 25px 50px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+
+            & div.social {
+                & div.links {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: space-around;
+
+                    & a {
+                        width: 25%;
+                        margin: 0 25px;
+                    }
+                }
+            }
+        }
+    }
+
+    section.main-content {
+        width: 75vw;
+        margin: 5vh auto;
+        max-width: 1140px;
+        order: 2;
+
+        div.home & {
+            &>div {
+                padding: 50px 0;
+                display: flex;
+                flex-direction: column;
+
+                &.slogan {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    width: 100%;
+                    max-width: 33%;
+                    padding: 100px 0;
+                    margin: 0 33%;
+
+                    & svg {
+                        max-height: 75px;
+                        transform: translate(100px, 20px);
+                    }
+
+                    & h2 {
+                        font-size: 20pt;
+                        font-weight: 300;
+                        transform: translate(-100px, -25px);
+                    }
+                }
+
+                &.presentation {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+
+                    &>img,
+                    & div.pres {
+                        width: 50%;
+                    }
+                }
+
+                &.team {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: space-between;
+
+                    & div.member {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        align-content: space-between;
+
+                        & img.user {
+                            max-height: 400px;
+                        }
+                    }
+                }
+
+                &.potions {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    & h1.pelem {
+                        width: 40%;
+                    }
+
+                    & img.pelem {
+                        display: block;
+                        max-width: 60%;
+                        height: auto;
+                    }
+
+                    & a.pelem {
+                        width: 50%;
+                        transform: translate(-25px, -75px);
+
+                        & h2 {
+                            float: right;
+                        }
+                    }
+
+                    & p.pelem {
+                        width: 50%;
+                    }
+                }
+            }
+        }
+
+        div.potions & {
+            &>div {
+                padding: 50px 0;
+
+                &.title {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    & h1 {
+                        align-self: flex-start;
+                    }
+
+                    & img {
+                        width: 60%;
+                        margin: 75px 20%;
+                    }
+                }
+
+                &.potion {
+                    display: flex;
+                    margin: 25px 0;
+
+                    &:nth-child(2n) {
+                        flex-direction: row;
+
+                        & .img img {
+                            float: right;
+                        }
+
+                        & .desc {
+                            text-align: left;
+
+                            & .commande {
+                                flex-direction: row;
+                                justify-content: space-between;
+
+                                & .prix {
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: center;
+
+                                    text-align: right;
+                                    float: right;
+
+                                    & h1 {
+                                        font-size: 56pt;
+                                    }
+
+                                    & p {
+                                        font-size: 18pt;
+                                        margin: -15px 0 0 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &:nth-child(2n+1) {
+                        flex-direction: row-reverse;
+
+                        & .img img {
+                            float: left;
+                        }
+
+                        & .desc {
+                            text-align: right;
+
+                            & .commande {
+                                flex-direction: row-reverse;
+                                justify-content: space-between;
+
+                                & .prix {
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: center;
+
+                                    text-align: left;
+                                    float: left;
+
+                                    & h1 {
+                                        font-size: 56pt;
+                                    }
+
+                                    & p {
+                                        font-size: 18pt;
+                                        margin: -15px 0 0 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    & img {
+                        max-height: 500px;
+                    }
+
+                    & div.desc {
+                        height: 500px;
+
+                        & div.commande {
+                            display: flex;
+
+                            & div.cmd {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: space-between;
+
+                                & div.prix {
+                                    display: flex;
+                                    flex-direction: column;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        div.commande & {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            & h2.error {}
+
+            &>div {
+                margin: 50px 0;
+
+                &.choix-produit {
+                    display: flex;
+                    align-items: flex-start;
+
+                    & img {
+                        width: 50%;
+                    }
+
+                    & form.form-choix {
+                        display: flex;
+                        flex-direction: column;
+                        width: 50%;
+
+                        & div.choix {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            width: 100%;
+
+                            & input.check {
+                                width: 10%;
+                            }
+
+                            & h2.titre {
+                                width: 30%;
+                            }
+
+                            & span.separator {
+                                width: 40%;
+                            }
+
+                            & div.prix {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: flex-end;
+                                width: 20%;
+
+                                & h1,
+                                & p {
+                                    margin: 0;
+                                }
+
+                                & p {
+                                    margin-top: -10px;
+                                }
+                            }
+                        }
+
+                        & input.ok {
+                            align-self: flex-end;
+                        }
+                    }
+                }
+
+                &.panier {
+                    display: flex;
+                    flex-direction: column;
+                    width: 75%;
+
+                    & div.fiche-produit-panier {
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+
+                        padding: 25px 0;
+                        border-bottom: solid 2px $color4;
+
+                        & h1 {
+                            width: 25%;
+                            margin: 0;
+                            font-size: 22pt;
+                        }
+
+                        & div.prix {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            width: 45%;
+
+                            & h1,
+                            & p {
+                                margin: 0 5px;
+                            }
+
+                            & h1 {
+                                font-size: 36pt;
+                            }
+                        }
+
+                        & div.quantite {
+                            width: 15%;
+                        }
+
+                        & div.delete {
+                            width: 15%;
+                        }
+
+                    }
+                }
+
+                &.user-info {
+                    width: 90%;
+
+                    form {
+                        display: flex;
+                        flex-direction: column;
+
+                        & div.text {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: space-between;
+
+                            & input {
+                                width: 100%;
+                            }
+
+                            & input:nth-child(2),
+                            & input:nth-child(3) {
+                                width: 45%;
+                            }
+                        }
+
+                        & input.ok {
+                            align-self: flex-end;
+                            float: right;
+                            width: auto !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        div.livreor & {
+            margin: 0 10%;
+            padding: 25px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: stretch;
+
+            & form {
+
+                & h1 {
+                    transform: translate(-75px, -25px);
+                }
+
+                & textarea {
+                    width: 100%;
+                    max-width: 1080px;
+                    height: 200px;
+                    resize: none;
+                    padding: 25px;
+                    margin: 25px 0;
+                }
+
+                & input {
+                    padding: 20px 50px;
+                    float: right;
+                }
+            }
+
+            & .commentaires {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: stretch;
+
+                & .commentaire {
+                    padding: 10px 0 15px;
+
+                    &>div:last-child {
+                        & a {
+                            float: right;
+                        }
+                    }
+                }
+            }
+        }
+
+        div.connexion & {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: auto;
+
+            form.connexion {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                & div.links {
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                & input.btn {
+                    align-self: flex-end;
+                }
+            }
+        }
+
+        div.inscription & {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: auto;
+
+            & form.inscription {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                & div.form {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    align-items: center;
+
+                    & div.part1,
+                    & div.part2 {
+                        display: flex;
+                        flex-direction: column;
+                        width: 30%;
+
+                        & input.form-txt {
+                            width: 100%;
+                        }
+                    }
+                }
+
+                & div.submit {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: flex-end;
+                    width: 50%;
+                    margin: 0 12.5%;
+                    align-self: flex-end;
+
+                    & p,
+                    & div.alert,
+                    & div.links {
+                        width: 100%;
+                        text-align: right;
+                    }
+
+                    & div.links {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                    }
+                }
+            }
         }
     }
 }

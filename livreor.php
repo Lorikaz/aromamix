@@ -39,7 +39,17 @@
 <body class="livreor">
 	<?php include("/parts/entete.php"); ?>
 
-    <!-- Génération du formulaire de message -->
+        <section class="main-content">
+            <div class="form">
+                <!-- Génération du formulaire de message -->
+                <form method="post" action="livreor.php">
+                    <!-- Récupère le pseudo dans SESSION-->
+                    <h2>Connecté en tant que : <?php echo $_SESSION['firstname'] ?></h2>
+                    <h1>Livre d'or</h1>
+                    <textarea name="message" placeholder="Laissez nous votre avis ..."></textarea><br/>
+                    <input class="ok" type="submit" value="Publier" />
+                </form>
+            </div>
 
     <form method="post" action="livreor.php">
         <!-- Récupère le pseudo dans SESSION-->
@@ -109,14 +119,18 @@
     $page = 1; // On se met sur la page 1 (par défaut)
     }
 
-    ////// On recupere les données en mettant les messages dans l'ordre du plus récent au plus ancien
+            $premierMessage = ($page - 1) * $nombreDeMessagesParPage;
+            $requete ="SELECT * FROM livreor ORDER BY id DESC LIMIT " . $premierMessage . ",". $nombreDeMessagesParPage.";";
+            $retourpremiermessage = $bdd->prepare($requete);
+            $retourpremiermessage->execute(); ?>
 
-    $premierMessage = ($page - 1) * $nombreDeMessagesParPage;
-    $requete ="SELECT * FROM livreor ORDER BY id DESC LIMIT " . $premierMessage . ",". $nombreDeMessagesParPage.";";
-    $retourpremiermessage = $bdd->prepare($requete);
-    $retourpremiermessage->execute();
-
-    ////// On stocke les données de la requete et on affiche les messages
+            <div class="commentaires">
+            <?php ////// On stocke les données de la requete et on affiche les messages
+            if ($retourpremiermessage) {
+                foreach ($retourpremiermessage as $row) {
+                 $id = $row[0];
+                 $pseudo = $row[1];
+                 $message = $row[2];
 
     if ($retourpremiermessage) {
         foreach ($retourpremiermessage as $row) {
@@ -124,31 +138,50 @@
          $pseudo = $row[1];
          $message = $row[2];
 
-            //// Si l'utilisateur est auteur du message il peut le supprimer
+                    if ($_SESSION['email']==$pseudo)  { ?>
+                        <div class="commentaire">
+                            <div class="pseudo">
+                                <h1>
+                                    <?php
+                                    echo $pseudo;
+                                    ?>
+                                </h1>
+                            </div>
+                            <div class="message">
+                                <?php
+                                echo $message;
+                                ?>
+                            </div>
 
-            if ($_SESSION['email']==$pseudo)  { ?>
-                <div class="pseudo">
-                    <h1>
-                        <?php
-                        echo $pseudo;
-                        ?>
-                    </h1>
-                </div>
-                <div class="message">
+                            <!-- Lien de suppression en fonction de l'ID du message -->
+                            <div id="<?php echo $id ?>">
+                                <?php echo "<a href=livreor.php?action=delete&id=" .$id .">Supprimer le commentaire</a>";?>
+                            </div>
+                        </div>
                     <?php
                     echo $message;
                     ?>
                 </div>
 
-                <!-- Lien de suppression en fonction de l'ID du message -->
-
-                <div id="<?php echo $id ?>">
-                    <?php echo "<a href=livreor.php?action=delete&id=" .$id .">Supprimer le commentaire</a>";?>
-                </div>
-            <?php
+                        <div class="commentaire">
+                            <div class="pseudo">
+                                <h1>
+                                <?php
+                                echo $pseudo;
+                                ?>
+                                </h1>
+                            </div>
+                            <div class="message">
+                                <?php
+                                echo $message; ?>
+                            </div>
+                        </div>
+                    <?php }
+                }
             }
             else{
             ?>
+            </div>
 
                 <div class="pseudo">
                     <h1>

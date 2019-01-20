@@ -17,10 +17,7 @@
     $bdd = new PDO('mysql:host='.$dbhost.';dbname='.$dbname, $dbuser, $dbpass);
   } catch(PDOException $e) {
     echo $e->getMessage();
-  }
-
-
-?>
+  } ?>
 <!DOCTYPE html>
 
 <html>
@@ -47,19 +44,17 @@
             </form>
 
             <?php
-
-
-
             	if(empty($_POST['email'])||empty($_POST['password'])){
-            		?>
-            		<p>Une erreur s'est produite pendant votre identification. Vous devez remplir tous les champs du formulaire</p>
+             ?>
+            		<p class="error">Une erreur s'est produite pendant votre identification. 
+                    <br/>Vous devez remplir tous les champs du formulaire</p>
             		<p>Cliquez <a href="connexion_test.php"> ici </a>pour revenir</p>
             <?php
             	}else
             	//On vérifie l'email
             	{
                 	$query="SELECT lastname,firstname,email,password FROM users WHERE email = '".$_POST['email']."'";
-            		echo $query;
+            		//echo $query;
             		$result=$bdd->prepare($query);
             		//$query->bindValue(':email',$_POST['email'], PDO::PARAM_STR);
             		$result->execute();
@@ -72,12 +67,12 @@
             			$_SESSION['email']=$data['email'];
 
             			?><p> Bienvenue <?php echo $data['firstname']?>, vous êtes maintenant connecté !</p>
-            			<p>Cliquez <a href="index.php">ici</a>pour revenir à la page d'accueil  ?></p>
+            			<p>Cliquez <a href="index.php">ici</a> pour revenir à la page d'accueil</p>
 
                     <?php 		
             		}else{
             			?>
-            			<p>Une erreur s\'est produite !!!</p>
+            			<p>Une erreur s'est produite.</p>
             		<?php	
             		}
             } ?>

@@ -1,0 +1,66 @@
+div.slogan {
+    img {
+        position: relative;
+        margin: auto;
+        //width: 75%;
+    }
+}
+
+#lune_pleine {
+    opacity: 0;
+    animation-name: lune;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes lune {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#ellipse {
+    animation-name: ellipse;
+    animation-duration: 2s;
+    animation-delay: 0.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-direction: reverse;
+}
+
+@keyframes ellipse {
+    from {
+        transform: translate(0);
+    }
+
+    to {
+        transform: translate(10%, -40%);
+    }
+}
+
+#point_i {
+    opacity: 0;
+    animation-name: i;
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes i {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

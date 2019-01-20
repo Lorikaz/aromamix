@@ -3,6 +3,7 @@
 ?>
 
 <!DOCTYPE html>
+<head>
 	<title>Inscription</title>
 	<?php include("./parts/head.php") ?>
 </head>
@@ -90,7 +91,8 @@
 				header('location: index.php'); 
 			}
 		}
-	} ?>
+	}
+ ?>
 
 <body>
 	<div class="page inscription">

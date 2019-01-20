@@ -1,5 +1,29 @@
 <header class="header">
-    <nav class="topnav">
+
+    <div class="overlay" id="sidenav">
+
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+            <i class="fas fa-times"></i>
+        </a>
+
+        <div class="overlay-content">
+            <a href="index.php">Accueil</a>
+            <a href="potions.php">Potions</a>
+            <a href="commande.php">Commander</a>
+            <a href="livreor.php">Livre d'or</a>
+            <a href="connexion_test.php">Connexion</a>
+        </div>
+
+    </div>
+
+    <nav class="topnav mobile">
+        <span onclick="openNav()">
+            <i class="fas fa-bars"></i>
+        </span>
+    </nav>
+
+
+    <nav class="topnav computer">
         <li>
             <a href="potions.php">Nos potions</a>
         </li>
@@ -18,4 +42,5 @@
             <a href="connexion_test.php">Connexion</a>
         </li>
     </nav>
+
 </header>

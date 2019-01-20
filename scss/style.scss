@@ -4,17 +4,15 @@
 
 
 body {
-    //background-color: lightgrey;
     margin: 0;
     font-family: HelveticaNeue, sans-serif;
     font-weight: 500;
-    font-size: 18px;
 }
 
 h1 {
+    margin: 0;
     font-family: Butler, serif;
     font-weight: 800;
-    font-size: 60px;
 }
 
 a {
@@ -29,30 +27,88 @@ a {
 
 
 header {
+    & .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        background-color: $color4;
+        background-color: $color4;
+        overflow-x: hidden;
+        transition: 0.5s;
+
+        & .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 48pt;
+        }
+
+        & a {
+            padding: 8px;
+            text-decoration: none;
+            font-family: Butler, serif;
+            font-weight: 800;
+            font-style: normal;
+            font-size: 48pt;
+            color: white;
+            display: block;
+            transition: 0.3s;
+
+
+            &:hover,
+            &:focus {
+                color: $color2;
+            }
+        }
+
+        .overlay-content {
+            position: relative;
+            top: 20%;
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+        }
+    }
+
     & nav.topnav {
-        background-color: white;
-        color: black;
-        list-style: none;
-        text-align: center;
-        font-size: 50px;
+        &.computer {
+            color: black;
+            list-style: none;
+            text-align: center;
 
-        & li {
-            & a {
-                vertical-align: middle;
-                color: black;
-                font-size: large;
-                text-align: center;
-                margin: 15px 10px;
-                padding: 10px 15px;
-                text-decoration: none;
+            & li {
+                & a {
+                    vertical-align: middle;
+                    color: black;
+                    text-align: center;
+                    margin: 15px 10px;
+                    padding: 10px 15px;
+                    text-decoration: none;
 
-                &:hover {
-                    color: $color4;
-                }
-
-                &#logo {
                     &:hover {
-                        background-color: white;
+                        color: $color4;
+                    }
+                }
+            }
+        }
+
+        &.mobile {
+
+            & span {
+                margin: 15px;
+                padding: 15px;
+
+                & i {
+                    vertical-align: middle;
+                    color: black;
+                    text-align: center;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: $color4;
                     }
                 }
             }
@@ -106,18 +162,10 @@ section.main-content {
             }
 
             &.slogan {
-                padding: 100px 0;
-                margin: auto;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-
-                & img {
+                & svg {
                     @include outline;
                     display: inline-block;
-                    padding: 15px;
-                    max-height: 50px;
-                    transform: translate(100px, 25px);
+                    padding: 5px 10px;
                     z-index: 2;
                 }
 
@@ -125,18 +173,14 @@ section.main-content {
                     display: inline-block;
                     background-color: $color4;
                     color: white;
-                    font-family: MetricTest, sans-serif;
-                    font-weight: 300;
+                    font-family: HelveticaNeue, sans-serif;
                     padding: 25px;
-                    transform: translate(-100px, -25px);
                     z-index: 1;
                 }
             }
 
             &.presentation {
-                & img {
-                    width: 50%;
-                }
+                & img {}
 
                 & div.pres {
                     padding: 25px;
@@ -153,7 +197,7 @@ section.main-content {
 
             &.team {
                 & div.member {
-                    padding: 0 25px;
+                    margin: 0 25px;
 
                     & img,
                     & p {
@@ -162,18 +206,15 @@ section.main-content {
                 }
 
                 & img.user {
-                    max-height: 400px;
                     width: auto;
-                    margin: auto;
                 }
 
                 & p {
                     text-align: center;
                 }
             }
-            
+
             &.potions {
-                padding: 50px;
 
                 & h1 {
                     text-transform: none;
@@ -182,16 +223,13 @@ section.main-content {
 
                 & h2 {
                     display: inline-block;
-                    transform: translate(-25px, -75px);
                     @include button;
-                    float: right;
                 }
             }
         }
     }
 
     div.potions & {
-        margin: 50px inherit;
 
         & div.title {
             & h1 {
@@ -201,14 +239,10 @@ section.main-content {
                 margin: 0 10%;
             }
 
-            & img {
-                width: 60%;
-                margin: 75px 20%;
-            }
+            & img {}
         }
 
         & div.potion {
-            margin: 100px 0;
 
             & div.img {
                 & img {
@@ -218,7 +252,6 @@ section.main-content {
             }
 
             & .desc {
-                height: 500px;
                 vertical-align: middle;
                 padding: 25px;
 
@@ -244,66 +277,108 @@ section.main-content {
                 & div.prix {
                     display: inline-block;
                     color: $color4;
-
-                    & h1 {
-                        font-size: 75px;
-                        margin: 0;
-                    }
-
-                    & p {
-                        font-size: 25px;
-                        margin: -15px 0 0 0;
-                    }
                 }
             }
         }
-
-        div.commande & {}
-
-        div.livreor & {
-            & div.form {
-                & form {
-                    & h1 {
-                        color: $color4;
-                        position: absolute;
-                        transform: translate(-75px, -25px);
-                    }
-
-                    & textarea {
-                        @include outline;
-                        transform: translateZ(10px);
-                    }
-
-                    & input {
-                        @include button;
-                        border: none;
-                        font-size: 1.5rem;
-                    }
-                }
-            }
-
-            & .commentaires {
-                & .commentaire {
-                    padding: 5px 0 10px;
-                    border-bottom: solid 3px $color4;
-
-                    & h1 {
-                        font-family: HelveticaNeue, sans-serif;
-                        font-weight: 500;
-                        font-style: italic;
-                        font-size: 20px;
-                        color: $color4;
-                    }
-                }
-            }
-        }
-
-        div.connexion & {}
-
-        div.inscription & {}
     }
 
-    div.commande & {}
+    div.commande & {
+
+        & h2.error {
+            text-align: center;
+        }
+
+        & div.choix-produit {
+
+            & img {}
+
+            & form.form-choix {
+
+                & div.choix {
+
+                    & label.checkbox {
+                        & input.check {}
+
+                        & span.checkmark {}
+                    }
+
+                    & h2.titre {
+                        font-family: Butler, serif;
+                        font-weight: 800;
+                    }
+
+                    & span.separator {
+                        height: 0;
+                        border: solid 1px $color4;
+                    }
+
+                    & div.prix {
+
+                        & h1,
+                        & p {}
+
+                        & p {
+                            font-size: 10pt;
+                        }
+                    }
+                }
+
+                & input.ok {
+                    @include button;
+                    margin: 25px 0;
+                }
+            }
+        }
+
+        & div.panier {
+            & div.fiche-produit-panier {
+                & h1.titre {
+                    font-family: HelveticaNeue, sans-serif;
+                    font-weight: 400;
+                }
+
+                & div.prix {
+                    & h1 {
+                        font-family: HelveticaNeue, sans-serif;
+                        font-weight: 600;
+                    }
+                }
+
+                & form.delete {
+                    & button {
+                        border: 0;
+                        background-color: white;
+
+                        & i {
+                            color: $color4;
+                            font-size: 22pt;
+                        }
+                    }
+                }
+            }
+        }
+
+        & div.user-info {
+            & form {
+                & div.text {
+                    & input {
+                        @include outline;
+                        border-width: 3px;
+                        padding: 10px 15px;
+                        margin: 10px 0;
+
+                        color: black;
+                        font-style: italic;
+                    }
+                }
+
+                & input.ok {
+                    @include button;
+                    margin: 25px 0;
+                }
+            }
+        }
+    }
 
     div.livreor & {
         & div.form {
@@ -311,7 +386,6 @@ section.main-content {
                 & h1 {
                     color: $color4;
                     position: absolute;
-                    transform: translate(-25px, -75px);
                 }
 
                 & textarea {
@@ -325,14 +399,12 @@ section.main-content {
                 & input {
                     @include button;
                     border: none;
-                    font-size: 1.5rem;
                 }
             }
         }
 
         & .commentaires {
             & .commentaire {
-                padding: 5px 0 10px;
                 border-bottom: solid 3px $color4;
 
                 & h1 {
@@ -347,7 +419,7 @@ section.main-content {
     }
 
     div.connexion & {
-        form.connexion {
+        & form.connexion {
             & input.text {
                 @include form-txt;
                 width: 100%;
@@ -361,10 +433,13 @@ section.main-content {
 
             input.btn {
                 @include button;
-                border: none;
-                font-size: 1.5rem;
                 margin: 25px 0;
             }
+        }
+
+        & p.error {
+            color: $color2;
+            text-align: center;
         }
     }
 
@@ -391,8 +466,6 @@ section.main-content {
             & div.submit {
                 & button.btn {
                     @include button;
-                    border: none;
-                    font-size: 1.5rem;
                     margin: 25px 0;
                 }
             }
